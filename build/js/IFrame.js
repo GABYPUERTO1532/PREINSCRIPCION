@@ -1,5 +1,3 @@
-// noinspection EqualityComparisonWithCoercionJS
-
 /**
  * --------------------------------------------
  * AdminLTE IFrame.js
@@ -108,11 +106,7 @@ class IFrame {
     if (autoOpen) {
       if (this._config.loadingScreen) {
         const $loadingScreen = $(SELECTOR_TAB_LOADING)
-
-        if (!$loadingScreen.is(':animated')) {
-          $loadingScreen.fadeIn()
-        }
-
+        $loadingScreen.fadeIn()
         $(`${tabId} iframe`).ready(() => {
           if (typeof this._config.loadingScreen === 'number') {
             this.switchTab(`#${navId}`)
@@ -264,6 +258,8 @@ class IFrame {
 
     if (usingDefTab) {
       const $el = $(`${SELECTOR_TAB_PANE}`).first()
+      // eslint-disable-next-line no-console
+      console.log($el)
       const uniqueName = $el.attr('id').replace('panel-', '')
       const navId = `#tab-${uniqueName}`
 
@@ -320,7 +316,7 @@ class IFrame {
       e.preventDefault()
       let { target } = e
 
-      if (target.nodeName === 'I') {
+      if (target.nodeName == 'I') {
         target = e.target.offsetParent
       }
 
@@ -415,8 +411,8 @@ class IFrame {
   }
 
   // Static
-  // eslint-disable-next-line max-params
-  static _jQueryInterface(config, name, link, id, reload) {
+
+  static _jQueryInterface(config) {
     if ($(SELECTOR_DATA_TOGGLE).length > 0) {
       let data = $(this).data(DATA_KEY)
 
@@ -426,14 +422,16 @@ class IFrame {
 
       const _options = $.extend({}, Default, typeof config === 'object' ? config : data)
       localStorage.setItem('AdminLTE:IFrame:Options', JSON.stringify(_options))
+
       const plugin = new IFrame($(this), _options)
-      window.iFrameInstance = plugin
-      $(this).data(DATA_KEY, typeof config === 'object' ? config : { link, name, id, reload, ...data })
+
+      $(this).data(DATA_KEY, typeof config === 'object' ? config : data)
+
       if (typeof config === 'string' && /createTab|openTabSidebar|switchTab|removeActiveTab/.test(config)) {
-        plugin[config](name, link, id, reload)
+        plugin[config]()
       }
     } else {
-      window.iFrameInstance = new IFrame($(this), JSON.parse(localStorage.getItem('AdminLTE:IFrame:Options')))._initFrameElement()
+      new IFrame($(this), JSON.parse(localStorage.getItem('AdminLTE:IFrame:Options')))._initFrameElement()
     }
   }
 }

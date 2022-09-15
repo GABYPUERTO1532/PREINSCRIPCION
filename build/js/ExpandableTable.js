@@ -30,13 +30,14 @@ const SELECTOR_ARIA_ATTR = 'aria-expanded'
   * ====================================================
   */
 class ExpandableTable {
-  constructor(element) {
+  constructor(element, options) {
+    this._options = options
     this._element = element
   }
 
   // Public
 
-  _init() {
+  init() {
     $(SELECTOR_DATA_TOGGLE).each((_, $header) => {
       const $type = $($header).attr(SELECTOR_ARIA_ATTR)
       const $body = $($header).next(SELECTOR_EXPANDABLE_BODY).children().first().children()
@@ -79,7 +80,8 @@ class ExpandableTable {
   }
 
   // Static
-  static _jQueryInterface(config) {
+
+  static _jQueryInterface(operation) {
     return this.each(function () {
       let data = $(this).data(DATA_KEY)
 
@@ -88,8 +90,8 @@ class ExpandableTable {
         $(this).data(DATA_KEY, data)
       }
 
-      if (typeof config === 'string' && /init|toggleRow/.test(config)) {
-        data[config]()
+      if (typeof operation === 'string' && /init|toggleRow/.test(operation)) {
+        data[operation]()
       }
     })
   }
@@ -100,7 +102,7 @@ class ExpandableTable {
   * ====================================================
   */
 $(SELECTOR_TABLE).ready(function () {
-  ExpandableTable._jQueryInterface.call($(this), '_init')
+  ExpandableTable._jQueryInterface.call($(this), 'init')
 })
 
 $(document).on('click', SELECTOR_DATA_TOGGLE, function () {

@@ -286,24 +286,22 @@ class ControlSidebar {
   }
 
   // Static
-  static _jQueryInterface(config) {
+
+  static _jQueryInterface(operation) {
     return this.each(function () {
       let data = $(this).data(DATA_KEY)
-      const _config = $.extend({}, Default, typeof config === 'object' ? config : $(this).data())
+      const _options = $.extend({}, Default, $(this).data())
 
       if (!data) {
-        data = new ControlSidebar($(this), _config)
+        data = new ControlSidebar(this, _options)
         $(this).data(DATA_KEY, data)
-        data._init()
-      } else if (typeof config === 'string') {
-        if (typeof data[config] === 'undefined') {
-          throw new TypeError(`No method named "${config}"`)
-        }
-
-        data[config]()
-      } else if (typeof config === 'undefined') {
-        data._init()
       }
+
+      if (data[operation] === 'undefined') {
+        throw new Error(`${operation} is not a function`)
+      }
+
+      data[operation]()
     })
   }
 }

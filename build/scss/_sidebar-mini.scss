@@ -436,14 +436,14 @@
       }
 
       .logo-xs {
-        animation-name: fade-in;
+        animation-name: fadeIn;
         animation-duration: $transition-speed;
         animation-fill-mode: both;
         visibility: visible;
       }
 
       .logo-xl {
-        animation-name: fade-out;
+        animation-name: fadeOut;
         animation-duration: $transition-speed;
         animation-fill-mode: both;
         visibility: hidden;
@@ -458,7 +458,7 @@
         .user-panel > .info,
         .nav-sidebar .nav-link p {
           margin-left: -10px;
-          animation-name: fade-out;
+          animation-name: fadeOut;
           animation-duration: $transition-speed;
           animation-fill-mode: both;
           visibility: hidden;

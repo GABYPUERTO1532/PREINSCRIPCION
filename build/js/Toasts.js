@@ -1,5 +1,3 @@
-// noinspection EqualityComparisonWithCoercionJS
-
 /**
  * --------------------------------------------
  * AdminLTE Toasts.js
@@ -142,19 +140,19 @@ class Toasts {
   // Static
 
   _getContainerId() {
-    if (this._config.position === POSITION_TOP_RIGHT) {
+    if (this._config.position == POSITION_TOP_RIGHT) {
       return SELECTOR_CONTAINER_TOP_RIGHT
     }
 
-    if (this._config.position === POSITION_TOP_LEFT) {
+    if (this._config.position == POSITION_TOP_LEFT) {
       return SELECTOR_CONTAINER_TOP_LEFT
     }
 
-    if (this._config.position === POSITION_BOTTOM_RIGHT) {
+    if (this._config.position == POSITION_BOTTOM_RIGHT) {
       return SELECTOR_CONTAINER_BOTTOM_RIGHT
     }
 
-    if (this._config.position === POSITION_BOTTOM_LEFT) {
+    if (this._config.position == POSITION_BOTTOM_LEFT) {
       return SELECTOR_CONTAINER_BOTTOM_LEFT
     }
   }
@@ -183,6 +181,7 @@ class Toasts {
   }
 
   // Static
+
   static _jQueryInterface(option, config) {
     return this.each(function () {
       const _options = $.extend({}, Default, config)

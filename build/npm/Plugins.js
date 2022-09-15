@@ -369,14 +369,14 @@ const Plugins = [
     from: 'node_modules/jsgrid/demos/db.js',
     to: 'plugins/jsgrid/demos/db.js'
   },
-  // flag-icons
+  // flag-icon-css
   {
-    from: 'node_modules/flag-icons/css',
-    to: 'plugins/flag-icons/css'
+    from: 'node_modules/flag-icon-css/css',
+    to: 'plugins/flag-icon-css/css'
   },
   {
-    from: 'node_modules/flag-icons/flags',
-    to: 'plugins/flag-icons/flags'
+    from: 'node_modules/flag-icon-css/flags',
+    to: 'plugins/flag-icon-css/flags'
   },
   // bootstrap4-duallistbox
   {
@@ -392,6 +392,11 @@ const Plugins = [
   {
     from: 'node_modules/ekko-lightbox/dist',
     to: 'plugins/ekko-lightbox/'
+  },
+  // bootstrap-switch
+  {
+    from: 'node_modules/bootstrap-switch/dist',
+    to: 'plugins/bootstrap-switch/'
   },
   // jQuery Validate
   {

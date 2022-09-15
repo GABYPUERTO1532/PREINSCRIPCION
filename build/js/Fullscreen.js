@@ -34,7 +34,7 @@ const Default = {
 class Fullscreen {
   constructor(_element, _options) {
     this.element = _element
-    this.options = _options
+    this.options = $.extend({}, Default, _options)
   }
 
   // Public
@@ -82,22 +82,24 @@ class Fullscreen {
   }
 
   // Static
+
   static _jQueryInterface(config) {
-    return this.each(function () {
-      let data = $(this).data(DATA_KEY)
-      const _config = $.extend({}, Default, typeof config === 'object' ? config : $(this).data())
+    let data = $(this).data(DATA_KEY)
 
-      if (!data) {
-        data = new Fullscreen($(this), _config)
-        $(this).data(DATA_KEY, data)
-      } else if (typeof config === 'string') {
-        if (typeof data[config] === 'undefined') {
-          throw new TypeError(`No method named "${config}"`)
-        }
+    if (!data) {
+      data = $(this).data()
+    }
 
-        data[config]()
-      }
-    })
+    const _options = $.extend({}, Default, typeof config === 'object' ? config : data)
+    const plugin = new Fullscreen($(this), _options)
+
+    $(this).data(DATA_KEY, typeof config === 'object' ? config : data)
+
+    if (typeof config === 'string' && /toggle|toggleIcon|fullscreen|windowed/.test(config)) {
+      plugin[config]()
+    } else {
+      plugin.init()
+    }
   }
 }
 

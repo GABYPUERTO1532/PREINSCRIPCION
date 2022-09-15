@@ -108,7 +108,6 @@ class CardWidget {
     this._parent.css({
       height: this._parent.height(),
       width: this._parent.width(),
-      position: 'fixed',
       transition: 'all .15s'
     }).delay(150).queue(function () {
       const $element = $(this)
@@ -177,12 +176,13 @@ class CardWidget {
   }
 
   // Static
+
   static _jQueryInterface(config) {
     let data = $(this).data(DATA_KEY)
-    const _config = $.extend({}, Default, $(this).data())
+    const _options = $.extend({}, Default, $(this).data())
 
     if (!data) {
-      data = new CardWidget($(this), _config)
+      data = new CardWidget($(this), _options)
       $(this).data(DATA_KEY, typeof config === 'string' ? data : config)
     }
 

@@ -131,7 +131,6 @@
       text-align: center;
       width: $sidebar-nav-icon-width;
 
-      /* stylelint-disable selector-class-pattern */
       &.fa,
       &.fas,
       &.far,
@@ -142,7 +141,6 @@
       &.ion {
         font-size: 1.1rem;
       }
-      /* stylelint-enable selector-class-pattern */
     }
 
     .float-right {
@@ -204,7 +202,7 @@
 
 .sidebar-is-opening .sidebar .nav-sidebar {
   .nav-link p {
-    animation-name: fade-in;
+    animation-name: fadeIn;
     animation-duration: $transition-speed;
     animation-fill-mode: both;
   }
@@ -859,7 +857,7 @@
 .nav-collapse-hide-child {
   .menu-open > .nav-treeview {
     max-height: min-content;
-    animation-name: fade-in;
+    animation-name: fadeIn;
     animation-duration: $transition-speed;
     animation-fill-mode: both;
   }
@@ -867,7 +865,7 @@
   .sidebar-collapse .sidebar:not(:hover) & {
     .menu-open > .nav-treeview {
       max-height: 0;
-      animation-name: fade-out;
+      animation-name: fadeOut;
       animation-duration: $transition-speed;
       animation-fill-mode: both;
     }
@@ -880,7 +878,7 @@
     .main-sidebar:not(.sidebar-no-expand):hover & {
       .menu-open > .nav-treeview {
         max-height: min-content;
-        animation-name: fade-in;
+        animation-name: fadeIn;
         animation-duration: $transition-speed;
         animation-fill-mode: both;
       }
