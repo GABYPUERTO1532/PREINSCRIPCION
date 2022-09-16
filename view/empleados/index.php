@@ -15,7 +15,7 @@
       }
 
       .card{
-        margin-top: 15%;
+        margin-top: 18%;
       }
 
       label{
@@ -31,7 +31,7 @@
     <div class="container">
         <div class="container col-md-3"></div>
         <div class="container col-md-6">
-          <form action="../../controller/empleados/login.php" method="post">
+          <form action="../../controller/post.php" method="post">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">BIENVENIDO TRABAJADOR</h4>
@@ -50,16 +50,16 @@
                     class="form-control" name="emp_pass" id="emp_pass" required minlength="8">
                 </div>
 
-                <!--Input: per_char (Cargo del empleado dentro de la institucion)-->
+                <!--Input: emp_char (Cargo del empleado dentro de la institucion)-->
                 <div class="mb-3">
-                  <label for="per_char" class="form-label">Seleccione su cargo en la institucion</label>
-                  <select class="form-control" name="per_char" id="per_char">
+                  <label for="emp_char" class="form-label">Seleccione su cargo en la institucion</label>
+                  <select class="form-control" name="emp_char" id="emp_char">
                     <option value="" selected>Seleccione</option>
-                    <option value="DC">Docente</option>
-                    <option value="CC">Coordinacion Convivencial</option>
-                    <option value="CA">Coordinacion Academica</option>
-                    <option value="SE">Secretaria</option>
-                    <option value="RF">Refrigerios</option>
+                    <option value="Docente">Docente</option>
+                    <option value="Coordinacion Convivencial">Coordinacion Convivencial</option>
+                    <option value="Coordinacion Academica">Coordinacion Academica</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="Refrigerios">Refrigerios</option>
                   </select>
                 </div>
 

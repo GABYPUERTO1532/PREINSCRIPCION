@@ -9,7 +9,7 @@
         }
     }
 
-    /*INFORMACION lOGIN*/
+    /*INFORMACION lOGIN FAMILIARES*/
 
         //Input: fam_doc_typ (Tipo de documento familiar)
         $fam_doc_typ=obtener_post('fam_doc_typ');
@@ -32,5 +32,23 @@
         echo($relation);
 
     /**/
+
+    /*INFORMACION lOGIN EMPLEADOS*/
+
+        //Input: fam_doc_typ (Correo Institucional Empleado)
+        $emp_ema=obtener_post('emp_ema');
+        echo($emp_ema);
+
+        //Input: emp_pass (Contraseña Empleado)
+        $emp_pass=password_hash(obtener_post('emp_pass'),PASSWORD_DEFAULT);
+        echo($emp_pass);
+
+        //Input: per_char (Cargo del empleado dentro de la institucion)
+        $emp_char=obtener_post('emp_char');
+        echo($emp_char);
+
+    /**/
+
+
 
 ?>
