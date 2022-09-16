@@ -158,6 +158,40 @@
 
         /**/
 
+        //Ingreso informacion "Other_information"
+        $sql=("INSERT INTO other_inf (stu_id,conf_vic,dis_sit,dis_arm_grp,dem_son,lim_stu,exp_cap,iq_sco,ass_tes) VALUES ('$stu_doc_num','$conf_vic','$dis_sit','$dis_arm_grp','$dem_son','$lim_stu','$exp_cap','$iq_sco','$ass_tes')");
+        $consulta=$coneccionBD->query($sql);
+
+        /*Ingreso Informacion Educativa*/
+
+            //Registro 1
+            $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$stu_doc_num','$sch_cit_1','$sch_yea_1','$sch_cit_1','$sch_ins_1')");
+            $consulta=$coneccionBD->query($sql);
+
+            //Registro 2
+            $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$stu_doc_num','$sch_cit_2','$sch_yea_2','$sch_cit_2','$sch_ins_2')");
+            $consulta=$coneccionBD->query($sql);
+
+            //Registro 3
+            $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$stu_doc_num','$sch_cit_3','$sch_yea_3','$sch_cit_3','$sch_ins_3')");
+            $consulta=$coneccionBD->query($sql);
+
+            //Registro 4
+            $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$stu_doc_num','$sch_cit_4','$sch_yea_4','$sch_cit_4','$sch_ins_4')");
+            $consulta=$coneccionBD->query($sql);
+
+            //Registro 5
+            $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$stu_doc_num','$sch_cit_5','$sch_yea_5','$sch_cit_5','$sch_ins_5')");
+            $consulta=$coneccionBD->query($sql);
+
+            //Registro 6
+            $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$stu_doc_num','$sch_cit_6','$sch_yea_6','$sch_cit_6','$sch_ins_6')");
+            $consulta=$coneccionBD->query($sql);
+        
+        /**/
+
+
+
     }
 
 ?>
