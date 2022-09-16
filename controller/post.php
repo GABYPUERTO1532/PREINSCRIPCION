@@ -13,23 +13,18 @@
 
         //Input: fam_doc_typ (Tipo de documento familiar)
         $fam_doc_typ=obtener_post('fam_doc_typ');
-        echo($fam_doc_typ);
 
         //Input: fam_doc_num (Numero de documento familiar)
         $fam_doc_num=obtener_post('fam_doc_num');
-        echo($fam_doc_num);
 
         //Input: stu_doc_typ (Tipo de documento Estudiante)
         $stu_doc_typ=obtener_post('stu_doc_typ');
-        echo($stu_doc_typ);
 
         //Input: stu_doc_num (Numero de documento Estudiante)
         $stu_doc_num=obtener_post('stu_doc_num');
-        echo($stu_doc_num);
 
         //Input: relation (Relacion Familiar con el estudiante)
         $relation=obtener_post('relation');
-        echo($relation);
 
     /**/
 
@@ -37,15 +32,12 @@
 
         //Input: fam_doc_typ (Correo Institucional Empleado)
         $emp_ema=obtener_post('emp_ema');
-        echo($emp_ema);
 
         //Input: emp_pass (Contraseña Empleado)
         $emp_pass=password_hash(obtener_post('emp_pass'),PASSWORD_DEFAULT);
-        echo($emp_pass);
 
         //Input: per_char (Cargo del empleado dentro de la institucion)
         $emp_char=obtener_post('emp_char');
-        echo($emp_char);
 
     /**/
 
