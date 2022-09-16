@@ -14,59 +14,73 @@
         text-align: center;
       }
 
-    </style>
+      .card{
+        margin-top: 15%;
+      }
 
+      label{
+        font-style: italic;
+        font-size: 17px;
+
+      }
+
+    </style>
+    
   </head>
   <body>
-      
     <div class="container">
-        <div class="container col-md-3"></div>
 
+        <div class="container col-md-3"></div>
         <div class="container col-md-6">
           <form action="controller/login.php" method="post">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Bienvenido al sistema de Preinscripcion</h4>
+                <h4 class="card-title">BIENVENIDO AL SISTEMA DE PREINSCRIPCION</h4>
 
+                <!--Informacion obtenida: Tipo y numero de documento del Familiar-->
                 <div class="mb-3">
                   <label for="" class="form-label">Digite numero de documento</label>
                   <div class="mb-3">
-                    <div class="input-group">  
-                      <div class="col-md-4">
+                    <div class="input-group"> 
+                      <div class="col-md-5">
                         <select class="form-control" name="fam_doc_typ" id="fam_doc_typ" required>
                           <option selected value="">Seleccione</option>
                           <option value="CC">Cedula de ciudadania</option>
                           <option value="CE">Cedula de Extranjeria</option>
-                          <option value="PA">Pasaporte</option>
+                          <option value="NIP">No. de Identificacion Personal</option>
+                          <option value="NUIP">No. Único de Identificación personal</option>
+                          <option value="NIT">No. de Identificacion Tributaria</option>
+                          <option value="PAP">Pasaporte</option>
                         </select>
                       </div>
+
                       <input type="text"
                       class="form-control" name="fam_doc_num" id="fam_doc_num" aria-describedby="helpId" maxlength="15" minlength="7">
                     </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="fam_ema" class="form-label">Ingrese su correo electronico</label>
-                    <input type="email"
-                      class="form-control" name="fam_ema" id="fam_ema" aria-describedby="helpId" placeholder="" required>
-                  </div>
+                  </div>  
                 </div>
+
+                <!--Informacion obtenida: Tipo y numero de documento del estudiante-->
                 <div class="mb-3">
                   <label for="" class="form-label">Digite numero de documento del estudiante</label>
                   <div class="mb-3">
                     <div class="input-group">  
-                      <div class="col-md-4">
+                      <div class="col-md-5">
                         <select class="form-control" name="stu_doc_typ" id="stu_doc_typ" required>
                           <option selected value="">Seleccione</option>
                           <option value="RC">Registro Civil</option>
-                          <option value="T.I">Tarjeta de Identidad</option>
-                          <option value="PA">Pasaporte</option>
+                          <option value="TI">Tarjeta de Identidad</option>
+                          <option value="PAP">Pasaporte</option>
                         </select>
                       </div>
+
                       <input type="text"
                       class="form-control" name="stu_doc_num" id="stu_doc_num" aria-describedby="helpId" maxlength="15" minlength="7">
                     </div>
                   </div>
                 </div>
+
+                <!--Informacion obtenida: Relacion entre el Familiar y el estudiante-->
                 <div class="mb-3">
                   <label for="" class="form-label">Especifique su relacion con el Estudiante</label>
                   <select class="form-control" name="relation" id="relation" required>
@@ -76,17 +90,20 @@
                     <option value="ACUDIENTE">Acudiente</option>
                   </select>
                 </div>
+
               </div>
+
               <div class="card-footer text-muted">
-                <button type="submit" class="btn btn-primary">Consultar</button>
+                <!--Boton redireccion a login Trabajadores-->
+                <a class="btn btn-primary" href="view/empleados" role="button">Soy Trabajador</a>
+
+                <!--Boton Inicio de sesion-->
+                <button type="submit" class="btn btn-success">Inicar Sesion</button>
               </div>
             </div>
           </form>
-
         </div>
-
-        <div class="container col-md-3"></div>
-        
+        <div class="container col-md-3"></div>  
     </div>
 
     <!-- Bootstrap JavaScript Libraries -->

@@ -1,35 +1,36 @@
 <?php
 
-    if(isset($_POST['fam_doc_typ'])){
-        $fam_doc_typ=$_POST['fam_doc_typ'];
-    }else{
-        $fam_doc_typ="";
+    //Funcion: Obtener el valor de $_POST['nombre_input'] y luego debe retornarlo para ser guardado en la varibale de destino, en caso que dicha clave de POST no este defnido retornada vacio
+    function obtener_post($nombre_input){
+        if(isset($_POST[$nombre_input])){
+            return $_POST[$nombre_input];
+        }else{
+            return "";
+        }
     }
 
-    if(isset($_POST['fam_doc_num'])){
-        $fam_doc_num=$_POST['fam_doc_num'];
-    }else{
-        $fam_doc_num="";
-    }
+    /*INFORMACION lOGIN*/
 
-    if(isset($_POST['stu_doc_typ'])){
-        $stu_doc_typ=$_POST['stu_doc_typ'];
-    }else{
-        $stu_doc_typ="";
-    }
+        //Input: fam_doc_typ (Tipo de documento familiar)
+        $fam_doc_typ=obtener_post('fam_doc_typ');
+        echo($fam_doc_typ);
 
-    if(isset($_POST['stu_doc_num'])){
-        $stu_doc_num=$_POST['stu_doc_num'];
-    }else{
-        $stu_doc_num="";
-    }
+        //Input: fam_doc_num (Numero de documento familiar)
+        $fam_doc_num=obtener_post('fam_doc_num');
+        echo($fam_doc_num);
 
-    if(isset($_POST['relation'])){
-        $relation=$_POST['relation'];
-    }else{
-        $relation="";
-    }
+        //Input: stu_doc_typ (Tipo de documento Estudiante)
+        $stu_doc_typ=obtener_post('stu_doc_typ');
+        echo($stu_doc_typ);
 
+        //Input: stu_doc_num (Numero de documento Estudiante)
+        $stu_doc_num=obtener_post('stu_doc_num');
+        echo($stu_doc_num);
 
+        //Input: relation (Relacion Familiar con el estudiante)
+        $relation=obtener_post('relation');
+        echo($relation);
+
+    /**/
 
 ?>
