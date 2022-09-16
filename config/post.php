@@ -93,6 +93,9 @@
             //Input stu_tel (Numero de telefono Estudiante)
             $stu_tel=obtener_post("stu_tel");
 
+            //Input stu_hob (Hobbies del Estudiante)
+            $stu_hob=obtener_post("stu_hob");
+
             //Input stu_enf (Enfermedades del Estudiante)
             $stu_enf=obtener_post("stu_enf");
 
