@@ -117,6 +117,41 @@
             global $sch_ins_6;
             /**/
         /**/
+
+        global $coneccionBD;
+
+        //Ingreso informacion Estudiante
+        $sql=("INSERT INTO 'students' () VALUES ()");
+        $consulta=$coneccionBD->query($sql);
+
+        //Ingreso informacion Madre
+        $sql=("INSERT INTO 'familiars' () VALUES ()");
+        $consulta=$coneccionBD->query($sql);
+
+        //Ingreso informacion Padre
+        $sql=("INSERT INTO 'familiars' () VALUES ()");
+        $consulta=$coneccionBD->query($sql);
+
+        //Ingreso informacion Acudiente
+        $sql=("INSERT INTO 'familiars' () VALUES ()");
+        $consulta=$coneccionBD->query($sql);
+
+        /*Ingreso informacion Relaciones*/
+
+            //Relacion Madre - Estudiante
+            $sql=("INSERT INTO 'relations' () VALUES ()");
+            $consulta=$coneccionBD->query($sql);
+
+            //Relacion Padre - Estudiante
+            $sql=("INSERT INTO 'relations' () VALUES ()");
+            $consulta=$coneccionBD->query($sql);
+
+            //Relacion Acudiente Estudiante - Estudiante
+            $sql=("INSERT INTO 'relations' () VALUES ()");
+            $consulta=$coneccionBD->query($sql);
+
+        /**/
+
     }
 
 ?>
