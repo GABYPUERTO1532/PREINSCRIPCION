@@ -202,47 +202,76 @@
         return $resultado;
     }
 
-    function obtener_registro_fam($stu_doc_num){
+    function obtener_registro_fam($stu_doc_num,$familiar){
         global $coneccionBD;
 
         $sql="SELECT fam_id,rel_typ FROM relations WHERE stu_id='$stu_doc_num'";
         $consulta=$coneccionBD->query($sql);
 
-        $fam_docs=[];
+
         while ($resultado=mysqli_fetch_assoc($consulta)){
-            switch ($resultado['rel_typ']){
-                case "Madre":
-                    $tmp=$resultado['fam_id'];
-                    $sql="SELECT * FROM familiars WHERE doc_num='$tmp'";
-                    $consulta=$coneccionBD->query($sql);
-                    $array_madre=mysqli_fetch_assoc($consulta);
-                break;
+            if ($resultado['rel_typ']=="Madre"){
+                $moth_doc_num=$resultado['fam_id'];
 
-                case "Padre":
-                    $tmp=$resultado['fam_id'];
-                    $sql="SELECT * FROM familiars WHERE doc_num='$tmp'";
-                    $consulta=$coneccionBD->query($sql);
-                    $array_padre=mysqli_fetch_assoc($consulta);
-                break;
-
-                case "Acudiente":
-                    $tmp=$resultado['fam_id'];
-                    $sql="SELECT * FROM familiars WHERE doc_num='$tmp'";
-                    $consulta=$coneccionBD->query($sql);
-                    $array_acudiente=mysqli_fetch_assoc($consulta);
-                break;
+            }elseif($resultado['rel_typ']=="Padre"){
+                $fath_doc_num=$resultado['fam_id'];
+                
+            }elseif($resultado['rel_typ']=="Acudiente"){
+                $acu_doc_num=$resultado['fam_id'];
             }
+
         }
 
-        //print_r ($array_madre);
-        //print_r ($array_padre);
-        //print_r ($array_acudiente);
+        switch ($familiar){
+
+            case ("Madre"):
+                $sql="SELECT * FROM familiars WHERE doc_num='$moth_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+                $resultado=mysqli_fetch_assoc($consulta);
+            break; 
+
+            case ("Padre"):
+                $sql="SELECT * FROM familiars WHERE doc_num='$fath_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+                $resultado=mysqli_fetch_assoc($consulta);
+            break; 
+
+            case ("Acudiente"):
+                $sql="SELECT * FROM familiars WHERE doc_num='$acu_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+                $resultado=mysqli_fetch_assoc($consulta);
+            break; 
+        }
+
+        return $resultado;
 
     }
 
-    print_r(obtener_registro_fam($stu_doc_num));
+    function obtener_registro_oth_inf($stu_doc_num){
+        global $coneccionBD;
+
+        $sql="SELECT * FROM other_inf WHERE stu_id='$stu_doc_num'";
+        $consulta=$coneccionBD->query($sql);
+        $resultado=mysqli_fetch_assoc($consulta);
+
+        return $resultado;
+    }
+
+    function obtener_registro_edu_inf($stu_doc_num,$no_registro){
+        global $coneccionBD;
+
+        $sql="SELECT * FROM edu_inf WHERE stu_id='$stu_doc_num'";
+        $consulta=$coneccionBD->query($sql);
 
 
-    
+        while ($resultado=mysqli_fetch_assoc($consulta)){
 
+            print_r($resultado);
+            
+
+        }
+
+    }
+
+    obtener_registro_edu_inf($stu_doc_num,"1")
 ?>
