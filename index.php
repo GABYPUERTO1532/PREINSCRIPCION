@@ -32,7 +32,7 @@
 
         <div class="container col-md-3"></div>
         <div class="container col-md-6">
-          <form action="controller/preinscripcion/login.php" method="post">
+          <form action="controller/login_familia.php" method="post">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">BIENVENIDO AL SISTEMA DE PREINSCRIPCION</h4>
@@ -85,9 +85,9 @@
                   <label for="" class="form-label">Especifique su relacion con el Estudiante</label>
                   <select class="form-control" name="relation" id="relation" required>
                     <option selected value="">Seleccione</option>
-                    <option value="PADRE">Padre</option>
-                    <option value="MADRE">Madre</option>
-                    <option value="ACUDIENTE">Acudiente</option>
+                    <option value="Padre">Padre</option>
+                    <option value="Madre">Madre</option>
+                    <option value="Acudiente">Acudiente</option>
                   </select>
                 </div>
 

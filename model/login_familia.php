@@ -1,6 +1,6 @@
 <?php
 
-    include "../../config/bd.php";
+    include "../config/bd.php";
 
     function login(){
 
