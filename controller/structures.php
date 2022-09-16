@@ -4,7 +4,7 @@
 
     $cities=['Bogota','Medellin'];
 
-    $stu_doc_typ=['Registro Civil','Tarjeta de identidad','Pasaporte','Permiso de permanencia'];
+    $stu_doc_typ=['Registro Civil','TI','Pasaporte','Permiso de permanencia'];
 
     $locations=['Engativa','Chapinero'];
 
@@ -14,14 +14,13 @@
 
     $eps=['Nueva EPS','Famisanar'];
 
-    $ars=['CAJA DE COMPENSACION FAMILIAR CAFAM','CAJA DE 
-    COMPENSACION FAMILIAR DE CORDOBA  COMFACOR'];
+    $ars=['NUEVA EPS'];
 
     $blood_group=['A','B','AB','O'];
 
-    $rh=['+','-'];
+    $rh=['POSITIVO','-'];
 
-    $fam_doc_typ=['Cedula de ciudadania','Documento de extranjeria'];
+    $fam_doc_typ=['CC','Documento de extranjeria'];
 
     $yes_no=['Si','No'];
 
@@ -113,8 +112,7 @@
                 }
 
                 foreach ($options as $option){
-                    $value=strtolower($option);
-                    $value=str_replace(' ','_',$value);
+                    $value=strtoupper($option);
                     $resultado.=("
                         <option value='$value' style='text-align:center;'>$option</option>
                     ");

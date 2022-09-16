@@ -127,33 +127,33 @@
         global $coneccionBD;
 
         //Ingreso informacion Estudiante
-        $sql=("INSERT INTO 'students' (firs_sur,sec_sur,firs_nam,sec_nam,dat_dir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ($firs_sur,$sec_sur,$firs_nam,$sec_nam,$dat_bir,$stu_cit,$stu_dep,$stu_doc_typ,$stu_doc_num,$exp_cit,$stu_add,$stu_nei,$stu_loc,$stu_est,$stu_cat,$stu_tel,$stu_hob,$stu_enf,$stu_eps,$stu_ars,$stu_ips,$b_grp,$rh_fact,$pre_stu,$cre_dat,$upd_dat)");
+        $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$firs_sur','$sec_sur','$firs_nam','$sec_nam','$dat_bir','$stu_cit','$stu_dep','$stu_doc_typ','$stu_doc_num','$exp_cit','$stu_add','$stu_nei','$stu_loc','$stu_est','$stu_cat','$stu_tel','$stu_hob','$stu_enf','$stu_eps','$stu_ars','$stu_ips','$b_grp','$rh_fact','$pre_stu','$cre_dat','$upd_dat')");
         $consulta=$coneccionBD->query($sql);
 
         //Ingreso informacion Madre
-        $sql=("INSERT INTO 'familiars' (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ($fam_nam_moth,$doc_typ_moth,$doc_num_moth,$fam_land_moth,$mob_pho_moth,$fam_add_moth,$fam_ocu_moth,$fam_ema_moth,$cre_dat,$upd_dat)");
+        $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$fam_nam_moth','$doc_typ_moth','$doc_num_moth','$fam_land_moth','$mob_pho_moth','$fam_add_moth','$fam_ocu_moth','$fam_ema_moth','$cre_dat','$upd_dat')");
         $consulta=$coneccionBD->query($sql);
 
         //Ingreso informacion Padre
-        $sql=("INSERT INTO 'familiars' (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ($fam_nam_fath,$doc_typ_fath,$doc_num_fath,$fam_land_fath,$mob_pho_fath,$fam_add_fath,$fam_ocu_fath,$fam_ema_fath,$cre_dat,$upd_dat)");
+        $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$fam_nam_fath','$doc_typ_fath','$doc_num_fath','$fam_land_fath','$mob_pho_fath','$fam_add_fath','$fam_ocu_fath','$fam_ema_fath','$cre_dat','$upd_dat')");
         $consulta=$coneccionBD->query($sql);
 
         //Ingreso informacion Acudiente
-        $sql=("INSERT INTO 'familiars' (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ($fam_nam_acu,$doc_typ_acu,$doc_num_acu,$fam_land_acu,$mob_pho_acu,$fam_add_acu,$fam_ocu_acu,$fam_ema_acu,$cre_dat,$upd_dat)");
+        $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$fam_nam_acu','$doc_typ_acu','$doc_num_acu','$fam_land_acu','$mob_pho_acu','$fam_add_acu','$fam_ocu_acu','$fam_ema_acu','$cre_dat','$upd_dat')");
         $consulta=$coneccionBD->query($sql);
 
         /*Ingreso informacion Relaciones*/
 
             //Relacion Madre - Estudiante
-            $sql=("INSERT INTO 'relations' (fam_id,rel_typ,stu_id) VALUES ($doc_num_moth,'Madre',$stu_doc_num)");
+            $sql=("INSERT INTO relations (fam_id,rel_typ,stu_id) VALUES ('$doc_num_moth','Madre','$stu_doc_num')");
             $consulta=$coneccionBD->query($sql);
 
             //Relacion Padre - Estudiante
-            $sql=("INSERT INTO 'relations' (fam_id,rel_typ,stu_id) VALUES ($doc_num_fath,'Padre',$stu_doc_num)");
+            $sql=("INSERT INTO relations (fam_id,rel_typ,stu_id) VALUES ('$doc_num_fath','Padre','$stu_doc_num')");
             $consulta=$coneccionBD->query($sql);
 
             //Relacion Acudiente Estudiante - Estudiante
-            $sql=("INSERT INTO 'relations' (fam_id,rel_typ,stu_id) VALUES ($doc_num_acu,'Actudiente',$stu_doc_num)");
+            $sql=("INSERT INTO relations (fam_id,rel_typ,stu_id) VALUES ('$doc_num_acu','Acudiente','$stu_doc_num')");
             $consulta=$coneccionBD->query($sql);
 
         /**/

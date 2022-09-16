@@ -62,7 +62,7 @@
 
             <!--Input: stu_doc_typ (Tipo de documento)-->
             <?php 
-              estructura("select","Tipo de documento","doc_typ","stu_doc_typ");
+              estructura("select","Tipo de documento","stu_doc_typ","stu_doc_typ");
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->

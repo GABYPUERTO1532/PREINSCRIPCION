@@ -15,7 +15,7 @@
             Explicacion: Se realiza una primera consulta, donde se busquen todos los registro en el cual concuerde el tipo de cargo del empleado y su correo asignado
 
         */
-        $sql="SELECT * FROM empleados WHERE per_char='$emp_char' AND per_ema='$emp_ema'";
+        $sql="SELECT * FROM workers WHERE per_char='$emp_char' AND per_ema='$emp_ema'";
 
         /*
 
