@@ -2,8 +2,8 @@
 
     include "../model/login_familia.php";
 
-    if (login()==TRUE){
-        header("Location: ../view/dashboard.php");
+    if (login()){
+        header("Location: ../view/preinscripcion");
     }else{
         header("Location: ../");
     }

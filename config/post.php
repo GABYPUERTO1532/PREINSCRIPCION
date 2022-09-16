@@ -34,7 +34,7 @@
         $emp_ema=obtener_post('emp_ema');
 
         //Input: emp_pass (Contraseña Empleado)
-        $emp_pass=password_hash(obtener_post('emp_pass'),PASSWORD_DEFAULT);
+        $emp_pass=obtener_post('emp_pass');
 
         //Input: per_char (Cargo del empleado dentro de la institucion)
         $emp_char=obtener_post('emp_char');
