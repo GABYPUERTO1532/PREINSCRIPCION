@@ -43,7 +43,7 @@
             <!--Input: date_bir (Fecha de nacimiento)-->
             <?php estructura("date","Fecha de nacimiento","dat_bir")?>
 
-            <!--Input: stu_dep (Departamento)-->
+            <!--Input: stu_dep (Departamento de Origen Estudiante)-->
             <?php 
               estructura("select","Departamento","stu_dep","departaments");
             ?>
@@ -620,7 +620,7 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-success">Finalizar Proceso</button>
       </div>
     </form>
   </div>
