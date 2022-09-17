@@ -250,7 +250,7 @@
 
             1. Declarar como global la variables $coneccionBD (Explicada anteriormente)
 
-            2. Selecciona los valores "fam_id" y "rel_typ" de la tabla "relations" de todos los registros los cuales la columna "stu_id" concuerde con el numero de documento del estudiante ingresado en el login
+            2. Selecciona los valores "fam_doc_num" y "rel_typ" de la tabla "relations" de todos los registros los cuales la columna "stu_doc_num" concuerde con el numero de documento del estudiante ingresado en el login
 
                 Tip: La tabla "relations" tiene como objetivo especificar la relacion que hay entre un familiar y un estudiante, dicho proceso se repite 3 veces por cada estudiante, ya que un registro corresponde al Padre, otro a la Madre y Otro al acudiente
 
@@ -305,7 +305,7 @@
             global $coneccionBD;
 
             //Paso 2
-            $sql="SELECT fam_id,rel_typ FROM relations WHERE stu_id='$stu_doc_num'";
+            $sql="SELECT fam_doc_num,rel_typ FROM relations WHERE stu_doc_num='$stu_doc_num'";
             $consulta=$coneccionBD->query($sql);
 
             //Paso 3.1
@@ -313,13 +313,13 @@
 
                 //Paso 3.2 
                 if ($resultado['rel_typ']=="Madre"){
-                    $moth_doc_num=$resultado['fam_id'];
+                    $moth_doc_num=$resultado['fam_doc_num'];
 
                 }elseif($resultado['rel_typ']=="Padre"){
-                    $fath_doc_num=$resultado['fam_id'];
+                    $fath_doc_num=$resultado['fam_doc_num'];
                     
                 }elseif($resultado['rel_typ']=="Acudiente"){
-                    $acu_doc_num=$resultado['fam_id'];
+                    $acu_doc_num=$resultado['fam_doc_num'];
                 }
 
             }
@@ -351,6 +351,14 @@
 
         }
 
+        /*
+            Funcion obtener_registro_oth_inf
+
+            Objetivo: Esta funcion tienen como objetivo seleccionar de la tabla "oth_inf", aquel registro el cual en su columna 'stu_id' tenga el mismo valor que el numero de documento del estudiante ingresado en el login.
+
+            Su funcionamiento es similar al de la funcion obtener_registro_stu.
+
+        */
         function obtener_registro_oth_inf($stu_doc_num){
             global $coneccionBD;
 
@@ -361,14 +369,64 @@
             return $resultado;
         }
 
+        /*
+            Funcion obtener_registro_edu_inf
+
+            Objetivo: Obtener todos los registros de la tabla 'edu_inf' los cuales en su columna 'stu_doc_num' sea igual al documento ingresado en el login.
+
+            Su funcionamiento es similar a la funcion "obtener_registro_fam", ya que de la consulta se obienen 6 diferentes registros, los cuales no tienen forma de ser clasificados por una caracteristica o valor particular.
+
+            Ante esta situacion, el algoritmo para llevar a cabo esta separacion es:
+
+            1.Realizar una consulta en la tabla 'edu_inf' de todos los registros los cuales en su columna 'stu_doc_num' tenga el mismo valor que el documento del estudiante ingresado en el login.
+
+            2. Usar una estructura while la cual ejecute el codigo en su interior mientras la condicion se este cumpliendo. En este caso la condicion es que haya algun registro NUEVO el cual se pueda asignar a la variable "$resultado", en caso de no haber, el ciclo dejaria de reptirse (Para mas informacion revisar la funcion "obtener_registro_fam" en el paso 3.1)
+
+            3.
+
+                Problema a resolver: Se requiere que cada registro obtenido se guarde en una variable independiente, con su respectivo nombre
+
+                Principales inconvenientes:
+
+                    - No existe una caracteristica o valor que ayude a diferenciar un registro de otro (Tal y como si pasa en la funcion "obtener_regitro_fam").
+
+                    - Se requiere que la funcion retorne unicamente el registro indicado por el usuario.
+
+                ¿Como se soluciono?:
+
+                    Se hace uso de una estructura if la cual evalua si una variable esta definida o no.
+
+                    Cuando la variable no esta definida, el registro se guardara en dicha variable, en caso contrario,realizara el mismo proceso para la siguiente variable, todo esto hasta que dicho registro se guarde en alguna variable
+
+                    EJ: Si la variable "$edu_inf_1" no esta definida,entonces se guardara el registro ali, en caso contrario y si la variable "$edu_inf_2" no esta definida, entonces guardar el registro en dicha variable
+
+                    Tip: La funcion isset, retorna el valor de TRUE en caso de que la variable este definida, en caso contrario retornara el valor de true.
+
+                    En este caso se necesita el efecto de contrario de esta funcion: Si la variable no esta definida, retorne el valor de True y realice el ciclo principal, en caso de estar definida retornara el valor de false y ejecutara el resto de codigo.
+
+                    Pasa esto hacemos uso del simbolo "!" el cual cambia el valor retornado por su opuesto.
+                
+                ¿Por que se implemento dicho condicional?: 
+
+                    Principalmente se buscaba que en cada variable hubiera un unico registro y este no fuera sobre escrito cada vez que se ejecutara el ciclo while
+             
+            4. Una vez separados los registros, se hace uso del segundo argumento de la funcion en el cual el usuario nos expresara cual de los 6 registros desea retornar.
+
+            Aclaracion final: La tabla 'edu_inf' contiene en su interior toda la trayectoria estudiantel del estudiante durante los ultimos 6 años.
+
+            Es por esta razon, que el sistema esta preparado para trabajar unicamente con hasta 6 registros, ni uno menos ni uno mas.
+        */
         function obtener_registro_edu_inf($stu_doc_num,$registro){
             global $coneccionBD;
 
-            $sql="SELECT * FROM edu_inf WHERE stu_id='$stu_doc_num'";
+            //Paso 1
+            $sql="SELECT * FROM edu_inf WHERE stu_doc_num='$stu_doc_num'";
             $consulta=$coneccionBD->query($sql);
 
+            //Paso 2
             while ($resultado=mysqli_fetch_assoc($consulta)){            
 
+                //Paso 3
                 if(!isset($edu_inf_1)){
                     $edu_inf_1=$resultado;
 
@@ -390,6 +448,7 @@
                 
             }
 
+            //Paso 4
             switch ($registro){
 
                 case "edu_inf_1":
@@ -421,5 +480,4 @@
         }
     /**/
 
-    print_r(obtener_registro_edu_inf($stu_doc_num,"edu_inf_6"));
 ?>
