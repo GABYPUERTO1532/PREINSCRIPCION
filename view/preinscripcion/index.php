@@ -2,7 +2,6 @@
   $_SESSION['titulo']="Proceso Preinscripcion";
   
   include "../header.php"; 
-  include ("../../controller/structures.php");
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
