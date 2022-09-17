@@ -32,7 +32,7 @@
 
         <div class="container col-md-3"></div>
         <div class="container col-md-6">
-          <form action="model/preinscripcion.php" method="post">
+          <form action="view/preinscripcion/index.php" method="post">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">BIENVENIDO AL SISTEMA DE PREINSCRIPCION</h4>

@@ -1,30 +1,19 @@
 <?php
 
-    $array=['Bogota','Medellin'];
+    include "../model/preinscripcion.php";
+    $stu_info=obtener_registro_stu($stu_doc_num);
 
-    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
+    $moth_info=obtener_registro_fam($stu_doc_num,"Madre");
+    $fath_info=obtener_registro_fam($stu_doc_num,"Padre");
+    $acu_info=obtener_registro_fam($stu_doc_num,"Acudiente");
 
-        switch ($tipo_input){
+    $oth_info=obtener_registro_oth_inf($stu_doc_num);
 
-            case "select":
+    $edu_inf_1=obtener_registro_edu_inf($stu_doc_num,"edu_inf_1");
+    $edu_inf_2=obtener_registro_edu_inf($stu_doc_num,"edu_inf_2");
+    $edu_inf_3=obtener_registro_edu_inf($stu_doc_num,"edu_inf_3");
+    $edu_inf_4=obtener_registro_edu_inf($stu_doc_num,"edu_inf_4");
+    $edu_inf_5=obtener_registro_edu_inf($stu_doc_num,"edu_inf_5");
+    $edu_inf_6=obtener_registro_edu_inf($stu_doc_num,"edu_inf_6");
 
-                $estructura="
-                    <div class='mb-3'>
-                        <label for='' class='form-label'>City</label>
-                        <select class='form-control' name='' id=''>
-                        <option value='$value'>$option</option>
-                ";
-
-                foreach ($options as $option){
-                    $value=strtolower($option);
-                    $estructura.="
-                        <option value='$value'>$option</option>
-                    ";
-                }
-
-            break;
-        }
-            
-    };
-
-    
+?>
