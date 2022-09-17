@@ -32,7 +32,7 @@
 
         <div class="container col-md-3"></div>
         <div class="container col-md-6">
-          <form action="view/preinscripcion/index.php" method="post">
+          <form action="controller/login_familia.php" method="post">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">BIENVENIDO AL SISTEMA DE PREINSCRIPCION</h4>
@@ -97,8 +97,11 @@
                 <!--Boton redireccion a login Trabajadores-->
                 <a class="btn btn-primary" href="view/empleados" role="button">Soy Trabajador</a>
 
-                <!--Boton Inicio de sesion-->
+                <!--Boton Inicio de sesion para estudiantes antiguos-->
                 <button type="submit" class="btn btn-success">Inicar Sesion</button>
+
+                <!--Boton redireccion para estudiantes nuevos-->
+                <a class="btn btn-dark" href="view/preinscripcion/index.php" role="button">Soy Estudiante nuevo</a>
               </div>
             </div>
           </form>

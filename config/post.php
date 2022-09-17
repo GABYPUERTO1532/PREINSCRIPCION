@@ -5,7 +5,7 @@
         if(isset($_POST[$nombre_input])){
             return $_POST[$nombre_input];
         }else{
-            return "";
+            return null;
         }
     }
 
@@ -31,13 +31,13 @@
     /*INFORMACION lOGIN EMPLEADOS*/
 
         //Input: fam_doc_typ (Correo Institucional Empleado)
-        $emp_ema=obtener_post('emp_ema');
+        $per_ema=obtener_post('per_ema');
 
         //Input: emp_pass (Contraseña Empleado)
-        $emp_pass=obtener_post('emp_pass');
+        $per_pass=obtener_post('per_pass');
 
         //Input: per_char (Cargo del empleado dentro de la institucion)
-        $emp_char=obtener_post('emp_char');
+        $per_char=obtener_post('per_char');
 
     /**/
 
