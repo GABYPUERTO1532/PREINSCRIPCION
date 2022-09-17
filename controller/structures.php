@@ -1,6 +1,7 @@
 <?php
 
-    include "../model/preinscripcion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
+    
     $stu_info=obtener_registro_stu($stu_doc_num);
 
     $moth_info=obtener_registro_fam($stu_doc_num,"Madre");

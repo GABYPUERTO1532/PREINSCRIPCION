@@ -1,6 +1,6 @@
 <?php include "../../controller/structures.php"?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <title>Title</title>
@@ -33,7 +33,7 @@
       <h1>Info Madre</h1>
       <ul>
         <?php
-          foreach ($moth_info_info as $info){
+          foreach ($moth_info as $info){
             echo("<li>$info</li>");
           }
         ?>
@@ -44,7 +44,7 @@
       <h1>Info Padre</h1>
       <ul>
         <?php
-          foreach ($fath_info_info as $info){
+          foreach ($fath_info as $info){
             echo("<li>$info</li>");
           }
         ?>
@@ -55,7 +55,7 @@
       <h1>Info Acudiente</h1>
       <ul>
         <?php
-          foreach ($acu_info_info as $info){
+          foreach ($acu_info as $info){
             echo("<li>$info</li>");
           }
         ?>

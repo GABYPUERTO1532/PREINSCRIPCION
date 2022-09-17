@@ -1,6 +1,6 @@
 <?php
 
-    include "../config/bd.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
     function crear_registros(){
 
@@ -362,7 +362,7 @@
         function obtener_registro_oth_inf($stu_doc_num){
             global $coneccionBD;
 
-            $sql="SELECT * FROM other_inf WHERE stu_id='$stu_doc_num'";
+            $sql="SELECT * FROM other_inf WHERE stu_doc_num='$stu_doc_num'";
             $consulta=$coneccionBD->query($sql);
             $resultado=mysqli_fetch_assoc($consulta);
 
