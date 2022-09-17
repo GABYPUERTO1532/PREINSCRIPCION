@@ -1,5 +1,4 @@
 <?php 
-  session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
   
   include "../header.php"; 
