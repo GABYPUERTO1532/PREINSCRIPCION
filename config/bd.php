@@ -1,7 +1,10 @@
 <?php
     
     include "post.php";
-    session_start();
+    if(!isset($_SESSION)){
+        header("Location: ../");
+    }
+
     $coneccionBD=mysqli_connect("localhost","root","","preinscripcion");
 
 ?>

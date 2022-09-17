@@ -1,11 +1,15 @@
 <?php
 
+    if(!isset($_SESSION)){
+        header("Location: ../");
+    }
+
     //Funcion: Obtener el valor de $_POST['nombre_input'] y luego debe retornarlo para ser guardado en la varibale de destino, en caso que dicha clave de POST no este defnido retornada vacio
     function obtener_post($nombre_input){
         if(isset($_POST[$nombre_input])){
             return $_POST[$nombre_input];
         }else{
-            return null;
+            return "";
         }
     }
 
