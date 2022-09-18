@@ -224,7 +224,7 @@
 
             break;
 
-            case "obtener_tipo_documentos":
+            case "obtener_tipo_documento":
 
                 $sql="SELECT doc_typ FROM doc_typ";
                 $consulta=$coneccionBD->query($sql);

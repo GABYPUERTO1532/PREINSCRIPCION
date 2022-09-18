@@ -4,9 +4,9 @@
 
     $departaments=interaccion_bd("obtener_departamentos");
 
-    $cities=['Bogota','Medellin'];
+    $cities=interaccion_bd("obtener_ciudades");
 
-    $stu_doc_typ=['Registro Civil','TI','Pasaporte','Permiso de permanencia'];
+    $stu_doc_typ=interaccion_bd("obtener_tipo_documento");
 
     $locations=['Engativa','Chapinero'];
 
