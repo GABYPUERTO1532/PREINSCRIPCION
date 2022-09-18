@@ -248,18 +248,6 @@
 
             break;
 
-            case "obtener_localidades":
-
-                $sql="SELECT loc_nam FROM locations";
-                $consulta=$coneccionBD->query($sql);
-                $array=[];
-                while($item=mysqli_fetch_assoc($consulta)){
-                    array_push($array,$item['loc_nam']);
-                }
-                return $array;
-
-            break;
-
             case "obtener_barrios":
 
                 $sql="SELECT neig_nam FROM neigh";
@@ -272,7 +260,7 @@
 
             break;
 
-            case "obtener_categorias_sisben":
+            case "obtener_categoria_sisben":
 
                 $sql="SELECT cat_nam FROM sisb_cat";
                 $consulta=$coneccionBD->query($sql);
@@ -316,6 +304,7 @@
                 while($item=mysqli_fetch_assoc($consulta)){
                     array_push($array,$item['gro_nam']);
                 }
+                unset($array['1'],$array['3'],$array['5'],$array['7']);
                 return $array;
 
             break;
@@ -332,7 +321,7 @@
 
             break;
 
-            case "obtener_ars":
+            case "obtener_grados":
 
                 $sql="SELECT gra_nam FROM grades";
                 $consulta=$coneccionBD->query($sql);

@@ -7,28 +7,30 @@
     $cities=interaccion_bd("obtener_ciudades");
 
     $stu_doc_typ=interaccion_bd("obtener_tipo_documento");
+    unset($stu_doc_typ['0'],$stu_doc_typ['1'],$stu_doc_typ['2'],$stu_doc_typ['3']);
 
-    $locations=['Engativa','Chapinero'];
+    $locations=interaccion_bd("obtener_localidades");
 
-    $neighborhood=['Bachue II','Chapinero Alto'];
+    $neighborhood=interaccion_bd("obtener_barrios");
 
-    $sisben=['A1','C16'];
+    $sisben=interaccion_bd("obtener_categoria_sisben");
 
-    $eps=['Nueva EPS','Famisanar'];
+    $eps=interaccion_bd("obtener_eps");
 
-    $ars=['NUEVA EPS'];
+    $ars=interaccion_bd("obtener_ars");
 
-    $blood_group=['A','B','AB','O'];
+    $blood_group=interaccion_bd("obtener_grupo_sanguineo");
 
-    $rh=['POSITIVO','-'];
+    $rh=interaccion_bd("obtener_factor_rh");
 
-    $fam_doc_typ=['CC','Documento de extranjeria'];
+    $fam_doc_typ=interaccion_bd("obtener_tipo_documento");
+    unset($fam_doc_typ['5'],$fam_doc_typ['6']);
 
     $yes_no=['Si','No'];
 
     $ci=['N/A','0-4','5-19','20-34','35-54','55-69','70-84','85-99','100','101-114','115-129','130-139','140-154','155-174','175-184','185-201'];
 
-    $grades=['Preescolar','Primero','Segundo','Tercero','Cuarto','Quinto','Sexto','Septimo','Octavo','Noveno','Decimo'];
+    $grades=interaccion_bd("obtener_grados");
 
 
     function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
