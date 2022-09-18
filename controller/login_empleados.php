@@ -1,6 +1,6 @@
 <?php
 
-    include "../model/login_empleado.php";
+    include "../model/login_empleados.php";
 
     if(
         isset($per_ema) AND  
@@ -21,7 +21,7 @@
 
                 //En caso de que el empleado Trabaje en coordinacion academica, se le redireccionara a la vista /coordinacion_academica/services.php
                 case "Coordinacion Academica":
-                    header("Location: ../view/empleados/services.php");
+                    header("Location: ../view/empleados/coordinacion_academica/services.php");
                 break;
 
                 /*
@@ -43,5 +43,9 @@
     }else{
         header("Location: ../view/empleados/");
     }
+
+
     
+    
+
 ?>
