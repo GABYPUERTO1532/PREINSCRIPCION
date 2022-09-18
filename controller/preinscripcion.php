@@ -1,7 +1,5 @@
 <?php
 
-    include "../model/preinscripcion.php";
-
-    crear_registros();
+    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
 ?>

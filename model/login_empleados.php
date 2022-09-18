@@ -6,16 +6,16 @@
 
         //Se importa la coneccion con la Base de datos y los valores POST obtenidos del login y guardados en variables
         global $coneccionBD;
-        global $emp_ema;
-        global $emp_pass;
-        global $emp_char;
+        global $post_emp_ema;
+        global $post_emp_pass;
+        global $post_emp_char;
 
         /*
 
             Explicacion: Se realiza una primera consulta, donde se busquen todos los registro en el cual concuerde el tipo de cargo del empleado y su correo asignado
 
         */
-        $sql="SELECT * FROM workers WHERE per_char='$emp_char' AND per_ema='$emp_ema'";
+        $sql="SELECT * FROM workers WHERE per_char='$post_emp_char' AND per_ema='$post_emp_ema'";
 
         /*
 
@@ -48,14 +48,14 @@
 
                 La funcion password_verify genera el hash para la contraseña ingresada por el usuario y luego compara dicho string con el string del hash original
             */
-            if(password_verify($emp_pass,$resultado['per_hash'])){
+            if(password_verify($post_emp_pass,$resultado['per_hash'])){
 
                 /*
                     En caso que la contraseña si coincida, se acticara una sesion y en la variable 'per_char', se guardara el cargo del empleado, para ser usado en la diferenciacion de este y su posterior redireccion a sus vistas correspondientes.
                 */
 
                 session_start();
-                $_SESSION['per_char']=$emp_char;
+                $_SESSION['per_char']=$post_emp_char;
 
                 //Una vez hecho esto, la funcion retornara el valor de TRUE, el cual sera usado en el controlador correspondiente
                 return TRUE;

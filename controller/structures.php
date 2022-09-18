@@ -1,6 +1,8 @@
 <?php
 
-    $departaments=['Cundinamarca','Antioquia'];
+    include "preinscripcion.php";
+
+    $departaments=interaccion_bd("obtener_departamentos");
 
     $cities=['Bogota','Medellin'];
 
@@ -164,10 +166,9 @@
 
 
                 foreach ($options as $option){
-                    $value=strtolower($option);
-                    $value=str_replace(' ','_',$value);
+
                     $resultado.=("
-                        <option value='$value' style='text-align:center;'>$option</option>
+                        <option value='$option' style='text-align:center;'>$option</option>
                     ");
                 }
 

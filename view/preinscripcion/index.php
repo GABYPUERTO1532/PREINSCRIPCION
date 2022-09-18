@@ -469,7 +469,7 @@
                   <td>
                     <!--Input: sch_ins_1 (Instituto donde fue cursado 1)-->
                     <?php
-                      estructura2('text','edu_ins_1');
+                      estructura2('text','sch_ins_1');
                     ?>
                   </td>
                 </tr>
@@ -497,7 +497,7 @@
                   <td>
                     <!--Input: sch_ins_2 (Instituto donde fue cursado 2)-->
                     <?php
-                      estructura2('text','edu_ins_2');
+                      estructura2('text','sch_ins_2');
                     ?>
                   </td>
                 </tr>
@@ -525,7 +525,7 @@
                   <td>
                     <!--Input: sch_ins_3 (Instituto donde fue cursado 3)-->
                     <?php
-                      estructura2('text','edu_ins_3');
+                      estructura2('text','sch_ins_3');
                     ?>
                   </td>
                 </tr>
@@ -553,7 +553,7 @@
                   <td>
                     <!--Input: sch_ins_4 (Instituto donde fue cursado 4)-->
                     <?php
-                      estructura2('text','edu_ins_4');
+                      estructura2('text','sch_ins_4');
                     ?>
                   </td>
                 </tr>
@@ -581,7 +581,7 @@
                   <td>
                     <!--Input: sch_ins_5 (Instituto donde fue cursado 5)-->
                     <?php
-                      estructura2('text','edu_ins_5');
+                      estructura2('text','sch_ins_5');
                     ?>
                   </td>
                 </tr>
@@ -607,9 +607,9 @@
                     ?>
                   </td>
                   <td>
-                    <!--Input: sch_ins_6 (Instituto donde fue cursado 6)-->
+                    <!--Input: edu_ins_6 (Instituto donde fue cursado 6)-->
                     <?php
-                      estructura2('text','edu_ins_6');
+                    estructura2('text','edu_ins_6');
                     ?>
                   </td>
                 </tr>
