@@ -38,22 +38,22 @@
 
                 <!--Input: emp_ema (Correo Electronico Empleado)-->
                 <div class="mb-3">
-                  <label for="per_ema" class="form-label">Ingrese su correo Institucional</label>
+                  <label for="emp_ema" class="form-label">Ingrese su correo Institucional</label>
                   <input type="email"
-                    class="form-control" name="per_ema" id="per_ema" required>
+                    class="form-control" name="emp_ema" id="emp_ema" required>
                 </div>
 
                 <!--Input: emp_pass (Contraseña Empleado)-->
                 <div class="mb-3">
-                  <label for="per_pass" class="form-label">Digite su contraseña</label>
+                  <label for="emp_pass" class="form-label">Digite su contraseña</label>
                   <input type="password"
-                    class="form-control" name="per_pass" id="per_pass" required minlength="8">
+                    class="form-control" name="emp_pass" id="emp_pass" required minlength="8">
                 </div>
 
                 <!--Input: emp_char (Cargo del empleado dentro de la institucion)-->
                 <div class="mb-3">
                   <label for="emp_char" class="form-label">Seleccione su cargo en la institucion</label>
-                  <select class="form-control" name="per_char" id="emp_char" required>
+                  <select class="form-control" name="emp_char" id="emp_char">
                     <option value="" selected>Seleccione</option>
                     <option value="Docente">Docente</option>
                     <option value="Coordinacion Convivencial">Coordinacion Convivencial</option>
