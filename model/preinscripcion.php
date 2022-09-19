@@ -131,7 +131,7 @@
             case "create":
                 
                 //Ingreso informacion Estudiante
-                $sql=("INSERT INTO students (post_firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',TRUE,'$cre_dat','$upd_dat')");
+                $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',TRUE,'$cre_dat','$upd_dat')");
                 $consulta=$coneccionBD->query($sql);
 
                 //Ingreso informacion Madre
@@ -149,47 +149,47 @@
                 /*Ingreso informacion Relaciones*/
 
                     //Relacion Madre - Estudiante
-                    $sql=("INSERT INTO relations (fam_id,rel_typ,stu_id) VALUES ('$post_doc_num_moth','Madre','$post_stu_doc_num')");
+                    $sql=("INSERT INTO relations (fam_doc_num,rel_typ,stu_doc_num) VALUES ('$post_doc_num_moth','Madre','$post_stu_doc_num')");
                         $consulta=$coneccionBD->query($sql);
 
                     //Relacion Padre - Estudiante
-                    $sql=("INSERT INTO relations (fam_id,rel_typ,stu_id) VALUES ('$post_doc_num_fath','Padre','$post_stu_doc_num')");
+                    $sql=("INSERT INTO relations (fam_doc_num,rel_typ,stu_doc_num) VALUES ('$post_doc_num_fath','Padre','$post_stu_doc_num')");
                     $consulta=$coneccionBD->query($sql);
 
                     //Relacion Acudiente Estudiante - Estudiante
-                    $sql=("INSERT INTO relations (fam_id,rel_typ,stu_id) VALUES ('$post_doc_num_acu','Acudiente','$post_stu_doc_num')");
+                    $sql=("INSERT INTO relations (fam_doc_num,rel_typ,stu_doc_num) VALUES ('$post_doc_num_acu','Acudiente','$post_stu_doc_num')");
                     $consulta=$coneccionBD->query($sql);
 
                 /**/
 
                     //Ingreso informacion "Other_information"
-                    $sql=("INSERT INTO other_inf (stu_id,conf_vic,dis_sit,dis_arm_grp,dem_son,lim_stu,exp_cap,iq_sco,ass_tes) VALUES ('$post_stu_doc_num','$post_conf_vic','$post_dis_sit','$post_dis_arm_grp','$post_dem_son','$post_lim_stu','$post_exp_cap','$post_iq_sco','$post_ass_tes')");
+                    $sql=("INSERT INTO other_inf (stu_doc_num,conf_vic,dis_sit,dis_arm_grp,dem_son,lim_stu,exp_cap,iq_sco,ass_tes) VALUES ('$post_stu_doc_num','$post_conf_vic','$post_dis_sit','$post_dis_arm_grp','$post_dem_son','$post_lim_stu','$post_exp_cap','$post_iq_sco','$post_ass_tes')");
                     $consulta=$coneccionBD->query($sql);
 
                 /*Ingreso Informacion Educativa*/
 
                     //Registro 1
-                    $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
+                    $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
                     $consulta=$coneccionBD->query($sql);
 
                     //Registro 2
-                    $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
+                    $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
                     $consulta=$coneccionBD->query($sql);
 
                     //Registro 3
-                    $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
+                    $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
                     $consulta=$coneccionBD->query($sql);
 
                     //Registro 4
-                    $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
+                    $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
                     $consulta=$coneccionBD->query($sql);
 
                     //Registro 5
-                    $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
+                    $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
                     $consulta=$coneccionBD->query($sql);
 
                     //Registro 6
-                    $sql=("INSERT INTO edu_inf (stu_id,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
+                    $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
                     $consulta=$coneccionBD->query($sql);
                     
                 /**/
