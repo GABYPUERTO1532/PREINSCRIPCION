@@ -20,7 +20,7 @@
 
             //En caso de que el empleado Trabaje en coordinacion academica, se le redireccionara a la vista /coordinacion_academica/services.php
             case "Coordinacion Academica":
-                header("Location: ../view/empleados/coordinacion_academica/services.php");
+                header("Location: ../view/empleados/coordinacion_academica/");
             break;
 
             /*
