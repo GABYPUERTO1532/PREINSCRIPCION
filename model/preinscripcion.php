@@ -383,9 +383,6 @@
             break;
 
             case "obtener_info_estudiante":
-
-                //TESTEO -> Se requiere solucion del problema de los POST
-                $post_stu_doc_num="1019604622";
                 
                 $sql="SELECT * FROM students WHERE doc_num='$post_stu_doc_num'";
                 $consulta=$coneccionBD->query($sql);
@@ -395,9 +392,6 @@
             break;
 
             case "obtener_info_familiar":
-
-                //TESTEO -> Se requiere solucion del problema de los POST
-                $post_stu_doc_num="1019604622";
         
                 $sql="SELECT fam_doc_num,rel_typ FROM relations WHERE stu_doc_num='$post_stu_doc_num'";
                 $consulta=$coneccionBD->query($sql);
@@ -439,9 +433,6 @@
 
             case "obtener_other_inf":
             
-                //TESTEO -> Se requiere solucion del problema de los POST
-                $post_stu_doc_num="1019604622";
-        
                 $sql="SELECT * FROM other_inf WHERE stu_doc_num='$post_stu_doc_num'";
                 $consulta=$coneccionBD->query($sql);
                 $resultado=mysqli_fetch_assoc($consulta);
@@ -452,9 +443,6 @@
 
             case "obtener_edu_info":
                 
-                //TESTEO -> Se requiere solucion del problema de los POST
-                $post_stu_doc_num="1019604622";
-        
                 $sql="SELECT * FROM edu_inf WHERE stu_doc_num='$post_stu_doc_num'";
                 $consulta=$coneccionBD->query($sql);
 

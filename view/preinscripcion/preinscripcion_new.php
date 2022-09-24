@@ -3,7 +3,7 @@
   $_SESSION['titulo']="Proceso Preinscripcion";
   
   include "../header.php"; 
-  include ("../../controller/structures_old.php");
+  include ("../../controller/structures_new.php");
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
@@ -22,13 +22,13 @@
           <div class="input-group">
 
             <!--Input: firs_sur (Primer apellido)-->
-            <?php estructura("text","Primer Apellido","firs_sur","",'estudiante')?>
+            <?php estructura("text","Primer Apellido","firs_sur")?>
 
             <!--Input: sec_sur (Segundo apellido)-->
-            <?php estructura("text","Segundo Apellido","sec_sur","","estudiante")?>
+            <?php estructura("text","Segundo Apellido","sec_sur")?>
 
             <!--Input: firs_nam (Primer Nombre)-->
-            <?php estructura("text","Primer Nombre","firs_nam","","estudiante")?>
+            <?php estructura("text","Primer Nombre","firs_nam")?>
 
           </div>
 
@@ -38,14 +38,14 @@
           <div class="input-group">
 
             <!--Input: sec_nam (Segundo Nombre)-->
-            <?php estructura("text","Segundo Nombre","sec_nam","","estudiante")?>
+            <?php estructura("text","Segundo Nombre","sec_nam")?>
 
             <!--Input: date_bir (Fecha de nacimiento)-->
-            <?php estructura("date","Fecha de nacimiento","dat_bir","","estudiante")?>
+            <?php estructura("date","Fecha de nacimiento","dat_bir")?>
 
             <!--Input: stu_dep (Departamento de Origen Estudiante)-->
             <?php 
-              estructura("select","Departamento","stu_dep","departaments","estudiante");
+              estructura("select","Departamento","stu_dep","departaments");
             ?>
 
           </div>
@@ -57,16 +57,16 @@
 
             <!--Input: stu_cit (Ciudad)-->
             <?php 
-              estructura("select","Ciudad","stu_cit","cities","estudiante");
+              estructura("select","Ciudad","stu_cit","cities");
             ?>
 
             <!--Input: stu_doc_typ (Tipo de documento)-->
             <?php 
-              estructura("select","Tipo de documento","stu_doc_typ","stu_doc_typ","estudiante");
+              estructura("select","Tipo de documento","stu_doc_typ","stu_doc_typ");
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante","disabled")?>
+            <?php estructura("text","Numero de documento","stu_doc_num")?>
 
           </div>
 
@@ -77,16 +77,16 @@
 
             <!--Input: exp_cit (Ciudad de expedicion documento)-->
             <?php
-              estructura("select","Ciudad de expedicion","exp_cit","cities","estudiante");
+              estructura("select","Ciudad de expedicion","exp_cit","cities");
 
             ?>
 
             <!--Input: stu_add (Direccion)-->
-            <?php estructura("text","Direccion","stu_add","","estudiante")?>
+            <?php estructura("text","Direccion","stu_add")?>
 
             <!--Input: stu_loc (Localidad)-->
             <?php
-              estructura("select","Localidad","stu_loc","locations","estudiante");
+              estructura("select","Localidad","stu_loc","locations");
             ?>
             
           </div>
@@ -98,17 +98,17 @@
 
             <!--Input: stu_neig (Barrio)-->
             <?php
-              estructura("select","Barrio","stu_nei","neighborhood","estudiante");
+              estructura("select","Barrio","stu_nei","neighborhood");
             ?>
 
             <!--Input: stu_est (Estrato)-->
             <?php
-              estructura("number","Estrato","stu_est","","estudiante");
+              estructura("number","Estrato","stu_est");
             ?>
 
             <!--Input: stu_cat (Categoria sisben)-->
             <?php
-              estructura("select","Categoria sisben","stu_cat","sisben","estudiante");
+              estructura("select","Categoria sisben","stu_cat","sisben");
             ?>
     
           </div>
@@ -120,17 +120,17 @@
 
             <!--Input: stu_tel (Telefono)-->
             <?php
-              estructura("number","Telefono","stu_tel","","estudiante");
+              estructura("number","Telefono","stu_tel","");
             ?>
 
             <!--Input: stu_hob (Aficiones o Hobbies)-->
             <?php
-              estructura("text","Aficiones o Hobbies","stu_hob","","estudiante");
+              estructura("text","Aficiones o Hobbies","stu_hob");
             ?>
 
             <!--Input: stu_enf (Cirujuas o enfermedades)-->
             <?php
-              estructura("text","Cirujias o enfermedades","stu_enf","","estudiante");
+              estructura("text","Cirujias o enfermedades","stu_enf");
             ?>
             
           </div>
@@ -142,17 +142,17 @@
 
             <!--Input: stu_eps (EPS)-->
             <?php
-              estructura("select","EPS","stu_eps","eps","estudiante");
+              estructura("select","EPS","stu_eps","eps");
             ?>
 
             <!--Input: stu_ars (ARS)-->
             <?php
-              estructura("select","ARS","stu_ars","ars","estudiante");
+              estructura("select","ARS","stu_ars","ars");
             ?>
 
             <!--Input: stu_ips (IPS)-->
             <?php
-              estructura("text","IPS","stu_ips","","estudiante");
+              estructura("text","IPS","stu_ips");
             ?>
     
           </div>
@@ -164,12 +164,12 @@
 
             <!--Input: b_grp (Grupo Sanguineo)-->
             <?php
-              estructura("select","Grupo Sanguineo","b_grp","blood_group","estudiante");
+              estructura("select","Grupo Sanguineo","b_grp","blood_group");
             ?>
 
             <!--Input: rh_fact (Factor Sanguineo)-->
             <?php
-              estructura("select","RH","rh_fact","rh","estudiante");
+              estructura("select","RH","rh_fact","rh");
             ?>
     
           </div>
@@ -189,15 +189,15 @@
           <div class="input-group">
 
             <!--Input: fam_nam_moth (Nombre)-->
-            <?php estructura("text","Nombre","fam_nam_moth","","madre")?>
+            <?php estructura("text","Nombre","fam_nam_moth")?>
 
             <!--Input: doc_typ_moth (Tipo de documento)-->
             <?php
-              estructura("select","Tipo de documento","doc_typ_moth","fam_doc_typ","madre");
+              estructura("select","Tipo de documento","doc_typ_moth","fam_doc_typ");
             ?>
 
             <!--Input: doc_num_moth (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_moth","","madre","disabled")?>
+            <?php estructura("text","Numero de documento","doc_num_moth")?>
 
           </div>
 
@@ -207,15 +207,15 @@
           <div class="input-group">
 
             <!--Input: fam_land_moth (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_moth","","madre")?>
+            <?php estructura("number","Telefono fijo","fam_land_moth")?>
 
             <!--Input: mob_pho_moth (Telefono Celular)-->
             <?php
-              estructura("number","Celular","mob_pho_moth","","madre");
+              estructura("number","Celular","mob_pho_moth");
             ?>
 
             <!--Input: fam_add_moth (Direccion)-->
-            <?php estructura("text","Direccion","fam_add_moth","","madre")?>
+            <?php estructura("text","Direccion","fam_add_moth")?>
 
           </div>
 
@@ -225,11 +225,11 @@
           <div class="input-group">
 
             <!--Input: fam_ocu_moth (Ocupacion)-->
-            <?php estructura("text","Ocupacion","fam_ocu_moth","","madre")?>
+            <?php estructura("text","Ocupacion","fam_ocu_moth")?>
 
             <!--Input: fam_ema_moth (Correo Electronico)-->
             <?php
-              estructura("email","Correo Electronico","fam_ema_moth","","madre");
+              estructura("email","Correo Electronico","fam_ema_moth");
             ?>
 
           </div>
@@ -249,16 +249,16 @@
           <div class="input-group">
 
             <!--Input: fam_nam_fath (Nombre)-->
-            <?php estructura("text","Nombre","fam_nam_fath","","padre")?>
+            <?php estructura("text","Nombre","fam_nam_fath")?>
 
             <!--Input: doc_typ_fath (Tipo de documento)-->
             <?php
 
-              estructura("select","Tipo de documento","doc_typ_fath","fam_doc_typ","padre");
+              estructura("select","Tipo de documento","doc_typ_fath","fam_doc_typ");
             ?>
 
             <!--Input: doc_num_fath (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_fath","","padre","disabled")?>
+            <?php estructura("text","Numero de documento","doc_num_fath")?>
 
           </div>
 
@@ -268,15 +268,15 @@
           <div class="input-group">
 
             <!--Input: fam_land_fath (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_fath","","padre")?>
+            <?php estructura("number","Telefono fijo","fam_land_fath")?>
 
             <!--Input: mob_pho_fath (Telefono Celular)-->
             <?php
-              estructura("number","Celular","mob_pho_fath","","padre");
+              estructura("number","Celular","mob_pho_fath");
             ?>
 
             <!--Input: fam_add_fath (Direccion)-->
-            <?php estructura("text","Direccion","fam_add_fath","","padre")?>
+            <?php estructura("text","Direccion","fam_add_fath")?>
 
           </div>
 
@@ -286,11 +286,11 @@
           <div class="input-group">
 
             <!--Input: fam_ocu_fath (Ocupacion)-->
-            <?php estructura("text","Ocupacion","fam_ocu_fath","","padre")?>
+            <?php estructura("text","Ocupacion","fam_ocu_fath")?>
 
             <!--Input: fam_ema_fath (Correo Electronico)-->
             <?php
-              estructura("email","Correo Electronico","fam_ema_fath","","padre");
+              estructura("email","Correo Electronico","fam_ema_fath");
             ?>
 
           </div>
@@ -310,15 +310,15 @@
           <div class="input-group">
 
             <!--Input: fam_nam_acu (Nombre)-->
-            <?php estructura("text","Nombre","fam_nam_acu","","acudiente")?>
+            <?php estructura("text","Nombre","fam_nam_acu")?>
 
             <!--Input: doc_typ_acu (Tipo de documento)-->
             <?php
-              estructura("select","Tipo de documento","doc_typ_acu","fam_doc_typ","acudiente");
+              estructura("select","Tipo de documento","doc_typ_acu","fam_doc_typ");
             ?>
 
             <!--Input: doc_num_acu (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_acu","","acudiente","disabled")?>
+            <?php estructura("text","Numero de documento","doc_num_acu")?>
 
           </div>
 
@@ -328,15 +328,15 @@
           <div class="input-group">
 
             <!--Input: fam_land_acu (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_acu","","acudiente")?>
+            <?php estructura("number","Telefono fijo","fam_land_acu")?>
 
             <!--Input: mob_pho_acu (Numero Telefonico)-->
             <?php
-              estructura("number","Celular","mob_pho_acu","","acudiente");
+              estructura("number","Celular","mob_pho_acu");
             ?>
 
             <!--Input: fam_add_acu (Direccion)-->
-            <?php estructura("text","Direccion","fam_add_acu","","acudiente")?>
+            <?php estructura("text","Direccion","fam_add_acu")?>
 
           </div>
 
@@ -346,11 +346,11 @@
           <div class="input-group">
 
             <!--Input: fam_ocu_moth (Ocupacion)-->
-            <?php estructura("text","Ocupacion","fam_ocu_acu","","acudiente")?>
+            <?php estructura("text","Ocupacion","fam_ocu_acu")?>
 
             <!--Input: fam_ema_moth (Correo Electronico)-->
             <?php
-              estructura("email","Correo Electronico","fam_ema_acu","","acudiente");
+              estructura("email","Correo Electronico","fam_ema_acu");
             ?>
 
           </div>
@@ -371,17 +371,17 @@
 
             <!--Input: conf_vic (Victima de conflicto armado)-->
             <?php 
-              estructura("select","Victima de conflicto armado","conf_vic","yes_no","oth_inf");
+              estructura("select","Victima de conflicto armado","conf_vic","yes_no");
             ?>
 
             <!--Input: dis_sit (Situacion de delplazamiento)-->
             <?php 
-              estructura("select","Situación de desplazamiento","dis_sit","yes_no","oth_inf");
+              estructura("select","Situación de desplazamiento","dis_sit","yes_no");
             ?>
 
             <!--Input: dis_arm_grp (Desvinculados Grupos Armados)-->
             <?php 
-            estructura("select","Desvinculados Grupos Armados","dis_arm_grp","yes_no","oth_inf");?>
+            estructura("select","Desvinculados Grupos Armados","dis_arm_grp","yes_no");?>
 
           </div>
 
@@ -392,18 +392,18 @@
 
             <!--Input: dem_son (Hijo de desmovilizado)-->
             <?php 
-              estructura("select","Hijo de desmovilizado","dem_son","yes_no","oth_inf");
+              estructura("select","Hijo de desmovilizado","dem_son","yes_no");
             ?>
 
             <!--Input: lim_stu (Limitaciones)-->
             <?php 
-              estructura("text","Limitaciones","lim_stu","","oth_inf");
+              estructura("text","Limitaciones","lim_stu");
             ?>
 
             <!--Input: exp_cap (Capacidades expecionales)-->
             <?php 
 
-              estructura("text","Capacidades expecionales","exp_cap","","oth_inf");
+              estructura("text","Capacidades expecionales","exp_cap");
             ?>
 
           </div>
@@ -415,12 +415,12 @@
           
             <!--Input: iq_sco (Puntaje C.I)-->
             <?php
-              estructura("select","Puntaje C.I","iq_sco","ci","oth_inf")
+              estructura("select","Puntaje C.I","iq_sco","ci")
             ?>
             
             <!--Input: ass_tes (Examen de valoración)-->
             <?php
-              estructura("select","Examen de valoración","ass_tes","yes_no","oth_inf");
+              estructura("select","Examen de valoración","ass_tes","yes_no");
             ?>
 
           </div>
@@ -452,25 +452,25 @@
                   <td>
                     <!--Input: sch_grd_1 (Grado escolar 1)-->
                     <?php
-                      estructura2('select','sch_grd_1',"grades","edu_inf_1","required");
+                      estructura2('select','sch_grd_1',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_1 (Año escolar 1)-->
                     <?php
-                      estructura2('number','sch_yea_1',"","edu_inf_1","min='2004' max='2021' required");
+                      estructura2('number','sch_yea_1',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_1 (Ciudad donde fue cursado 1)-->
                     <?php
-                      estructura2('select','sch_cit_1',"cities","edu_inf_1","required");
+                      estructura2('select','sch_cit_1',"cities","required");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_ins_1 (Instituto donde fue cursado 1)-->
                     <?php
-                      estructura2('text','sch_ins_1',"","edu_inf_1");
+                      estructura2('text','sch_ins_1');
                     ?>
                   </td>
                 </tr>
@@ -480,25 +480,25 @@
                   <td>
                     <!--Input: sch_grd_2 (Grado escolar 2)-->
                     <?php
-                      estructura2('select','sch_grd_2',"grades","edu_inf_2");
+                      estructura2('select','sch_grd_2',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_2 (Año escolar 2)-->
                     <?php
-                      estructura2('number','sch_yea_2',"","edu_inf_2","min='2004' max='2021'");
+                      estructura2('number','sch_yea_2',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_2 (Ciudad donde fue cursado 2)-->
                     <?php
-                      estructura2('select','sch_cit_2',"cities","edu_inf_2");
+                      estructura2('select','sch_cit_2',"cities");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_ins_2 (Instituto donde fue cursado 2)-->
                     <?php
-                      estructura2('text','sch_ins_2',"","edu_inf_2");
+                      estructura2('text','sch_ins_2');
                     ?>
                   </td>
                 </tr>
@@ -508,25 +508,25 @@
                   <td>
                     <!--Input: sch_grd_3 (Grado escolar 3)-->
                     <?php
-                      estructura2('select','sch_grd_3',"grades","edu_inf_3");
+                      estructura2('select','sch_grd_3',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_3 (Año escolar 3)-->
                     <?php
-                      estructura2('number','sch_yea_3',"","edu_inf_3","min='2004' max='2021'");
+                      estructura2('number','sch_yea_3',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_3 (Ciudad donde fue cursado 3)-->
                     <?php
-                      estructura2('select','sch_cit_3',"cities","edu_inf_3");
+                      estructura2('select','sch_cit_3',"cities");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_ins_3 (Instituto donde fue cursado 3)-->
                     <?php
-                      estructura2('text','sch_ins_3',"","edu_inf_3");
+                      estructura2('text','sch_ins_3');
                     ?>
                   </td>
                 </tr>
@@ -536,25 +536,25 @@
                   <td>
                     <!--Input: sch_grd_4 (Grado escolar 4)-->
                     <?php
-                      estructura2('select','sch_grd_4',"grades","edu_inf_4");
+                      estructura2('select','sch_grd_4',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_4 (Año escolar 4)-->
                     <?php
-                      estructura2('number','sch_yea_4',"","edu_inf_4","min='2004' max='2021'");
+                      estructura2('number','sch_yea_4',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_4 (Ciudad donde fue cursado 4)-->
                     <?php
-                      estructura2('select','sch_cit_4',"cities","edu_inf_4");
+                      estructura2('select','sch_cit_4',"cities");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_ins_4 (Instituto donde fue cursado 4)-->
                     <?php
-                      estructura2('text','sch_ins_4',"","edu_inf_4");
+                      estructura2('text','sch_ins_4');
                     ?>
                   </td>
                 </tr>
@@ -564,25 +564,25 @@
                   <td>
                     <!--Input: sch_grd_5 (Grado escolar 5)-->
                     <?php
-                      estructura2('select','sch_grd_5',"grades","edu_inf_5");
+                      estructura2('select','sch_grd_5',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_5 (Año escolar 5)-->
                     <?php
-                      estructura2('number','sch_yea_5',"","edu_inf_5","min='2004' max='2021'");
+                      estructura2('number','sch_yea_5',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_5 (Ciudad donde fue cursado 5)-->
                     <?php
-                      estructura2('select','sch_cit_5',"cities","edu_inf_5");
+                      estructura2('select','sch_cit_5',"cities");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_ins_5 (Instituto donde fue cursado 5)-->
                     <?php
-                      estructura2('text','sch_ins_5',"","edu_inf_5");
+                      estructura2('text','sch_ins_5');
                     ?>
                   </td>
                 </tr>
@@ -592,25 +592,25 @@
                   <td>
                     <!--Input: sch_grd_6 (Grado escolar 6)-->
                     <?php
-                      estructura2('select','sch_grd_6',"grades","edu_inf_6");
+                      estructura2('select','sch_grd_6',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_6 (Año escolar 6)-->
                     <?php
-                      estructura2('number','sch_yea_6',"","edu_inf_6","min='2004' max='2021'");
+                      estructura2('number','sch_yea_6',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_6 (Ciudad donde fue cursado 6)-->
                     <?php
-                      estructura2('select','sch_cit_6',"cities","edu_inf_6");
+                      estructura2('select','sch_cit_6',"cities");
                     ?>
                   </td>
                   <td>
                     <!--Input: edu_ins_6 (Instituto donde fue cursado 6)-->
                     <?php
-                    estructura2('text','sch_ins_6',"","edu_inf_6");
+                    estructura2('text','sch_ins_6');
                     ?>
                   </td>
                 </tr>

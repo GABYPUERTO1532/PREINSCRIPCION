@@ -11,11 +11,10 @@
 
         //Al validarse su inicio de sesion, el usuario sera redirigido a la vista de preinscripcion
         header("Location: ../view/preinscripcion");
-        $_COOKIE['stu_doc_num']=$post_stu_doc_num;
     }else{
 
         //En caso que no se haya autorizado el inicio de sesion al usuario, ese sera redirigido nuevamente al login
-        header("Location: ../");
+        header("Location: ../view/preinscripcion/preinscripcion_new.php");
     }
 
 ?>
