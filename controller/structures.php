@@ -273,8 +273,8 @@
             case "select":
                 $resultado=("
                     <div class='mb-3 col-md-12 input'>
-                        <select class='form-control' name='$nombre_input''id='$nombre_input' required>
-                            <option value='' style='text-align:center;'>Seleccione</option>
+                        <select class='form-control' name='$nombre_input'' id='$nombre_input' $addons>
+                            <option value=''style='text-align:center;'>Seleccione</option>
                 ");
 
                 switch($array_type){
@@ -317,7 +317,6 @@
                             class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
                             value='$value_select'
                             $addons
-
                         >
                     </div>
                 ");   

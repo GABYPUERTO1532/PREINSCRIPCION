@@ -5,7 +5,7 @@
         if(isset($_POST[$nombre_input])){
             return $_POST[$nombre_input];
         }else{
-            return "";
+            return null;
         }
     }
 

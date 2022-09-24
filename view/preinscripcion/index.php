@@ -197,7 +197,7 @@
             ?>
 
             <!--Input: doc_num_moth (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_moth","","madre")?>
+            <?php estructura("text","Numero de documento","doc_num_moth","","madre","disabled")?>
 
           </div>
 
@@ -258,7 +258,7 @@
             ?>
 
             <!--Input: doc_num_fath (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_fath","","padre")?>
+            <?php estructura("text","Numero de documento","doc_num_fath","","padre","disabled")?>
 
           </div>
 
@@ -318,7 +318,7 @@
             ?>
 
             <!--Input: doc_num_acu (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_acu","","acudiente")?>
+            <?php estructura("text","Numero de documento","doc_num_acu","","acudiente","disabled")?>
 
           </div>
 
@@ -452,19 +452,19 @@
                   <td>
                     <!--Input: sch_grd_1 (Grado escolar 1)-->
                     <?php
-                      estructura2('select','sch_grd_1',"grades","edu_inf_1");
+                      estructura2('select','sch_grd_1',"grades","edu_inf_1","required");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_1 (Año escolar 1)-->
                     <?php
-                      estructura2('number','sch_yea_1',"","edu_inf_1","min='2004' max='2022'");
+                      estructura2('number','sch_yea_1',"","edu_inf_1","min='2004' max='2021' required");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_cit_1 (Ciudad donde fue cursado 1)-->
                     <?php
-                      estructura2('select','sch_cit_1',"cities","edu_inf_1");
+                      estructura2('select','sch_cit_1',"cities","edu_inf_1","required");
                     ?>
                   </td>
                   <td>
@@ -486,7 +486,7 @@
                   <td>
                     <!--Input: sch_yea_2 (Año escolar 2)-->
                     <?php
-                      estructura2('number','sch_yea_2',"","edu_inf_2","min='2004' max='2022'");
+                      estructura2('number','sch_yea_2',"","edu_inf_2","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
@@ -514,7 +514,7 @@
                   <td>
                     <!--Input: sch_yea_3 (Año escolar 3)-->
                     <?php
-                      estructura2('number','sch_yea_3',"","edu_inf_3","min='2004' max='2022'");
+                      estructura2('number','sch_yea_3',"","edu_inf_3","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
@@ -542,7 +542,7 @@
                   <td>
                     <!--Input: sch_yea_4 (Año escolar 4)-->
                     <?php
-                      estructura2('number','sch_yea_4',"","edu_inf_4","min='2004' max='2022'");
+                      estructura2('number','sch_yea_4',"","edu_inf_4","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
@@ -570,7 +570,7 @@
                   <td>
                     <!--Input: sch_yea_5 (Año escolar 5)-->
                     <?php
-                      estructura2('number','sch_yea_5',"","edu_inf_5","min='2004' max='2022'");
+                      estructura2('number','sch_yea_5',"","edu_inf_5","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
@@ -598,7 +598,7 @@
                   <td>
                     <!--Input: sch_yea_6 (Año escolar 6)-->
                     <?php
-                      estructura2('number','sch_yea_6',"","edu_inf_6","min='2004' max='2022'");
+                      estructura2('number','sch_yea_6',"","edu_inf_6","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
