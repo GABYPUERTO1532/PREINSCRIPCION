@@ -3,19 +3,38 @@
     $_SESSION['titulo']="Listado Preinscripciones";
     
     include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
+    include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/coord_structures.php";
 ?>
 
     <div class="card">
         <div class="card-header">
-            Header
+            <h4 class="card-title">Title</h4>
         </div>
         <div class="card-body">
-            <h4 class="card-title">Title</h4>
-            <p class="card-text">Text</p>
+            <form action="" method="post">
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Tipo de documento Estudiante</th>
+                                <th scope="col">Numero de documento Estudiante</th>
+                                <th scope="col">Fecha y hora de la preinscripcion</th>
+                                <th scope="col">Accion</th>
+                                <th scope="col">bs5-but</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php listar_registros();?>
+                        </tbody>
+                    </table>
+                </div>
+                
+
+            </form>
         </div>
-        <div class="card-footer text-muted">
-            Footer
-        </div>
+        
     </div>
 
 <?php include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/footer.php"?>
