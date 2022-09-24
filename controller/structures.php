@@ -32,8 +32,119 @@
 
     $grades=interaccion_bd("obtener_grados");
 
+    $stu_info=interaccion_bd("obtener_info_estudiante");
 
-    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
+    $moth_info=interaccion_bd("obtener_info_familiar","Madre");
+
+    $fath_info=interaccion_bd("obtener_info_familiar","Padre");
+
+    $acu_info=interaccion_bd("obtener_info_familiar","Acudiente");
+
+    $oth_inf=interaccion_bd("obtener_other_inf");
+
+    $edu_inf_1=interaccion_bd("obtener_edu_info","edu_inf_1");
+
+    $edu_inf_2=interaccion_bd("obtener_edu_info","edu_inf_2");
+
+    $edu_inf_3=interaccion_bd("obtener_edu_info","edu_inf_3");
+
+    $edu_inf_4=interaccion_bd("obtener_edu_info","edu_inf_4");
+
+    $edu_inf_5=interaccion_bd("obtener_edu_info","edu_inf_5");
+
+    $edu_inf_6=interaccion_bd("obtener_edu_info","edu_inf_6");
+    
+    function seleccionar_col_array($array,$col_nam){
+
+        global $stu_info;
+        global $moth_info;
+        global $fath_info;
+        global $acu_info;
+        global $oth_inf;
+        global $edu_inf_1;
+        global $edu_inf_2;
+        global $edu_inf_3;
+        global $edu_inf_4;
+        global $edu_inf_5; 
+        global $edu_inf_6;
+
+        switch ($array){
+            
+            case "estudiante":
+                switch ($col_nam){
+                    case "stu_doc_typ":
+                        $resultado=$stu_info['doc_typ'];        
+                        return $resultado;
+                    break;
+
+                    case "stu_doc_num":
+                        $resultado=$stu_info['doc_num'];        
+                        return $resultado;
+                    break;
+                }
+
+                return $stu_info[$col_nam];
+                
+            break;
+
+            case "oth_inf":
+                return $oth_inf[$col_nam];
+
+            break;
+
+            case "edu_inf_1":
+                $col_nam=substr($col_nam,0,-2);
+                return $edu_inf_1[$col_nam];
+            break;
+
+            case "edu_inf_2":
+                $col_nam=substr($col_nam,0,-2);
+                return $edu_inf_2[$col_nam];
+            break;
+
+            case "edu_inf_3":
+                $col_nam=substr($col_nam,0,-2);
+                return $edu_inf_3[$col_nam];
+            break;
+
+            case "edu_inf_4":
+                $col_nam=substr($col_nam,0,-2);
+                return $edu_inf_4[$col_nam];
+            break;
+
+            case "edu_inf_5":
+                $col_nam=substr($col_nam,0,-2);
+                return $edu_inf_5[$col_nam];
+            break;
+
+            case "edu_inf_6":
+                $col_nam=substr($col_nam,0,-2);
+                return $edu_inf_6[$col_nam];
+            break;
+
+            case "madre" OR "padre" OR "acudiente":
+
+                if($array=="madre"){
+                    $col_nam=substr($col_nam,0,-5);
+                    return $moth_info[$col_nam];
+
+                }elseif($array=="padre"){
+                    $col_nam=substr($col_nam,0,-5);
+                    return $fath_info[$col_nam];
+
+                }elseif($array=="acudiente"){ 
+                    $col_nam=substr($col_nam,0,-4);
+                    return $acu_info[$col_nam];
+
+                }
+
+            break;
+
+        }
+    }
+
+
+    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength='255',$minlenght='1'){
         
         global $departaments;
         global $cities;
@@ -48,7 +159,8 @@
         global $fam_doc_typ;
         global $yes_no;
         global $ci;
-    
+
+        $value_select=seleccionar_col_array($array_bd,$nombre_input);
     
         switch ($tipo_input){
             case "select":
@@ -56,7 +168,7 @@
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <select class='form-control' name='$nombre_input''id='$nombre_input' required>
-                            <option value='' selected style='text-align:center;'>Seleccione</option>
+                            <option value='' style='text-align:center;'>Seleccione</option>
                 ");
 
                 switch ($array_type){
@@ -116,9 +228,17 @@
                 }
 
                 foreach ($options as $option){
-                    $resultado.=("
-                        <option value='$option' style='text-align:center;'>$option</option>
-                    ");
+
+                    if ($option==$value_select){
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;' selected>$option</option>
+                        ");
+                    }else{
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;'>$option</option>
+                        ");
+                    }
+
                 }
 
                 $resultado.=("
@@ -135,24 +255,26 @@
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
                             class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
-                            min='0'
-                            $addons>
+                            min='0' value='$value_select'
+                            $addons'>
                     </div>
                 ");   
             break;
         };
     }
 
-    function estructura2($tipo_input,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
+    function estructura2($tipo_input,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength='255',$minlenght='1'){
         global $cities;
         global $grades;
+
+        $value_select=seleccionar_col_array($array_bd,$nombre_input);
     
         switch ($tipo_input){
             case "select":
                 $resultado=("
                     <div class='mb-3 col-md-12 input'>
                         <select class='form-control' name='$nombre_input''id='$nombre_input' required>
-                            <option value='' selected style='text-align:center;'>Seleccione</option>
+                            <option value='' style='text-align:center;'>Seleccione</option>
                 ");
 
                 switch($array_type){
@@ -169,9 +291,15 @@
 
                 foreach ($options as $option){
 
-                    $resultado.=("
-                        <option value='$option' style='text-align:center;'>$option</option>
-                    ");
+                    if ($option==$value_select){
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;' selected>$option</option>
+                        ");
+                    }else{
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;'>$option</option>
+                        ");
+                    }
                 }
 
                 $resultado.=("
@@ -187,7 +315,9 @@
                     <div class='mb-3 col-md-9 input'>
                         <input type='$tipo_input'
                             class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
+                            value='$value_select'
                             $addons
+
                         >
                     </div>
                 ");   

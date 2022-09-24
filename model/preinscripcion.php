@@ -2,7 +2,7 @@
 
     include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
-    function interaccion_bd($tipo_accion){
+    function interaccion_bd($tipo_accion,$addons=null){
 
         /*DATOS DEL ESTUDIANTE*/
             global $post_firs_sur;
@@ -333,8 +333,135 @@
 
             break;
 
+            case "obtener_info_estudiante":
 
+                //TESTEO -> Se requiere solucion del problema de los POST
+                $post_stu_doc_num="1019604622";
+                
+                $sql="SELECT * FROM students WHERE doc_num='$post_stu_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+                $resultado=mysqli_fetch_assoc($consulta);
+                return $resultado;
+
+            break;
+
+            case "obtener_info_familiar":
+
+                //TESTEO -> Se requiere solucion del problema de los POST
+                $post_stu_doc_num="1019604622";
         
+                $sql="SELECT fam_doc_num,rel_typ FROM relations WHERE stu_doc_num='$post_stu_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+
+                while($registro=mysqli_fetch_assoc($consulta)){
+                    if($registro['rel_typ']=="Madre"){
+                        $moth_doc_num=$registro['fam_doc_num'];
+
+                    }elseif($registro['rel_typ']=="Padre"){
+                        $fath_doc_num=$registro['fam_doc_num'];
+                        
+                    }elseif($registro['rel_typ']=="Acudiente"){
+                        $acu_doc_num=$registro['fam_doc_num'];
+                    }
+                }
+
+                switch ($addons){
+                    case "Madre":
+                        $fam_doc_num=$moth_doc_num;
+                    break;
+
+                    case "Padre":
+                        $fam_doc_num=$fath_doc_num;
+                    break;
+
+                    case "Acudiente":
+                        $fam_doc_num=$acu_doc_num;
+                    break;
+
+                }
+
+                $sql="SELECT * FROM familiars WHERE doc_num='$fam_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+                $resultado=mysqli_fetch_assoc($consulta);
+
+                return $resultado;
+
+            break;
+
+            case "obtener_other_inf":
+            
+                //TESTEO -> Se requiere solucion del problema de los POST
+                $post_stu_doc_num="1019604622";
+        
+                $sql="SELECT * FROM other_inf WHERE stu_doc_num='$post_stu_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+                $resultado=mysqli_fetch_assoc($consulta);
+
+                return $resultado;
+
+            break;
+
+            case "obtener_edu_info":
+                
+                //TESTEO -> Se requiere solucion del problema de los POST
+                $post_stu_doc_num="1019604622";
+        
+                $sql="SELECT * FROM edu_inf WHERE stu_doc_num='$post_stu_doc_num'";
+                $consulta=$coneccionBD->query($sql);
+
+                while($registro=mysqli_fetch_assoc($consulta)){
+
+                    if(!isset($edu_inf_1)){
+                        $edu_inf_1=$registro;
+
+                    }elseif(!isset($edu_inf_2)){
+                        $edu_inf_2=$registro;
+
+                    }elseif(!isset($edu_inf_3)){
+                        $edu_inf_3=$registro;
+
+                    }elseif(!isset($edu_inf_4)){
+                        $edu_inf_4=$registro;
+
+                    }elseif(!isset($edu_inf_5)){
+                        $edu_inf_5=$registro;
+
+                    }elseif(!isset($edu_inf_6)){
+                        $edu_inf_6=$registro;
+                    }
+
+                }
+
+                switch ($addons){
+                    case "edu_inf_1":
+                        $resultado=$edu_inf_1;
+                    break;
+
+                    case "edu_inf_2":
+                        $resultado=$edu_inf_2;
+                    break;
+
+                    case "edu_inf_3":
+                        $resultado=$edu_inf_3;
+                    break;
+
+                    case "edu_inf_4":
+                        $resultado=$edu_inf_4;
+                    break;
+
+                    case "edu_inf_5":
+                        $resultado=$edu_inf_5;
+                    break;
+
+                    case "edu_inf_6":
+                        $resultado=$edu_inf_6;
+                    break;
+
+                }
+
+                return $resultado;          
+            
+            break;
         }
 
         
