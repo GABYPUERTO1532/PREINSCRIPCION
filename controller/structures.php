@@ -116,9 +116,8 @@
                 }
 
                 foreach ($options as $option){
-                    $value=strtoupper($option);
                     $resultado.=("
-                        <option value='$value' style='text-align:center;'>$option</option>
+                        <option value='$option' style='text-align:center;'>$option</option>
                     ");
                 }
 
@@ -136,6 +135,7 @@
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
                             class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
+                            min='0'
                             $addons>
                     </div>
                 ");   

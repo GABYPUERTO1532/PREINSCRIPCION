@@ -45,12 +45,12 @@
                       <div class="col-md-5">
                         <select class="form-control" name="fam_doc_typ" id="fam_doc_typ" required>
                           <option selected value="">Seleccione</option>
-                          <option value="CC">Cedula de ciudadania</option>
-                          <option value="CE">Cedula de Extranjeria</option>
-                          <option value="NIP">No. de Identificacion Personal</option>
-                          <option value="NUIP">No. Único de Identificación personal</option>
-                          <option value="NIT">No. de Identificacion Tributaria</option>
-                          <option value="PAP">Pasaporte</option>
+                          <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                          <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                          <option value="No. de Identificacion Personal">No. de Identificacion Personal</option>
+                          <option value="No. Unico de Identificacion Personal">No. Único de Identificación personal</option>
+                          <option value="No. Unico de Identificacion Tributaria">No. de Identificacion Tributaria</option>
+                          <option value="Pasaporte">Pasaporte</option>
                         </select>
                       </div>
 
@@ -68,9 +68,9 @@
                       <div class="col-md-5">
                         <select class="form-control" name="stu_doc_typ" id="stu_doc_typ" required>
                           <option selected value="">Seleccione</option>
-                          <option value="RC">Registro Civil</option>
-                          <option value="TI">Tarjeta de Identidad</option>
-                          <option value="PAP">Pasaporte</option>
+                          <option value="Registro Civil">Registro Civil</option>
+                          <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                          <option value="Pasaporte">Pasaporte</option>
                         </select>
                       </div>
 
