@@ -66,7 +66,7 @@
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante")?>
+            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante","disabled")?>
 
           </div>
 

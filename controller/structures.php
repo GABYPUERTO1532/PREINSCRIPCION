@@ -256,7 +256,7 @@
                         <input type='$tipo_input'
                             class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
                             min='0' value='$value_select'
-                            $addons'>
+                            $addons>
                     </div>
                 ");   
             break;

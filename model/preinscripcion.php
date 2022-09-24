@@ -197,6 +197,70 @@
             break;
 
             case "update":
+                
+                //Actualizacion informacion Estudiante
+                $sql=("UPDATE students SET (firs_sur='$post_firs_sur', sec_sur='$post_sec_sur',  firs_nam='$post_firs_nam', sec_nam='$post_sec_nam', dat_bir='$post_dat_bir', stu_cit='$post_stu_cit', stu_dep='$post_stu_dep', doc_typ='$post_stu_doc_typ', exp_cit='$post_exp_cit', stu_add='$post_stu_add', stu_nei='$post_stu_nei', stu_loc='$post_stu_loc',  stu_est='$post_stu_est', stu_cat='$post_stu_cat', stu_tel='$post_stu_tel', stu_hob='$post_stu_hob', stu_enf='$post_stu_enf', stu_eps='$post_stu_eps', stu_ars='$post_stu_ars', stu_ips='$post_stu_ips',  b_grp='$post_b_grp', rh_fact='$post_rh_fact', pre_stu=TRUE, upd_dat='$upd_dat') WHERE doc_num='$post_stu_doc_num'");
+                $consulta=$coneccionBD->query($sql);
+
+                //Actualizacion informacion Madre
+                $sql=("");
+                $consulta=$coneccionBD->query($sql);
+
+                //Actualizacion informacion Padre
+                $sql=("");
+                $consulta=$coneccionBD->query($sql);
+
+                //Actualizacion informacion Acudiente
+                $sql=("");
+                $consulta=$coneccionBD->query($sql);
+
+                /*Actualizacion informacion Relaciones*/
+
+                    //Relacion Madre - Estudiante
+                    $sql=("");
+                        $consulta=$coneccionBD->query($sql);
+
+                    //Relacion Padre - Estudiante
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                    //Relacion Acudiente Estudiante - Estudiante
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                /**/
+
+                    //Actualizacion informacion "Other_information"
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                /*Actualizacion Informacion Educativa*/
+
+                    //Registro 1
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                    //Registro 2
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                    //Registro 3
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                    //Registro 4
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                    //Registro 5
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+
+                    //Registro 6
+                    $sql=("");
+                    $consulta=$coneccionBD->query($sql);
+                    
+                /**/
 
             break;
 
