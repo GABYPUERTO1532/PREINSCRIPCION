@@ -54,13 +54,11 @@
 
             Tip: En caso de que no se hayan encontrado registros con dicha informacion o aparezcan mas de dos registros simultaneos, la funcion retornada el valor de false, el cual sera usado en la funcion para redirigirlo nuevamente al login y no permitir su ingreso
         */
-        /*if ($resultado==1){
+        if ($resultado==1){
             return TRUE;
         }else{
             return FALSE;
-        }*/
-
-        return TRUE;
+        }
     }
 
 ?>
