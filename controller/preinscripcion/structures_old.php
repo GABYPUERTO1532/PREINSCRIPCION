@@ -2,8 +2,11 @@
 
     include "intermediario.php";
     
-    $stu_doc_num=$_SESSION['a1'];
-    $_SESSION['a2']=$stu_doc_num;
+    $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
+    if(password_verify(1019604622,$stu_doc_num_cont)){
+        $_SESSION['stu_doc_num_int']=$stu_doc_num_cont;
+    }
+    
 
     $departaments=interaccion_bd("obtener_departamentos");
 
