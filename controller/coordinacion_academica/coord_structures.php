@@ -15,6 +15,8 @@
             $stu_doc_num=$registro['stu_doc_num'];
             $dat_pre=$registro['dat_pre'];
 
+            $etc=password_hash(1019604622,PASSWORD_DEFAULT);
+
             echo("
                 <tr>
                     <td>$id</td>
@@ -22,6 +24,7 @@
                     <td>$stu_doc_num</td>
                     <td>$dat_pre</td>
                     <td><input name='' id='' class='btn btn-primary' type='button' value='$stu_doc_num'></td>
+                    <td><a name='' id='' class='btn btn-primary' href='../../preinscripcion/index.php?stu_doc_num=$etc' role='button'>Button</a></td>
                 </tr>
             ");
 
