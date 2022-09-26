@@ -1,14 +1,15 @@
 <?php
-
-    include "intermediary.php";
-    
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
+    echo($stu_doc_num_cont);
+
+    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
     $consulta=interaccion_bd("obtener_stu_doc_num");
+    $resultado=0;   
 
     while($resultado=mysqli_fetch_assoc($consulta)){
         if(password_verify($resultado['doc_num'],$stu_doc_num_cont)){
-            $_SESSION['stu_doc_num_int']=$resultado['doc_num'];
+            $stu_doc_num=$resultado['doc_num'];
         }
     }
 
@@ -42,28 +43,28 @@
 
     $grades=interaccion_bd("obtener_grados");
 
-    $stu_info=$stu_info_int;
-    print_r($stu_info);
+    $stu_info=interaccion_bd("obtener_info_estudiante",$stu_doc_num);   
 
-    $moth_info=interaccion_bd("obtener_info_familiar","Madre");
+    $moth_info=interaccion_bd("obtener_info_familiar",$stu_doc_num,"Madre");
 
-    $fath_info=interaccion_bd("obtener_info_familiar","Padre");
+    $fath_info=interaccion_bd("obtener_info_familiar",$stu_doc_num,"Padre");
 
-    $acu_info=interaccion_bd("obtener_info_familiar","Acudiente");
+    $acu_info=interaccion_bd("obtener_info_familiar",$stu_doc_num,"Acudiente");
 
-    $oth_inf=interaccion_bd("obtener_other_inf");
+    $oth_inf=interaccion_bd("obtener_other_inf",$stu_doc_num);
 
-    $edu_inf_1=interaccion_bd("obtener_edu_info","edu_inf_1");
+    $edu_inf_1=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_1");
 
-    $edu_inf_2=interaccion_bd("obtener_edu_info","edu_inf_2");
+    $edu_inf_2=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_2");
 
-    $edu_inf_3=interaccion_bd("obtener_edu_info","edu_inf_3");
+    $edu_inf_3=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_3");
 
-    $edu_inf_4=interaccion_bd("obtener_edu_info","edu_inf_4");
+    $edu_inf_4=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_4");
 
-    $edu_inf_5=interaccion_bd("obtener_edu_info","edu_inf_5");
+    $edu_inf_5=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_5");
 
-    $edu_inf_6=interaccion_bd("obtener_edu_info","edu_inf_6");
+    $edu_inf_6=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_6");
+    print_r($edu_inf_6);
     
     function seleccionar_col_array($array,$col_nam){
 

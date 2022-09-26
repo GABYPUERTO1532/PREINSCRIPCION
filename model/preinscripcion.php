@@ -2,7 +2,7 @@
 
     include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
-    function interaccion_bd($tipo_accion,$addons=null){
+    function interaccion_bd($tipo_accion,$addons=null,$addons_2=null){
 
         /*DATOS DEL ESTUDIANTE*/
             global $post_firs_sur;
@@ -415,7 +415,7 @@
                     }
                 }
 
-                switch ($addons){
+                switch ($addons_2){
                     case "Madre":
                         $fam_doc_num=$moth_doc_num;
                     break;
@@ -476,7 +476,7 @@
 
                 }
 
-                switch ($addons){
+                switch ($addons_2){
                     case "edu_inf_1":
                         $resultado=$edu_inf_1;
                     break;

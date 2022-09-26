@@ -3,7 +3,6 @@
     $_SESSION['titulo']="Listado Preinscripciones";
     
     include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
-    include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/coord_structures.php";
 ?>
 
     <div class="card">
@@ -26,7 +25,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php listar_registros();?>
+                        
                         </tbody>
                     </table>
                 </div>
