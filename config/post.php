@@ -334,4 +334,10 @@
 
     /**/
 
+    /*ACCIONES DE LAS VISTAS*/
+
+        $action=obtener_post("action");
+
+    /**/
+
 ?>

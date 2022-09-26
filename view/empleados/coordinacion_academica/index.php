@@ -3,6 +3,7 @@
     $_SESSION['titulo']="Listado Preinscripciones";
     
     include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
+    include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/coord_structures.php"; 
 ?>
 
     <div class="card">
@@ -21,11 +22,10 @@
                                 <th scope="col">Numero de documento Estudiante</th>
                                 <th scope="col">Fecha y hora de la preinscripcion</th>
                                 <th scope="col">Accion</th>
-                                <th scope="col">bs5-but</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                            <?php listar_registros()?>
                         </tbody>
                     </table>
                 </div>

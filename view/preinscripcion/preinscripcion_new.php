@@ -7,7 +7,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/test1.php" method="post">
+    <form action="../../controller/preinscripcion/test1.php" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

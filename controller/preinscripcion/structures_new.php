@@ -1,6 +1,6 @@
 <?php
 
-    include "preinscripcion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
     $departaments=interaccion_bd("obtener_departamentos");
 
