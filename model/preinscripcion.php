@@ -14,7 +14,6 @@
             global $post_stu_cit;
             global $post_stu_doc_typ;
             global $post_stu_doc_num;
-            $post_stu_doc_num="1019604622";
             global $post_exp_cit;
             global $post_stu_add;
             global $post_stu_nei;
@@ -383,8 +382,8 @@
             break;
 
             case "obtener_info_estudiante":
-                
-                $sql="SELECT * FROM students WHERE doc_num='$post_stu_doc_num'";
+
+                $sql="SELECT * FROM students WHERE doc_num='$addons'";
                 $consulta=$coneccionBD->query($sql);
                 $resultado=mysqli_fetch_assoc($consulta);
                 return $resultado;
@@ -393,7 +392,7 @@
 
             case "obtener_info_familiar":
         
-                $sql="SELECT fam_doc_num,rel_typ FROM relations WHERE stu_doc_num='$post_stu_doc_num'";
+                $sql="SELECT fam_doc_num,rel_typ FROM relations WHERE stu_doc_num='$addons'";
                 $consulta=$coneccionBD->query($sql);
 
                 while($registro=mysqli_fetch_assoc($consulta)){
@@ -432,8 +431,8 @@
             break;
 
             case "obtener_other_inf":
-            
-                $sql="SELECT * FROM other_inf WHERE stu_doc_num='$post_stu_doc_num'";
+
+                $sql="SELECT * FROM other_inf WHERE stu_doc_num='$addons'";
                 $consulta=$coneccionBD->query($sql);
                 $resultado=mysqli_fetch_assoc($consulta);
 
@@ -443,7 +442,7 @@
 
             case "obtener_edu_info":
                 
-                $sql="SELECT * FROM edu_inf WHERE stu_doc_num='$post_stu_doc_num'";
+                $sql="SELECT * FROM edu_inf WHERE stu_doc_num='$addons'";
                 $consulta=$coneccionBD->query($sql);
 
                 while($registro=mysqli_fetch_assoc($consulta)){

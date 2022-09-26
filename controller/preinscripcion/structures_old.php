@@ -1,6 +1,9 @@
 <?php
 
-    include "preinscripcion.php";
+    include "intermediario.php";
+    
+    $stu_doc_num=$_SESSION['a1'];
+    $_SESSION['a2']=$stu_doc_num;
 
     $departaments=interaccion_bd("obtener_departamentos");
 
@@ -32,7 +35,8 @@
 
     $grades=interaccion_bd("obtener_grados");
 
-    $stu_info=interaccion_bd("obtener_info_estudiante");
+    $stu_info=$stu_info_int;
+    print_r($stu_info);
 
     $moth_info=interaccion_bd("obtener_info_familiar","Madre");
 
