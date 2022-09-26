@@ -3,13 +3,12 @@
     include "intermediary.php";
     
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
-    $_SESSION['stu_doc_num_int']=$stu_doc_num_cont;
 
     $consulta=interaccion_bd("obtener_stu_doc_num");
 
     while($resultado=mysqli_fetch_assoc($consulta)){
-        if($resultado['doc_num']==$stu_doc_num_cont=$_SESSION['stu_doc_num_cont']){
-            echo($resultado['doc_num']);
+        if(password_verify($resultado['doc_num'],$stu_doc_num_cont)){
+            $_SESSION['stu_doc_num_int']=$resultado['doc_num'];
         }
     }
 
