@@ -5,7 +5,7 @@
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_old.php");
 
-  $_SESSION['stu_doc_num_cont']=$_GET['stu_doc_num_get'];
+  $_SESSION['a1']=$_GET['stu_doc_num'];
 
 ?>
   <!--Contenedor principal Formulario-->
