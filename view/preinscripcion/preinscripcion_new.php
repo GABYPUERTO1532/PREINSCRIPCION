@@ -3,7 +3,7 @@
   $_SESSION['titulo']="Proceso Preinscripcion";
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
-  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/structures_new.php");
+  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_new.php");
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
