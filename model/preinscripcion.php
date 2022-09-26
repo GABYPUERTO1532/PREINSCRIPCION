@@ -248,6 +248,14 @@
 
             break;
 
+            case "obtener_stu_doc_num":
+            
+                $sql="SELECT doc_num FROM students";
+                $consulta=$coneccionBD->query($sql);
+                return $consulta;
+
+            break;
+
             case "obtener_departamentos":
 
                 $sql="SELECT dep_nam FROM departaments";
