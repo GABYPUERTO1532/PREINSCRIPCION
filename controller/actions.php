@@ -1,15 +1,15 @@
 <?php
     include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
     
-    
     switch ($action){
-        case "create":
+        case "create" OR "update":
             interaccion_bd($action);
         break;
 
-        case "retornar":
-            interaccion_bd($action);
+        case "matricula_verificada" OR "matricula_rechazada":
+            interaccion_bd($action,$stu_doc_num);
         break;
+
     }
 
     echo($action);

@@ -17,8 +17,6 @@
 
     $eps=interaccion_bd("obtener_eps");
 
-    $ars=interaccion_bd("obtener_ars");
-
     $blood_group=interaccion_bd("obtener_grupo_sanguineo");
 
     $rh=interaccion_bd("obtener_factor_rh");
@@ -129,6 +127,32 @@
                 echo($resultado);
             break;
 
+            case "button_create":
+
+                echo("
+                
+                    <div>
+                        <input value='create' name='action' style='display:none;'>
+                        <button type='submit' class='btn btn-primary'>Finalizar Proceso</button>
+                    </div>
+                
+                ");
+
+            break;
+
+            case "button_update":
+
+                echo("
+                
+                    <div>
+                        <input value='update' name='action' style='display:none;'>
+                        <button type='submit' class='btn btn-primary'>Finalizar Proceso</button>
+                    </div>
+                
+                ");
+
+            break;
+
             default:
                 echo("
                     <div class='mb-3 col-md-3 input'>
@@ -185,7 +209,7 @@
                 echo("
                     <div class='mb-3 col-md-9 input'>
                         <input type='$tipo_input'
-                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
+                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
                             $addons
                         >
                     </div>

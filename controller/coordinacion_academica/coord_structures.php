@@ -15,7 +15,7 @@
             $stu_doc_num=$registro['stu_doc_num'];
             $dat_pre=$registro['dat_pre'];
 
-            $etc=password_hash(1032937438,PASSWORD_DEFAULT);
+            $etc=password_hash($stu_doc_num,PASSWORD_DEFAULT);
 
             echo("
                 <tr>

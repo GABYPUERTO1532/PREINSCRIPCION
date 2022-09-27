@@ -1,6 +1,5 @@
 <?php
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
-    echo($stu_doc_num_cont);
 
     include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
@@ -28,8 +27,6 @@
 
     $eps=interaccion_bd("obtener_eps");
 
-    $ars=interaccion_bd("obtener_ars");
-
     $blood_group=interaccion_bd("obtener_grupo_sanguineo");
 
     $rh=interaccion_bd("obtener_factor_rh");
@@ -54,17 +51,31 @@
     $oth_inf=interaccion_bd("obtener_other_inf",$stu_doc_num);
 
     $edu_inf_1=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_1");
-
+     
     $edu_inf_2=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_2");
+    if(!isset($stu_inf_2)){
+        $stu_inf_2=['sch_grd_2'=>'','sch_yea_2'=>'','sch_cit_2'=>'','sch_ins_2'=>''];
+    }
 
     $edu_inf_3=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_3");
+    if(!isset($stu_inf_3)){
+        $stu_inf_3=['sch_grd_3'=>'','sch_yea_3'=>'','sch_cit_3'=>'','sch_ins_3'=>''];
+    }
 
     $edu_inf_4=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_4");
+    if(!isset($stu_inf_4)){
+        $stu_inf_4=['sch_grd_4'=>'','sch_yea_4'=>'','sch_cit_4'=>'','sch_ins_4'=>''];
+    }
 
     $edu_inf_5=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_5");
+    if(!isset($stu_inf_5)){
+        $stu_inf_5=['sch_grd_5'=>'','sch_yea_5'=>'','sch_cit_5'=>'','sch_ins_5'=>''];
+    }
 
     $edu_inf_6=interaccion_bd("obtener_edu_info",$stu_doc_num,"edu_inf_6");
-    print_r($edu_inf_6);
+    if(!isset($stu_inf_6)){
+        $stu_inf_6=['sch_grd_6'=>'','sch_yea_6'=>'','sch_cit_6'=>'','sch_ins_6'=>''];
+    }
     
     function seleccionar_col_array($array,$col_nam){
 
@@ -259,6 +270,32 @@
                 ");
 
                 echo($resultado);
+            break;
+
+            case "button_create":
+
+                echo("
+                
+                    <div>
+                        <input value='create' name='action' style='display:none;'>
+                        <button type='submit' class='btn btn-primary'>Finalizar Proceso</button>
+                    </div>
+                
+                ");
+
+            break;
+
+            case "button_update":
+
+                echo("
+                
+                    <div>
+                        <input value='update' name='action' style='display:none;'>
+                        <button type='submit' class='btn btn-primary'>Finalizar Proceso</button>
+                    </div>
+                
+                ");
+
             break;
 
             default:
