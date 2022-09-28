@@ -4,7 +4,6 @@
     include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
     $consulta=interaccion_bd("obtener_stu_doc_num");
-    $resultado=0;   
 
     while($resultado=mysqli_fetch_assoc($consulta)){
         if(password_verify($resultado['doc_num'],$stu_doc_num_cont)){

@@ -9,7 +9,7 @@
 
             case "consultar_listado":
 
-                $sql="SELECT * FROM pre_stu";
+                $sql="SELECT * FROM pre_sta";
                 $consulta=$coneccionBD->query($sql);
 
                 return $consulta;
@@ -19,6 +19,4 @@
         }
 
     }
-
-
 ?>

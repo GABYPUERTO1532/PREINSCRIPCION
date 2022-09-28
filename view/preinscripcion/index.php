@@ -6,6 +6,9 @@
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_old.php");
 
   $_SESSION['stu_doc_num_cont']=$_GET['stu_doc_num'];
+  if($_GET['addons']==1){
+    header("location: https://youtube.com");
+  }
 
 ?>
   <!--Contenedor principal Formulario-->
