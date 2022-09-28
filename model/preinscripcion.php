@@ -32,7 +32,8 @@
             //Varibles extras
             $pre_stu=1;
             date_default_timezone_set('America/Bogota');
-            $date=date("Y-m-d H:i:s");
+            $cre_dat=date("Y-m-d H:i:s");
+            $upd_dat=date("Y-m-d H:i:s");
         /**/
 
         /*DATOS MADRE*/
@@ -130,19 +131,19 @@
             case "create":
 
                 //Ingreso informacion Estudiante
-                $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',TRUE,'$date','$date')");
+                $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',TRUE,'$cre_dat','$upd_dat')");
                 $consulta=$coneccionBD->query($sql);
 
                 //Ingreso informacion Madre
-                $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$post_fam_nam_moth','$post_doc_typ_moth','$post_doc_num_moth','$post_fam_land_moth','$post_mob_pho_moth','$post_fam_add_moth','$post_fam_ocu_moth','$post_fam_ema_moth','$date','$date')");
+                $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$post_fam_nam_moth','$post_doc_typ_moth','$post_doc_num_moth','$post_fam_land_moth','$post_mob_pho_moth','$post_fam_add_moth','$post_fam_ocu_moth','$post_fam_ema_moth','$cre_dat','$upd_dat')");
                 $consulta=$coneccionBD->query($sql);
 
                 //Ingreso informacion Padre
-                $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$post_fam_nam_fath','$post_doc_typ_fath','$post_doc_num_fath','$post_fam_land_fath','$post_mob_pho_fath','$post_fam_add_fath','$post_fam_ocu_fath','$post_fam_ema_fath','$date','$date')");
+                $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$post_fam_nam_fath','$post_doc_typ_fath','$post_doc_num_fath','$post_fam_land_fath','$post_mob_pho_fath','$post_fam_add_fath','$post_fam_ocu_fath','$post_fam_ema_fath','$cre_dat','$upd_dat')");
                 $consulta=$coneccionBD->query($sql);
 
                 //Ingreso informacion Acudiente
-                $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$post_fam_nam_acu','$post_doc_typ_acu','$post_doc_num_acu','$post_fam_land_acu','$post_mob_pho_acu','$post_fam_add_acu','$post_fam_ocu_acu','$post_fam_ema_acu','$date','$date')");
+                $sql=("INSERT INTO familiars (fam_nam,doc_typ,doc_num,fam_land,mob_pho,fam_add,fam_ocu,fam_ema,cre_dat,upd_dat) VALUES ('$post_fam_nam_acu','$post_doc_typ_acu','$post_doc_num_acu','$post_fam_land_acu','$post_mob_pho_acu','$post_fam_add_acu','$post_fam_ocu_acu','$post_fam_ema_acu','$cre_dat','$upd_dat')");
                 $consulta=$coneccionBD->query($sql);
 
                 /*Ingreso informacion Relaciones*/
@@ -191,13 +192,8 @@
                     $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
                     $consulta=$coneccionBD->query($sql);
                     
-                /**/
-
-                /*Ingreso de Registro confirmacion matricula*/
-                
-                    $sql="INSERT INTO pre_stu (stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$date')";
+                    $sql="INSERT INTO pre_sta(stu_doc_typ,stu_doc_num,reg_dat) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$upd_dat')";
                     $consulta=$coneccionBD->query($sql);
-
                 /**/
 
             break;
@@ -205,19 +201,19 @@
             case "update":
 
                 //Actualizacion informacion Estudiante
-                $sql=("UPDATE students SET firs_sur='$post_firs_sur', sec_sur='$post_sec_sur',firs_nam='$post_firs_nam', sec_nam='$post_sec_nam',dat_bir='$post_dat_bir', stu_cit='$post_stu_cit',stu_dep='$post_stu_dep', doc_typ='$post_stu_doc_typ',exp_cit='$post_exp_cit', stu_add='$post_stu_add',stu_nei='$post_stu_nei', stu_loc='$post_stu_loc',stu_est='$post_stu_est', stu_cat='$post_stu_cat',stu_tel='$post_stu_tel', stu_hob='$post_stu_hob',stu_enf='$post_stu_enf', stu_eps='$post_stu_eps',stu_ars='$post_stu_ars', stu_ips='$post_stu_ips',b_grp='$post_b_grp', rh_fact='$post_rh_fact', pre_stu=TRUE, upd_dat='$date' WHERE doc_num='$post_stu_doc_num'");
+                $sql=("UPDATE students SET firs_sur='$post_firs_sur', sec_sur='$post_sec_sur',firs_nam='$post_firs_nam', sec_nam='$post_sec_nam',dat_bir='$post_dat_bir', stu_cit='$post_stu_cit',stu_dep='$post_stu_dep', doc_typ='$post_stu_doc_typ',exp_cit='$post_exp_cit', stu_add='$post_stu_add',stu_nei='$post_stu_nei', stu_loc='$post_stu_loc',stu_est='$post_stu_est', stu_cat='$post_stu_cat',stu_tel='$post_stu_tel', stu_hob='$post_stu_hob',stu_enf='$post_stu_enf', stu_eps='$post_stu_eps',stu_ars='$post_stu_ars', stu_ips='$post_stu_ips',b_grp='$post_b_grp', rh_fact='$post_rh_fact', pre_stu=TRUE, upd_dat='$upd_dat' WHERE doc_num='1019604622'");
                 $consulta=$coneccionBD->query($sql);
                 
                 //Actualizacion informacion Madre
-                $sql=("UPDATE familiars SET fam_nam='$post_fam_nam_moth',doc_typ='$post_doc_typ_moth',fam_land='$post_fam_land_moth',mob_pho='$post_mob_pho_moth',fam_add='$post_fam_add_moth',fam_ocu='$post_fam_ocu_moth',fam_ema='$post_fam_ema_moth',upd_dat='$date'WHERE doc_num='$post_doc_num_moth'");
+                $sql=("UPDATE familiars SET fam_nam='$post_fam_nam_moth',doc_typ='$post_doc_typ_moth',fam_land='$post_fam_land_moth',mob_pho='$post_mob_pho_moth',fam_add='$post_fam_add_moth',fam_ocu='$post_fam_ocu_moth',fam_ema='$post_fam_ema_moth',upd_dat='$upd_dat'WHERE doc_num='$post_doc_num_moth'");
                 $consulta=$coneccionBD->query($sql);
 
                 //Actualizacion informacion Padre
-                $sql=("UPDATE familiars SET fam_nam='$post_fam_nam_fath',doc_typ='$post_doc_typ_fath',fam_land='$post_fam_land_fath',mob_pho='$post_mob_pho_fath',fam_add='$post_fam_add_fath',fam_ocu='$post_fam_ocu_fath',fam_ema='$post_fam_ema_fath',upd_dat='$date'WHERE doc_num='$post_doc_num_fath'");
+                $sql=("UPDATE familiars SET fam_nam='$post_fam_nam_fath',doc_typ='$post_doc_typ_fath',fam_land='$post_fam_land_fath',mob_pho='$post_mob_pho_fath',fam_add='$post_fam_add_fath',fam_ocu='$post_fam_ocu_fath',fam_ema='$post_fam_ema_fath',upd_dat='$upd_dat'WHERE doc_num='$post_doc_num_fath'");
                 $consulta=$coneccionBD->query($sql);
 
                 //Actualizacion informacion Acudiente
-                $sql=("UPDATE familiars SET fam_nam='$post_fam_nam_acu',doc_typ='$post_doc_typ_acu',fam_land='$post_fam_land_acu',mob_pho='$post_mob_pho_acu',fam_add='$post_fam_add_acu',fam_ocu='$post_fam_ocu_acu',fam_ema='$post_fam_ema_acu',upd_dat='$date'WHERE doc_num='$post_doc_num_acu'");
+                $sql=("UPDATE familiars SET fam_nam='$post_fam_nam_acu',doc_typ='$post_doc_typ_acu',fam_land='$post_fam_land_acu',mob_pho='$post_mob_pho_acu',fam_add='$post_fam_add_acu',fam_ocu='$post_fam_ocu_acu',fam_ema='$post_fam_ema_acu',upd_dat='$upd_dat'WHERE doc_num='$post_doc_num_acu'");
                 $consulta=$coneccionBD->query($sql);
 
                 //Actualizacion informacion "Other_information"
@@ -252,13 +248,6 @@
                     
                 /**/
 
-                /*Ingreso de Registro confirmacion matricula*/
-                
-                    $sql="INSERT INTO pre_stu (stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$date')";
-                    $consulta=$coneccionBD->query($sql);
-
-                /**/
-
             break;
 
             case "obtener_stu_doc_num":
@@ -266,26 +255,6 @@
                 $sql="SELECT doc_num FROM students";
                 $consulta=$coneccionBD->query($sql);
                 return $consulta;
-
-            break;
-
-            case "matricula_verificada":
-
-                $sql="UPDATE students SET pre_stu=TRUE WHERE doc_num='$addons'";
-                $consulta=$coneccionBD->query($sql);
-
-                $sql="DELETE FROM pre_stu WHERE stu_doc_num='$addons'";
-                $consulta=$coneccionBD->query($sql);
-
-            break;
-
-            case "matricula_rechazada":
-
-                $sql="UPDATE students SET pre_stu=FALSE WHERE doc_num='$addons'";
-                $consulta=$coneccionBD->query($sql);
-
-                $sql="DELETE FROM pre_stu WHERE stu_doc_num='$addons'";
-                $consulta=$coneccionBD->query($sql);
 
             break;
 
@@ -373,6 +342,18 @@
 
             break;
 
+            case "obtener_ars":
+
+                $sql="SELECT ars_nam FROM ars";
+                $consulta=$coneccionBD->query($sql);
+                $array=[];
+                while($item=mysqli_fetch_assoc($consulta)){
+                    array_push($array,$item['ars_nam']);
+                }
+                return $array;
+
+            break;
+
             case "obtener_grupo_sanguineo":
 
                 $sql="SELECT gro_nam FROM blo_grp";
@@ -385,6 +366,14 @@
                 return $array;
 
             break;
+
+            case "consultar_listado":
+
+                $sql="SELECT * FROM pre_sta";
+                $consulta=$coneccionBD->query($sql);
+                return $consulta;
+
+            break; 
 
             case "obtener_factor_rh":
 

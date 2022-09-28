@@ -10,7 +10,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="C://xampp/htdocs/PREINSCRIPCION/controller/actions.php" method="post">
+    <form action="../../controller/test1.php" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -150,7 +150,7 @@
 
             <!--Input: stu_ars (ARS)-->
             <?php
-              estructura("text","ARS","stu_ars");
+              estructura("select","ARS","stu_ars","ars","estudiante");
             ?>
 
             <!--Input: stu_ips (IPS)-->
@@ -624,7 +624,7 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <?php estructura("button_create","","")?>
+        <button type="submit" class="btn btn-success">Finalizar Proceso</button>
       </div>
     </form>
   </div>

@@ -7,7 +7,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="C://xampp/htdocs/PREINSCRIPCION/controller/actions.php" method="post">
+    <form action="../../controller/test2.php" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -147,7 +147,7 @@
 
             <!--Input: stu_ars (ARS)-->
             <?php
-              estructura("text","ARS","stu_ars");
+              estructura("select","ARS","stu_ars","ars");
             ?>
 
             <!--Input: stu_ips (IPS)-->
@@ -452,13 +452,13 @@
                   <td>
                     <!--Input: sch_grd_1 (Grado escolar 1)-->
                     <?php
-                      estructura2('select','sch_grd_1',"grades",'required');
+                      estructura2('select','sch_grd_1',"grades");
                     ?>
                   </td>
                   <td>
                     <!--Input: sch_yea_1 (Año escolar 1)-->
                     <?php
-                      estructura2('number','sch_yea_1',"","min='2004' max='2021' required");
+                      estructura2('number','sch_yea_1',"","min='2004' max='2021'");
                     ?>
                   </td>
                   <td>
@@ -470,7 +470,7 @@
                   <td>
                     <!--Input: sch_ins_1 (Instituto donde fue cursado 1)-->
                     <?php
-                      estructura2('text','sch_ins_1',"required");
+                      estructura2('text','sch_ins_1');
                     ?>
                   </td>
                 </tr>
@@ -621,8 +621,7 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <?php estructura("button_create","","")?>
-        <button type="submit">A1</button>
+        <button type="submit" class="btn btn-success">Finalizar Proceso</button>
       </div>
     </form>
   </div>
