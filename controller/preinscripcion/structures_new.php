@@ -1,6 +1,8 @@
 <?php
 
-    include "preinscripcion.php";
+    $db_op=$_SESSION['db_op'];
+    
+    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
     $departaments=interaccion_bd("obtener_departamentos");
 
@@ -16,8 +18,6 @@
     $sisben=interaccion_bd("obtener_categoria_sisben");
 
     $eps=interaccion_bd("obtener_eps");
-
-    $ars=interaccion_bd("obtener_ars");
 
     $blood_group=interaccion_bd("obtener_grupo_sanguineo");
 

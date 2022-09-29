@@ -1,6 +1,7 @@
 <?php 
   session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['titulo']=$_GET['db_op'];
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_new.php");
@@ -147,7 +148,7 @@
 
             <!--Input: stu_ars (ARS)-->
             <?php
-              estructura("select","ARS","stu_ars","ars");
+              estructura("text","ARS","stu_ars","ars");
             ?>
 
             <!--Input: stu_ips (IPS)-->

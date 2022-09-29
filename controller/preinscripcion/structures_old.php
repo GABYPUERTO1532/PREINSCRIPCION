@@ -1,13 +1,14 @@
 <?php
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
+    $db_op=$_SESSION['db_op'];
 
     include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
     $consulta=interaccion_bd("obtener_stu_doc_num");
 
-    while($resultado=mysqli_fetch_assoc($consulta)){
-        if(password_verify($resultado['doc_num'],$stu_doc_num_cont)){
-            $stu_doc_num=$resultado['doc_num'];
+    while($itmes_consulta=mysqli_fetch_assoc($consulta)){
+        if(password_verify($itmes_consulta['doc_num'],$stu_doc_num_cont)){
+            $stu_doc_num=$itmes_consulta['doc_num'];
         }
     }
 
@@ -25,8 +26,6 @@
     $sisben=interaccion_bd("obtener_categoria_sisben");
 
     $eps=interaccion_bd("obtener_eps");
-
-    $ars=interaccion_bd("obtener_ars");
 
     $blood_group=interaccion_bd("obtener_grupo_sanguineo");
 

@@ -1,14 +1,12 @@
 <?php 
   session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['stu_doc_num_cont']=$_GET['stu_doc_num'];
+  $_SESSION['db_op']=$_GET['db_op'];
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_old.php");
 
-  $_SESSION['stu_doc_num_cont']=$_GET['stu_doc_num'];
-  if($_GET['addons']==1){
-    header("location: https://youtube.com");
-  }
 
 ?>
   <!--Contenedor principal Formulario-->
@@ -153,7 +151,7 @@
 
             <!--Input: stu_ars (ARS)-->
             <?php
-              estructura("select","ARS","stu_ars","ars","estudiante");
+              estructura("text","ARS","stu_ars","","estudiante");
             ?>
 
             <!--Input: stu_ips (IPS)-->
@@ -510,7 +508,7 @@
                 </tr>
 
                 <!--Fila 3-->
-                <tr class="">
+                <tr>
                   <td>
                     <!--Input: sch_grd_3 (Grado escolar 3)-->
                     <?php

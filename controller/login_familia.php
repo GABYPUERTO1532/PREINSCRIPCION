@@ -11,11 +11,11 @@
 
         //Al validarse su inicio de sesion, el usuario sera redirigido a la vista de preinscripcion
         $post_stu_doc_num=password_hash($post_stu_doc_num,PASSWORD_DEFAULT);
-        header("Location: ../view/preinscripcion?stu_doc_num=$post_stu_doc_num");
+        header("Location: ../view/preinscripcion?stu_doc_num=$post_stu_doc_num&db_op=update");
     }else{
 
         //En caso que no se haya autorizado el inicio de sesion al usuario, ese sera redirigido nuevamente al login
-        header("Location: ../view/preinscripcion/preinscripcion_new.php");
+        header("Location: ../view/preinscripcion/preinscripcion_new.php?db_op=create");
     }
 
 ?>

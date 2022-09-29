@@ -2,6 +2,8 @@
 
     include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
+    echo($db_op);
+
     function interaccion_bd($tipo_accion,$addons=null,$addons_2=null){
 
         /*DATOS DEL ESTUDIANTE*/
@@ -192,7 +194,7 @@
                     $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
                     $consulta=$coneccionBD->query($sql);
                     
-                    $sql="INSERT INTO pre_sta(stu_doc_typ,stu_doc_num,reg_dat) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$upd_dat')";
+                    $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$upd_dat')";
                     $consulta=$coneccionBD->query($sql);
                 /**/
 
@@ -337,18 +339,6 @@
                 $array=[];
                 while($item=mysqli_fetch_assoc($consulta)){
                     array_push($array,$item['eps_nam']);
-                }
-                return $array;
-
-            break;
-
-            case "obtener_ars":
-
-                $sql="SELECT ars_nam FROM ars";
-                $consulta=$coneccionBD->query($sql);
-                $array=[];
-                while($item=mysqli_fetch_assoc($consulta)){
-                    array_push($array,$item['ars_nam']);
                 }
                 return $array;
 

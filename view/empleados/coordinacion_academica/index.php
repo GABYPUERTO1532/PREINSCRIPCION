@@ -25,7 +25,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php listar_registros()?>
+                            <?php listar_registros();?>
                         </tbody>
                     </table>
                 </div>
