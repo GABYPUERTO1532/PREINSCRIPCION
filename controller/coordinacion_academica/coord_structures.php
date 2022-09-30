@@ -1,8 +1,9 @@
 <?php
 
+    //Traer El modelo de
     include "C://xampp/htdocs/PREINSCRIPCION/model/coordinacion_academica.php";
 
-    $consulta=interaccion_bd("consultar_listado");
+    $consulta=crear_actualizar("consultar_listado");
 
     function listar_registros(){
         

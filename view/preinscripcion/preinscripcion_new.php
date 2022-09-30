@@ -1,7 +1,7 @@
 <?php 
   session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
-  $_SESSION['titulo']=$_GET['db_op'];
+  $_SESSION['db_op']=$_GET['db_op'];
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_new.php");

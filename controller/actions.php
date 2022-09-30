@@ -3,11 +3,11 @@
     
     switch ($action){
         case "create" OR "update":
-            interaccion_bd($action);
+            crear_actualizar($action);
         break;
 
         case "matricula_verificada" OR "matricula_rechazada":
-            interaccion_bd($action,$stu_doc_num);
+            crear_actualizar($action,$stu_doc_num);
         break;
 
     }

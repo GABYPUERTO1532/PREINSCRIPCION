@@ -4,33 +4,33 @@
     
     include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
 
-    $departaments=interaccion_bd("obtener_departamentos");
+    $departaments=crear_actualizar("obtener_departamentos");
 
-    $cities=interaccion_bd("obtener_ciudades");
+    $cities=crear_actualizar("obtener_ciudades");
 
-    $stu_doc_typ=interaccion_bd("obtener_tipo_documento");
+    $stu_doc_typ=crear_actualizar("obtener_tipo_documento");
     unset($stu_doc_typ['0'],$stu_doc_typ['1'],$stu_doc_typ['2'],$stu_doc_typ['3']);
 
-    $locations=interaccion_bd("obtener_localidades");
+    $locations=crear_actualizar("obtener_localidades");
 
-    $neighborhood=interaccion_bd("obtener_barrios");
+    $neighborhood=crear_actualizar("obtener_barrios");
 
-    $sisben=interaccion_bd("obtener_categoria_sisben");
+    $sisben=crear_actualizar("obtener_categoria_sisben");
 
-    $eps=interaccion_bd("obtener_eps");
+    $eps=crear_actualizar("obtener_eps");
 
-    $blood_group=interaccion_bd("obtener_grupo_sanguineo");
+    $blood_group=crear_actualizar("obtener_grupo_sanguineo");
 
-    $rh=interaccion_bd("obtener_factor_rh");
+    $rh=crear_actualizar("obtener_factor_rh");
 
-    $fam_doc_typ=interaccion_bd("obtener_tipo_documento");
+    $fam_doc_typ=crear_actualizar("obtener_tipo_documento");
     unset($fam_doc_typ['5'],$fam_doc_typ['6']);
 
     $yes_no=['Si','No'];
 
     $ci=['N/A','0-4','5-19','20-34','35-54','55-69','70-84','85-99','100','101-114','115-129','130-139','140-154','155-174','175-184','185-201'];
 
-    $grades=interaccion_bd("obtener_grados");
+    $grades=crear_actualizar("obtener_grados");
     
     function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
         
