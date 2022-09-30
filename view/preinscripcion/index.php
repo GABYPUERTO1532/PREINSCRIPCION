@@ -1,5 +1,5 @@
 <?php 
-  session_start();
+
   $_SESSION['titulo']="Proceso Preinscripcion";
   $_SESSION['db_op']=$_GET['db_op'];
 
@@ -12,7 +12,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/action.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
+    <form action="../../controller/actions.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

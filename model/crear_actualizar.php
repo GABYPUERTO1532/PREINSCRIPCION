@@ -157,7 +157,7 @@
                 case "create":
 
                     //Ingreso informacion Estudiante
-                    $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',TRUE,'$date','$date')");
+                    $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',FALSE,'$date','$date')");
                     $coneccionBD->query($sql);
 
                     //Ingreso informacion Madre
@@ -227,7 +227,7 @@
                 case "update":
 
                     //Actualizacion informacion Estudiante
-                    $sql=("UPDATE students SET firs_sur='$post_firs_sur', sec_sur='$post_sec_sur',firs_nam='$post_firs_nam', sec_nam='$post_sec_nam',dat_bir='$post_dat_bir', stu_cit='$post_stu_cit',stu_dep='$post_stu_dep', doc_typ='$post_stu_doc_typ',exp_cit='$post_exp_cit', stu_add='$post_stu_add',stu_nei='$post_stu_nei', stu_loc='$post_stu_loc',stu_est='$post_stu_est', stu_cat='$post_stu_cat',stu_tel='$post_stu_tel', stu_hob='$post_stu_hob',stu_enf='$post_stu_enf', stu_eps='$post_stu_eps',stu_ars='$post_stu_ars', stu_ips='$post_stu_ips',b_grp='$post_b_grp', rh_fact='$post_rh_fact', pre_stu=TRUE, upd_dat='$date' WHERE doc_num='$post_doc_num'");
+                    $sql=("UPDATE students SET firs_sur='$post_firs_sur', sec_sur='$post_sec_sur',firs_nam='$post_firs_nam', sec_nam='$post_sec_nam',dat_bir='$post_dat_bir', stu_cit='$post_stu_cit',stu_dep='$post_stu_dep', doc_typ='$post_stu_doc_typ',exp_cit='$post_exp_cit', stu_add='$post_stu_add',stu_nei='$post_stu_nei', stu_loc='$post_stu_loc',stu_est='$post_stu_est', stu_cat='$post_stu_cat',stu_tel='$post_stu_tel', stu_hob='$post_stu_hob',stu_enf='$post_stu_enf', stu_eps='$post_stu_eps',stu_ars='$post_stu_ars', stu_ips='$post_stu_ips',b_grp='$post_b_grp', rh_fact='$post_rh_fact', pre_stu=TRUE, upd_dat='$date' WHERE doc_num=$post_doc_num");
                     $coneccionBD->query($sql);
                     
                     //Actualizacion informacion Madre
@@ -243,33 +243,33 @@
                     $coneccionBD->query($sql);
 
                     //Actualizacion informacion "Other_information"
-                    $sql=("UPDATE other_inf SET conf_vic='$post_conf_vic',dis_sit='$post_dis_sit',dis_arm_grp='$post_dis_arm_grp',dem_son='$post_dem_son',exp_cap='$post_exp_cap',iq_sco='$post_iq_sco',ass_tes='$post_ass_tes' WHERE stu_doc_num='$post_doc_num'");
+                    $sql=("UPDATE other_inf SET conf_vic='$post_conf_vic',dis_sit='$post_dis_sit',dis_arm_grp='$post_dis_arm_grp',dem_son='$post_dem_son',exp_cap='$post_exp_cap',iq_sco='$post_iq_sco',ass_tes='$post_ass_tes' WHERE stu_doc_num=$post_doc_num");
                     $coneccionBD->query($sql);
 
                     /*Actualizacion Informacion Educativa*/
 
                         //Registro 1
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_1',sch_yea='$post_sch_yea_1',sch_cit='$post_sch_cit_1',sch_ins='$post_sch_ins_1' WHERE stu_doc_num='$post_doc_num'");
+                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_1',sch_yea='$post_sch_yea_1',sch_cit='$post_sch_cit_1',sch_ins='$post_sch_ins_1' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
 
                         //Registro 2
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_2',sch_yea='$post_sch_yea_2',sch_cit='$post_sch_cit_2',sch_ins='$post_sch_ins_2' WHERE stu_doc_num='$post_doc_num'");
+                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_2',sch_yea='$post_sch_yea_2',sch_cit='$post_sch_cit_2',sch_ins='$post_sch_ins_2' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
 
                         //Registro 3
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_3',sch_yea='$post_sch_yea_3',sch_cit='$post_sch_cit_3',sch_ins='$post_sch_ins_3' WHERE stu_doc_num='$post_doc_num'");
+                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_3',sch_yea='$post_sch_yea_3',sch_cit='$post_sch_cit_3',sch_ins='$post_sch_ins_3' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
                             
                         //Registro 4
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_4',sch_yea='$post_sch_yea_4',sch_cit='$post_sch_cit_4',sch_ins='$post_sch_ins_4' WHERE stu_doc_num='$post_doc_num'");
+                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_4',sch_yea='$post_sch_yea_4',sch_cit='$post_sch_cit_4',sch_ins='$post_sch_ins_4' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
 
                         //Registro 5
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_5',sch_yea='$post_sch_yea_5',sch_cit='$post_sch_cit_5',sch_ins='$post_sch_ins_5' WHERE stu_doc_num='$post_doc_num'");
+                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_5',sch_yea='$post_sch_yea_5',sch_cit='$post_sch_cit_5',sch_ins='$post_sch_ins_5' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
 
                         //Registro 6
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_6',sch_yea='$post_sch_yea_6',sch_cit='$post_sch_cit_6',sch_ins='$post_sch_ins_6' WHERE stu_doc_num='$post_doc_num'");
+                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_6',sch_yea='$post_sch_yea_6',sch_cit='$post_sch_cit_6',sch_ins='$post_sch_ins_6' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
                         
                     /**/
@@ -288,11 +288,11 @@
                 case "confirmar_preinscripcion":
 
                     //En caso de que la preinscricpion sea aceptada, el sistema actualizara el registro del estudiante en la columna "pre_stu" (Estudiante preinscrito) con el valor de TRUE
-                    $sql="UPDATE students SET pre_stu=TRUE WHERE doc_num='$post_doc_num'";
+                    $sql="UPDATE students SET pre_stu=TRUE WHERE doc_num=$post_doc_num";
                     $coneccionBD->query($sql);
 
                     //Una vez actualizada la informacion del estudiante, el sistema borrara el registro enla tabla de "pre_stu" (Estudiantes preinscritos) ya que este proceso ha finalizado correctamente
-                    $sql="DELETE FROM pre_stu WHERE doc_num='$post_doc_num'";
+                    $sql="DELETE FROM pre_stu WHERE stu_doc_num=$post_doc_num";
                     $coneccionBD->query($sql);
 
                 break;

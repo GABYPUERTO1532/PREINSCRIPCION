@@ -1,16 +1,18 @@
 <?php 
-  session_start();
+
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['db_op']=$_GET['db_op'];
+
+  $stu_doc_num=$_GET['stu_doc_num'];
+  $_SESSION['stu_doc_num_cont']=$stu_doc_num;
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
 
-  $_SESSION['stu_doc_num_cont']=$_GET['stu_doc_num'];
-
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="C://xampp/htdocs/PREINSCRIPCION/controller/actions.php" method="post">
+    <form action="../../../controller/actions.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -25,7 +27,7 @@
           <div class="input-group">
 
             <!--Input: firs_sur (Primer apellido)-->
-            <?php estructura("text","Primer Apellido","firs_sur","",'estudiante')?>
+            <?php estructura("text","Primer Apellido","firs_sur","","estudiante")?>
 
             <!--Input: sec_sur (Segundo apellido)-->
             <?php estructura("text","Segundo Apellido","sec_sur","","estudiante")?>
@@ -150,7 +152,7 @@
 
             <!--Input: stu_ars (ARS)-->
             <?php
-              estructura("text","ARS","stu_ars");
+              estructura("text","ARS","stu_ars","","estudiante");
             ?>
 
             <!--Input: stu_ips (IPS)-->
@@ -507,7 +509,7 @@
                 </tr>
 
                 <!--Fila 3-->
-                <tr class="">
+                <tr>
                   <td>
                     <!--Input: sch_grd_3 (Grado escolar 3)-->
                     <?php
@@ -624,9 +626,8 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <input class="oculto" type="text" value="<?php echo($db_op)?>" name="action">
+        <button type="submit" class="btn btn-success">Finalizar Proceso</button>
       </div>
     </form>
   </div>
