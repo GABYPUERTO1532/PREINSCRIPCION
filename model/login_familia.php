@@ -50,11 +50,13 @@
         $resultado=mysqli_num_rows($consulta);
 
         /*
-            En caso de que la consulta haya sido exitosa y se encontrara un UNICO registro, dicha funcion retornara el valor de TRUE, el cual sera usado por el controlador para permitir o no el acceso a las vistas correspondientes
+            En caso de que la consulta haya sido exitosa y se hallan Encontrado entre 1 y 2 registros, dicha funcion retornara el valor de TRUE, el cual sera usado por el controlador para permitir o no el acceso a las vistas correspondientes
+
+            Aclaracion: Se permite que el sistema acepte que dos familiare tengan el mismo numero de documento, ya que en muchos casos no se tiene la informacion del padre o madre del estudiante, por lo cual se repite la informacion.
 
             Tip: En caso de que no se hayan encontrado registros con dicha informacion o aparezcan mas de dos registros simultaneos, la funcion retornada el valor de false, el cual sera usado en la funcion para redirigirlo nuevamente al login y no permitir su ingreso
         */
-        if ($resultado>0){
+        if ($resultado==1 or $resultado==2){
             return TRUE;
         }else{
             return FALSE;
