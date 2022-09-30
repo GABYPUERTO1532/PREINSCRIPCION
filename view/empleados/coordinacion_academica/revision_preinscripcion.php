@@ -3,7 +3,7 @@
   $_SESSION['titulo']="Proceso Preinscripcion";
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
-  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/structures_old.php");
+  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
 
   $_SESSION['stu_doc_num_cont']=$_GET['stu_doc_num'];
 

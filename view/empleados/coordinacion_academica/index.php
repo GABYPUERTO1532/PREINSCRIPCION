@@ -3,7 +3,7 @@
     $_SESSION['titulo']="Listado Preinscripciones";
     
     include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
-    include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/coord_structures.php"; 
+    include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/estructuras_coordinador.php"; 
 ?>
 
     <div class="card">
