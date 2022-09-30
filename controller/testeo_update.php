@@ -1,6 +1,6 @@
 <?php
     include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
-    crear_actualizar("update");
+    consultar_informacion("update");
     header("Location: ../");
     
 ?>

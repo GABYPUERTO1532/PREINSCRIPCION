@@ -10,7 +10,7 @@
         Tip: El objetivo de la estructura "switch" (Segun), es realizar ciertas acciones segun el contenido de x variable.
     
     */
-    function obtener_registro($consulta){
+    function consultar_informacion($consulta){
         global $coneccionBD;
 
         switch ($consulta){

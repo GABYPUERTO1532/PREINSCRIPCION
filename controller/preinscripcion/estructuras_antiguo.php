@@ -2,9 +2,9 @@
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
     $db_op=$_SESSION['db_op'];
 
-    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 
-    $consulta=crear_actualizar("obtener_stu_doc_num");
+    $consulta=consultar_informacion("obtener_stu_doc_num");
 
     while($itmes_consulta=mysqli_fetch_assoc($consulta)){
         if(password_verify($itmes_consulta['doc_num'],$stu_doc_num_cont)){
@@ -12,55 +12,56 @@
         }
     }
 
-    $departaments=crear_actualizar("obtener_departamentos");
+    $departaments=consultar_informacion("obtener_departamentos");
 
-    $cities=crear_actualizar("obtener_ciudades");
+    $cities=consultar_informacion("obtener_ciudades");
 
-    $stu_doc_typ=crear_actualizar("obtener_tipo_documento");
+    $stu_doc_typ=consultar_informacion("obtener_tipo_documento");
     unset($stu_doc_typ['0'],$stu_doc_typ['1'],$stu_doc_typ['2'],$stu_doc_typ['3']);
 
-    $locations=crear_actualizar("obtener_localidades");
+    $locations=consultar_informacion("obtener_localidades");
 
-    $neighborhood=crear_actualizar("obtener_barrios");
+    $neighborhood=consultar_informacion("obtener_barrios");
 
-    $sisben=crear_actualizar("obtener_categoria_sisben");
+    $sisben=consultar_informacion("obtener_categoria_sisben");
 
-    $eps=crear_actualizar("obtener_eps");
+    $eps=consultar_informacion("obtener_eps");
 
-    $blood_group=crear_actualizar("obtener_grupo_sanguineo");
+    $blood_group=consultar_informacion("obtener_grupo_sanguineo");
 
-    $rh=crear_actualizar("obtener_factor_rh");
+    $rh=consultar_informacion("obtener_factor_rh");
 
-    $fam_doc_typ=crear_actualizar("obtener_tipo_documento");
+    $fam_doc_typ=consultar_informacion("obtener_tipo_documento");
     unset($fam_doc_typ['5'],$fam_doc_typ['6']);
 
     $yes_no=['Si','No'];
 
     $ci=['N/A','0-4','5-19','20-34','35-54','55-69','70-84','85-99','100','101-114','115-129','130-139','140-154','155-174','175-184','185-201'];
 
-    $grades=crear_actualizar("obtener_grados");
+    $grades=consultar_informacion("obtener_grados");
 
-    $stu_info=crear_actualizar("obtener_info_estudiante",$stu_doc_num);   
+    $stu_info=consultar_informacion("obtener_info_estudiante",$stu_doc_num);   
+    print_r($stu_info);
 
-    $moth_info=crear_actualizar("obtener_info_familiar",$stu_doc_num,"Madre");
+    $moth_info=consultar_informacion("obtener_info_familiar",$stu_doc_num,"Madre");
 
-    $fath_info=crear_actualizar("obtener_info_familiar",$stu_doc_num,"Padre");
+    $fath_info=consultar_informacion("obtener_info_familiar",$stu_doc_num,"Padre");
 
-    $acu_info=crear_actualizar("obtener_info_familiar",$stu_doc_num,"Acudiente");
+    $acu_info=consultar_informacion("obtener_info_familiar",$stu_doc_num,"Acudiente");
 
-    $oth_inf=crear_actualizar("obtener_other_inf",$stu_doc_num);
+    $oth_inf=consultar_informacion("obtener_other_inf",$stu_doc_num);
 
-    $edu_inf_1=crear_actualizar("obtener_edu_info",$stu_doc_num,"edu_inf_1");
+    $edu_inf_1=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_1");
 
-    $edu_inf_2=crear_actualizar("obtener_edu_info",$stu_doc_num,"edu_inf_2");
+    $edu_inf_2=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_2");
 
-    $edu_inf_3=crear_actualizar("obtener_edu_info",$stu_doc_num,"edu_inf_3");
+    $edu_inf_3=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_3");
 
-    $edu_inf_4=crear_actualizar("obtener_edu_info",$stu_doc_num,"edu_inf_4");
+    $edu_inf_4=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_4");
 
-    $edu_inf_5=crear_actualizar("obtener_edu_info",$stu_doc_num,"edu_inf_5");
+    $edu_inf_5=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_5");
 
-    $edu_inf_6=crear_actualizar("obtener_edu_info",$stu_doc_num,"edu_inf_6");
+    $edu_inf_6=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_6");
     
     function seleccionar_col_array($array,$col_nam){
 

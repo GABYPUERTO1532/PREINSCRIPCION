@@ -2,35 +2,35 @@
 
     $db_op=$_SESSION['db_op'];
     
-    include "C://xampp/htdocs/PREINSCRIPCION/model/preinscripcion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 
-    $departaments=crear_actualizar("obtener_departamentos");
+    $departaments=consultar_informacion("obtener_departamentos");
 
-    $cities=crear_actualizar("obtener_ciudades");
+    $cities=consultar_informacion("obtener_ciudades");
 
-    $stu_doc_typ=crear_actualizar("obtener_tipo_documento");
+    $stu_doc_typ=consultar_informacion("obtener_tipo_documento");
     unset($stu_doc_typ['0'],$stu_doc_typ['1'],$stu_doc_typ['2'],$stu_doc_typ['3']);
 
-    $locations=crear_actualizar("obtener_localidades");
+    $locations=consultar_informacion("obtener_localidades");
 
-    $neighborhood=crear_actualizar("obtener_barrios");
+    $neighborhood=consultar_informacion("obtener_barrios");
 
-    $sisben=crear_actualizar("obtener_categoria_sisben");
+    $sisben=consultar_informacion("obtener_categoria_sisben");
 
-    $eps=crear_actualizar("obtener_eps");
+    $eps=consultar_informacion("obtener_eps");
 
-    $blood_group=crear_actualizar("obtener_grupo_sanguineo");
+    $blood_group=consultar_informacion("obtener_grupo_sanguineo");
 
-    $rh=crear_actualizar("obtener_factor_rh");
+    $rh=consultar_informacion("obtener_factor_rh");
 
-    $fam_doc_typ=crear_actualizar("obtener_tipo_documento");
+    $fam_doc_typ=consultar_informacion("obtener_tipo_documento");
     unset($fam_doc_typ['5'],$fam_doc_typ['6']);
 
     $yes_no=['Si','No'];
 
     $ci=['N/A','0-4','5-19','20-34','35-54','55-69','70-84','85-99','100','101-114','115-129','130-139','140-154','155-174','175-184','185-201'];
 
-    $grades=crear_actualizar("obtener_grados");
+    $grades=consultar_informacion("obtener_grados");
     
     function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
         
@@ -134,7 +134,7 @@
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
-                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
+                            class='form-control' name='$nombre_input' id='$nombre_input' required aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
                             min='0'
                             $addons>
                     </div>
@@ -185,7 +185,7 @@
                 echo("
                     <div class='mb-3 col-md-9 input'>
                         <input type='$tipo_input'
-                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
+                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
                             $addons
                         >
                     </div>

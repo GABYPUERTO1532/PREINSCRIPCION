@@ -21,3 +21,7 @@ label{
 input{
     text-align: center;
 }
+
+.oculto{
+    display: none;
+}

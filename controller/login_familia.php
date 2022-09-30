@@ -15,7 +15,7 @@
     }else{
 
         //En caso que no se haya autorizado el inicio de sesion al usuario, ese sera redirigido nuevamente al login
-        header("Location: ../view/preinscripcion/preinscripcion_new.php?db_op=create");
+        header("Location: ../view/preinscripcion/estudiante_nuevo.php?db_op=create");
     }
 
 ?>

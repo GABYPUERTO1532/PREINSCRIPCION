@@ -334,4 +334,10 @@
 
     /**/
 
+    /*Acciones Formularios*/
+
+        $action=obtener_post("action");
+
+    /**/
+
 ?>
