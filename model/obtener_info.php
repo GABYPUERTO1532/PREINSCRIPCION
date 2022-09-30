@@ -1,6 +1,6 @@
 <?php
 
-    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    $coneccionBD=mysqli_connect("localhost","root","","preinscripcion");
 
     function obtener_info($tipo_accion,$stu_doc_num,$nom_reg=null){
 
