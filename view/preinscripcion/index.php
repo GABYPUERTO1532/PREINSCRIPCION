@@ -1,10 +1,9 @@
 <?php 
-
+  session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
-  $_SESSION['db_op']=$_GET['db_op'];
-
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
+  $db_op=$_GET['db_op'];
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
@@ -12,7 +11,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
+    <form action="../../controller/action.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -27,7 +26,7 @@
           <div class="input-group">
 
             <!--Input: firs_sur (Primer apellido)-->
-            <?php estructura("text","Primer Apellido","firs_sur","","estudiante")?>
+            <?php estructura("text","Primer Apellido","firs_sur","estudiante")?>
 
             <!--Input: sec_sur (Segundo apellido)-->
             <?php estructura("text","Segundo Apellido","sec_sur","","estudiante")?>
@@ -626,6 +625,7 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
+        <?php estructura("text","Numero de documento","stu_doc_num","","estudiante","disabled style='display:none;'")?>
         <input class="oculto" type="text" value="<?php echo($db_op)?>" name="action">
         <button type="submit" class="btn btn-success">Finalizar Proceso</button>
       </div>

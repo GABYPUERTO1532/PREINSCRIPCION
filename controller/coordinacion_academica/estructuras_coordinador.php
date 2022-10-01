@@ -24,7 +24,7 @@
                     <td>$stu_doc_typ</td>
                     <td>$stu_doc_num</td>
                     <td>$dat_pre</td>
-                    <td><a name='' id='' class='btn btn-primary' href='../../preinscripcion/index.php?stu_doc_num=$etc&db_op=confirmar_preinscripcion' role='button'>Button</a></td>
+                    <td><a name='' id='' class='btn btn-primary' href='../../preinscripcion/index.php?stu_doc_num=$etc&addons=1' role='button'>Button</a></td>
                 </tr>
             ");
 
