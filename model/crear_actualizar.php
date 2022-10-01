@@ -1,6 +1,8 @@
 <?php
 
     include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
+    echo($post_stu_cit);
 
     /*
     
