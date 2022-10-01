@@ -1,8 +1,8 @@
 <?php
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
-    $db_op=$_SESSION['db_op'];
 
     include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
+    
     include "C://xampp/htdocs/PREINSCRIPCION/model/obtener_info.php";
 
     $consulta=consultar_informacion("obtener_stu_doc_num");

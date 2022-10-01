@@ -10,7 +10,7 @@
   <!-- Bootstrap CSS v5.2.0-beta1 -->
   <link rel="stylesheet" href="../../../config/library/bootstrap-5.0.2-dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="../../addons/style.css">
+  <link rel="stylesheet" href="../../../addons/style.css">
 
 </head>
 

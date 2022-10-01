@@ -1,14 +1,13 @@
 <?php 
   session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
-  $_SESSION['db_op']=$_GET['db_op'];
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php");
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php" method="post">
+    <form action="../../controller/actions.php?action='create'" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -622,7 +621,6 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <input class="oculto" type="text" value="<?php echo($db_op)?>" name="action">
         <button type="submit" class="btn btn-success">Finalizar Proceso</button>
       </div>
     </form>

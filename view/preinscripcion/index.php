@@ -1,7 +1,6 @@
 <?php 
 
   $_SESSION['titulo']="Proceso Preinscripcion";
-  $_SESSION['db_op']=$_GET['db_op'];
 
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
@@ -12,7 +11,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
+    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -626,8 +625,7 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <input class="oculto" type="text" value="<?php echo($db_op)?>" name="action">
-        <button type="submit" class="btn btn-success">Finalizar Proceso</button>
+        <button type="submit" class="btn btn-success">Finalizar Preinscripcion</button>
       </div>
     </form>
   </div>

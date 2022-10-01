@@ -304,7 +304,7 @@
                     $coneccionBD->query($sql);
 
                     //Una vez actualizada la informacion del estudiante, el sistema borrara el registro enla tabla de "pre_stu" (Estudiantes preinscritos) ya que este proceso ha finalizado correctamente
-                    $sql="DELETE FROM pre_stu WHERE doc_num='$post_doc_num'";
+                    $sql="DELETE FROM pre_stu WHERE stu_doc_num='$post_doc_num'";
                     $coneccionBD->query($sql);
 
                 break;

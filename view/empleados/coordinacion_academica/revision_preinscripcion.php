@@ -1,12 +1,11 @@
 <?php 
 
   $_SESSION['titulo']="Proceso Preinscripcion";
-  $_SESSION['db_op']=$_GET['db_op'];
 
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
+  include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
 
 ?>
@@ -626,8 +625,9 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <input class="oculto" type="text" value="<?php echo($db_op)?>" name="action">
-        <button type="submit" class="btn btn-success">Finalizar Proceso</button>
+        <a class="btn btn-danger" href="../../../controller/actions.php?action=rechazar_preinscripcion&stu_doc_num=<?php echo($stu_doc_num);?>" role="button">Rechazar Preinscripcion</a>
+
+        <a class="btn btn-success" href="../../../controller/actions.php?action=confirmar_preinscripcion&stu_doc_num=<?php echo($stu_doc_num);?>" role="button">Confirmar Preinscripcion</a>
       </div>
     </form>
   </div>
