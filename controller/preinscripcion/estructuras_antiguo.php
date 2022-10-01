@@ -3,6 +3,7 @@
     $db_op=$_SESSION['db_op'];
 
     include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/obtener_info.php";
 
     $consulta=consultar_informacion("obtener_stu_doc_num");
 
@@ -40,28 +41,27 @@
 
     $grades=consultar_informacion("obtener_grados");
 
-    $stu_info=consultar_informacion("obtener_info_estudiante",$stu_doc_num);   
-    print_r($stu_info);
+    $stu_info=obtener_info("obtener_info_estudiante",$stu_doc_num);   
 
-    $moth_info=consultar_informacion("obtener_info_familiar",$stu_doc_num,"Madre");
+    $moth_info=obtener_info("obtener_info_familiar",$stu_doc_num,"Madre");
+    
+    $fath_info=obtener_info("obtener_info_familiar",$stu_doc_num,"Padre");
 
-    $fath_info=consultar_informacion("obtener_info_familiar",$stu_doc_num,"Padre");
+    $acu_info=obtener_info("obtener_info_familiar",$stu_doc_num,"Acudiente");
 
-    $acu_info=consultar_informacion("obtener_info_familiar",$stu_doc_num,"Acudiente");
+    $oth_inf=obtener_info("obtener_other_inf",$stu_doc_num);
 
-    $oth_inf=consultar_informacion("obtener_other_inf",$stu_doc_num);
+    $edu_inf_1=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_1");
 
-    $edu_inf_1=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_1");
+    $edu_inf_2=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_2");
 
-    $edu_inf_2=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_2");
+    $edu_inf_3=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_3");
 
-    $edu_inf_3=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_3");
+    $edu_inf_4=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_4");
 
-    $edu_inf_4=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_4");
+    $edu_inf_5=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_5");
 
-    $edu_inf_5=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_5");
-
-    $edu_inf_6=consultar_informacion("obtener_edu_info",$stu_doc_num,"edu_inf_6");
+    $edu_inf_6=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_6");
     
     function seleccionar_col_array($array,$col_nam){
 
