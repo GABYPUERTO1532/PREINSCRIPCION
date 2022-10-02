@@ -11,7 +11,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../../controller/actions.php?stu_doc_num='<?php echo($stu_doc_num);?>'" method="post">
+    <form action="../../../controller/actions.php?stu_doc_num=<?php echo($stu_doc_num);?>" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -625,9 +625,8 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <a class="btn btn-danger" href="../../../controller/actions.php?action=rechazar_preinscripcion&stu_doc_num=<?php echo($stu_doc_num);?>" role="button">Rechazar Preinscripcion</a>
-
-        <a class="btn btn-success" href="../../../controller/actions.php?action=confirmar_preinscripcion&stu_doc_num=<?php echo($stu_doc_num);?>" role="button">Confirmar Preinscripcion</a>
+        <?php estructura("select","Esta Preinscripcion es:","action","actions")?>
+        <button type="submit" class="btn btn-primary">Finalizar Revision</button>
       </div>
     </form>
   </div>

@@ -1,8 +1,6 @@
 <?php
 
     include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
-    include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
-    echo($post_stu_cit);
 
     /*
     
@@ -273,6 +271,13 @@
                         //Registro 6
                         $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_6',sch_yea='$post_sch_yea_6',sch_cit='$post_sch_cit_6',sch_ins='$post_sch_ins_6' WHERE stu_doc_num=$post_doc_num");
                         $coneccionBD->query($sql);
+
+                        /*Guardado Registro Preinscripcion*/
+
+                            $sql="INSERT INTO pre_stu (stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_doc_num','$date')";
+                            $coneccionBD->query($sql);
+
+                        /**/
                         
                     /**/
 

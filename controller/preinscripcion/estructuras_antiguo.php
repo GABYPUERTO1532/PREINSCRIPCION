@@ -39,6 +39,8 @@
 
     $ci=['N/A','0-4','5-19','20-34','35-54','55-69','70-84','85-99','100','101-114','115-129','130-139','140-154','155-174','175-184','185-201'];
 
+    $actions=['Aceptada/Confirmada','Rechaza/Negada'];
+
     $grades=consultar_informacion("obtener_grados");
 
     $stu_info=obtener_info("obtener_info_estudiante",$stu_doc_num);   
@@ -168,6 +170,7 @@
         global $fam_doc_typ;
         global $yes_no;
         global $ci;
+        global $actions;
 
         $value_select=seleccionar_col_array($array_bd,$nombre_input);
     
@@ -231,6 +234,10 @@
 
                     case "ci":
                         $options=$ci;
+                    break;
+
+                    case "actions":
+                        $options=$actions;
                     break;
 
                     

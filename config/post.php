@@ -336,7 +336,7 @@
 
     /*Acciones Formularios*/
 
-        $action=obtener_post("action");
+        $post_action=obtener_post("action");
 
     /**/
 
