@@ -1,0 +1,27 @@
+*{
+    text-align: center;
+}
+
+section{
+    margin: 12px 0px 12px 0px;
+}
+
+article{
+    margin-top: 20px;
+}
+
+.input{
+    margin: auto;
+}
+
+label{
+    font-weight: bold;
+}
+
+input{
+    text-align: center;
+}
+
+.oculto{
+    display: none;
+}
