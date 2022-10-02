@@ -9,7 +9,7 @@
         Tip: El objetivo de la estructura "switch" (Segun), es realizar ciertas acciones segun el contenido de x variable.
 
     */
-    function crear_actualizar($tipo_accion,$post_doc_num=null){
+    function crear_actualizar($tipo_accion,$post_doc_num=null,$doc_num_moth=null,$doc_num_fath=null,$doc_num_acu=null){
 
         /*DATOS DEL ESTUDIANTE*/
             global $post_firs_sur;
@@ -294,12 +294,28 @@
                 */                    
                 case "confirmar_preinscripcion":
 
-                    //En caso de que la preinscricpion sea aceptada, el sistema actualizara el registro del estudiante en la columna "pre_stu" (Estudiante preinscrito) con el valor de TRUE
-                    $sql="UPDATE students SET pre_stu=TRUE WHERE doc_num=$post_doc_num";
-                    $coneccionBD->query($sql);
-
                     //Una vez actualizada la informacion del estudiante, el sistema borrara el registro enla tabla de "pre_stu" (Estudiantes preinscritos) ya que este proceso ha finalizado correctamente
                     $sql="DELETE FROM pre_stu WHERE stu_doc_num=$post_doc_num";
+                    $coneccionBD->query($sql);
+
+                    //Actualizacion informacion Estudiante
+                    $sql=("UPDATE students SET doc_num='$post_stu_doc_num' WHERE doc_num=$post_doc_num");
+                    $coneccionBD->query($sql);
+
+                    //Actualizacion informacion Estudiante
+                    $sql=("UPDATE familiars SET doc_num='$post_doc_num_moth' WHERE doc_num=$doc_num_moth");
+                    $coneccionBD->query($sql);
+
+                    //Actualizacion informacion Estudiante
+                    $sql=("UPDATE familiars SET doc_num='$post_doc_num_fath' WHERE doc_num=$doc_num_fath");
+                    $coneccionBD->query($sql);
+
+                    //Actualizacion informacion Estudiante
+                    $sql=("UPDATE familiars SET doc_num='$post_doc_num_acu' WHERE doc_num=$doc_num_acu");
+                    $coneccionBD->query($sql);
+
+                    //En caso de que la preinscricpion sea aceptada, el sistema actualizara el registro del estudiante en la columna "pre_stu" (Estudiante preinscrito) con el valor de TRUE
+                    $sql="UPDATE students SET pre_stu=TRUE WHERE doc_num=$post_doc_num";
                     $coneccionBD->query($sql);
 
                 break;

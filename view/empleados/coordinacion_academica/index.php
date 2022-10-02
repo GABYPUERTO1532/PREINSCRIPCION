@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Title</h4>
+            <h4 class="card-title">Lista Estudiantes Preinscritos</h4>
         </div>
         <div class="card-body">
             <form action="" method="post">
