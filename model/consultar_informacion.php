@@ -2,13 +2,10 @@
 
     include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
-
-    /*
-    
+    /*    
         Explicacion: Esta funcion tiene como fin el obtener todos los registros de diferentes tablas, segun la necesidad del sistema, para ello se hace uso de una estructura switch la cual segun el argumento que le introduzcamos a la funcion, esta buscara en una u otra tabla y retornara el correspondiente resultado a dicha consulta.
 
         Tip: El objetivo de la estructura "switch" (Segun), es realizar ciertas acciones segun el contenido de x variable.
-    
     */
     function consultar_informacion($consulta){
         global $coneccionBD;
@@ -26,7 +23,6 @@
                         Tip 2: Cuando el sistema confirma que los datos existen en el sistema, este genera un hash con el numero de documento del estudiante y abre la vista de preinscripcion de estudiante antiguo, donde le pasa una variable llamada "stu_doc_num" la cual tiene como valor el hash del documento del estudiante ingresado en el login (En este caso dicha Variabe es de tipo $_GET).
 
                         Tip 3. Las razones principales por las cuales se usa este metodo de funcionamiento, seran planteadas en el controlador "preinscripcion_antiguo.php"
-                
                 */
                 case "obtener_stu_doc_num":
                 

@@ -2,7 +2,7 @@
     session_start();
     $_SESSION['titulo']="Listado Preinscripciones";
     
-    include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
+    include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php";
     include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/estructuras_coordinador.php"; 
 ?>
 

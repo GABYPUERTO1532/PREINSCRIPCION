@@ -1,6 +1,4 @@
 <?php
-
-    $db_op=$_SESSION['db_op'];
     
     include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 

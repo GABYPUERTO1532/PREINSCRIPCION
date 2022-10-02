@@ -221,6 +221,7 @@
                         $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$date')";
                         $coneccionBD->query($sql);
                     /**/
+                    
 
                 break;
 
@@ -248,28 +249,31 @@
 
                     /*Actualizacion Informacion Educativa*/
 
+                        $sql="DELETE FROM edu_inf WHERE stu_doc_num=$post_doc_num";
+                        $coneccionBD->query($sql);
+
                         //Registro 1
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_1',sch_yea='$post_sch_yea_1',sch_cit='$post_sch_cit_1',sch_ins='$post_sch_ins_1' WHERE stu_doc_num=$post_doc_num");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
                         $coneccionBD->query($sql);
 
                         //Registro 2
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_2',sch_yea='$post_sch_yea_2',sch_cit='$post_sch_cit_2',sch_ins='$post_sch_ins_2' WHERE stu_doc_num=$post_doc_num");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
                         $coneccionBD->query($sql);
 
                         //Registro 3
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_3',sch_yea='$post_sch_yea_3',sch_cit='$post_sch_cit_3',sch_ins='$post_sch_ins_3' WHERE stu_doc_num=$post_doc_num");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
                         $coneccionBD->query($sql);
-                            
+
                         //Registro 4
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_4',sch_yea='$post_sch_yea_4',sch_cit='$post_sch_cit_4',sch_ins='$post_sch_ins_4' WHERE stu_doc_num=$post_doc_num");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
                         $coneccionBD->query($sql);
 
                         //Registro 5
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_5',sch_yea='$post_sch_yea_5',sch_cit='$post_sch_cit_5',sch_ins='$post_sch_ins_5' WHERE stu_doc_num=$post_doc_num");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
                         $coneccionBD->query($sql);
 
                         //Registro 6
-                        $sql=("UPDATE edu_inf SET sch_grd='$post_sch_grd_6',sch_yea='$post_sch_yea_6',sch_cit='$post_sch_cit_6',sch_ins='$post_sch_ins_6' WHERE stu_doc_num=$post_doc_num");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
                         $coneccionBD->query($sql);
 
                         /*Guardado Registro Preinscripcion*/

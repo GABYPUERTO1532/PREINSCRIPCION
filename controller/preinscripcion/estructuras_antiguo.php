@@ -52,18 +52,6 @@
     $acu_info=obtener_info("obtener_info_familiar",$stu_doc_num,"Acudiente");
 
     $oth_inf=obtener_info("obtener_other_inf",$stu_doc_num);
-
-    $edu_inf_1=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_1");
-
-    $edu_inf_2=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_2");
-
-    $edu_inf_3=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_3");
-
-    $edu_inf_4=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_4");
-
-    $edu_inf_5=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_5");
-
-    $edu_inf_6=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_6");
     
     function seleccionar_col_array($array,$col_nam){
 
@@ -72,12 +60,6 @@
         global $fath_info;
         global $acu_info;
         global $oth_inf;
-        global $edu_inf_1;
-        global $edu_inf_2;
-        global $edu_inf_3;
-        global $edu_inf_4;
-        global $edu_inf_5; 
-        global $edu_inf_6;
 
         switch ($array){
             
@@ -101,36 +83,6 @@
             case "oth_inf":
                 return $oth_inf[$col_nam];
 
-            break;
-
-            case "edu_inf_1":
-                $col_nam=substr($col_nam,0,-2);
-                return $edu_inf_1[$col_nam];
-            break;
-
-            case "edu_inf_2":
-                $col_nam=substr($col_nam,0,-2);
-                return $edu_inf_2[$col_nam];
-            break;
-
-            case "edu_inf_3":
-                $col_nam=substr($col_nam,0,-2);
-                return $edu_inf_3[$col_nam];
-            break;
-
-            case "edu_inf_4":
-                $col_nam=substr($col_nam,0,-2);
-                return $edu_inf_4[$col_nam];
-            break;
-
-            case "edu_inf_5":
-                $col_nam=substr($col_nam,0,-2);
-                return $edu_inf_5[$col_nam];
-            break;
-
-            case "edu_inf_6":
-                $col_nam=substr($col_nam,0,-2);
-                return $edu_inf_6[$col_nam];
             break;
 
             case "madre" OR "padre" OR "acudiente":
@@ -279,17 +231,15 @@
         };
     }
 
-    function estructura2($tipo_input,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength='255',$minlenght='1'){
+    function estructura2($tipo_input,$nombre_input,$array_type=null,$addons=null,$maxlength='255',$minlenght='1'){
         global $cities;
         global $grades;
-
-        $value_select=seleccionar_col_array($array_bd,$nombre_input);
     
         switch ($tipo_input){
             case "select":
                 $resultado=("
                     <div class='mb-3 col-md-12 input'>
-                        <select class='form-control' name='$nombre_input'' id='$nombre_input' $addons>
+                        <select class='form-control' name='$nombre_input' id='$nombre_input' $addons>
                             <option value=''style='text-align:center;'>Seleccione</option>
                 ");
 
@@ -304,18 +254,12 @@
 
                 }
 
-
                 foreach ($options as $option){
 
-                    if ($option==$value_select){
-                        $resultado.=("
-                            <option value='$option' style='text-align:center;' selected>$option</option>
-                        ");
-                    }else{
-                        $resultado.=("
-                            <option value='$option' style='text-align:center;'>$option</option>
-                        ");
-                    }
+                    $resultado.=("
+                        <option value='$option' style='text-align:center;'>$option</option>
+                    ");
+
                 }
 
                 $resultado.=("
@@ -330,8 +274,7 @@
                 echo("
                     <div class='mb-3 col-md-9 input'>
                         <input type='$tipo_input'
-                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
-                            value='$value_select'
+                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
                             $addons
                         >
                     </div>

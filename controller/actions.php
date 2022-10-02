@@ -30,8 +30,11 @@
         break;
 
         case "Rechaza/Negada":
-            crear_actualizar("rechazar_preinscripcion",$stu_doc_num);
+            $doc_num_moth=$_GET['doc_num_moth'];
+            $doc_num_fath=$_GET['doc_num_fath'];
+            $doc_num_acu=$_GET['doc_num_acu'];
             crear_actualizar("update",$stu_doc_num);
+            crear_actualizar("rechazar_preinscripcion",$stu_doc_num,$doc_num_moth,$doc_num_fath,$doc_num_acu);
             header("Location: ../view/empleados/coordinacion_academica/");
         break;
     }

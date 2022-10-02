@@ -540,7 +540,7 @@
                   <td>
                     <!--Input: sch_grd_4 (Grado escolar 4)-->
                     <?php
-                      estructura2('select','sch_grd_4',"grades","edu_inf_4");
+                      estructura2('select','sch_grd_4',"grades");
                     ?>
                   </td>
                   <td>
@@ -614,7 +614,7 @@
                   <td>
                     <!--Input: edu_ins_6 (Instituto donde fue cursado 6)-->
                     <?php
-                    estructura2('text','sch_ins_6',"","edu_inf_6");
+                      estructura2('text','sch_ins_6',"","edu_inf_6");
                     ?>
                   </td>
                 </tr>
