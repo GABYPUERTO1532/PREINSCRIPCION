@@ -120,7 +120,7 @@
 
             <!--Input: stu_tel (Telefono)-->
             <?php
-              estructura("text","Telefono","stu_tel","","","10");
+              estructura("text","Telefono Celular","stu_tel","","","10");
             ?>
 
             <!--Input: stu_hob (Aficiones o Hobbies)-->
