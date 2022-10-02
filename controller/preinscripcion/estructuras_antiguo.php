@@ -51,6 +51,8 @@
 
     $oth_inf=obtener_info("obtener_other_inf",$stu_doc_num);
 
+    $ghost_array=['stu_doc_num'=>'','sch_grd'=>'','sch_cit'=>'','sch_ins'=>''];
+
     $edu_inf_1=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_1");
 
     $edu_inf_2=obtener_info("obtener_edu_info",$stu_doc_num,"edu_inf_2");
@@ -152,8 +154,11 @@
         }
     }
 
+    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength=null,$minlenght='1'){
 
-    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength='255',$minlenght='1'){
+        if($maxlength==null){
+            $maxlength='255';
+        }
         
         global $departaments;
         global $cities;
@@ -263,7 +268,8 @@
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
-                            class='form-control' name='$nombre_input' id='$nombre_input' aria-describedby='helpId' required maxlength='$maxlength' minlenght='$minlenght'
+                            class='form-control' name='$nombre_input' id='$nombre_input' 
+                            maxlength='$maxlength' aria-describedby='helpId' required minlenght='$minlenght'
                             min='0' value='$value_select'
                             $addons>
                     </div>

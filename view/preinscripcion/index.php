@@ -70,7 +70,7 @@
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante"," min='1000000000' disabled")?>
+            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante","min='1000000000' disabled")?>
 
           </div>
 
@@ -102,12 +102,12 @@
 
             <!--Input: stu_neig (Barrio)-->
             <?php
-              estructura("text","Barrio","stu_nei","","estudiante");
+              estructura("text","Barrio","stu_nei","","estudiante","","255");
             ?>
 
             <!--Input: stu_est (Estrato)-->
             <?php
-              estructura("number","Estrato","stu_est","","estudiante");
+              estructura("number","Estrato","stu_est","","estudiante","max='6'");
             ?>
 
             <!--Input: stu_cat (Categoria sisben)-->
@@ -124,7 +124,7 @@
 
             <!--Input: stu_tel (Telefono)-->
             <?php
-              estructura("number","Telefono","stu_tel","","estudiante");
+              estructura("text","Telefono Celular","stu_tel","","estudiante","","10");
             ?>
 
             <!--Input: stu_hob (Aficiones o Hobbies)-->
@@ -211,11 +211,11 @@
           <div class="input-group">
 
             <!--Input: fam_land_moth (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_moth","","madre")?>
+            <?php estructura("text","Telefono fijo","fam_land_moth","","madre","","10")?>
 
             <!--Input: mob_pho_moth (Telefono Celular)-->
             <?php
-              estructura("number","Celular","mob_pho_moth","","madre");
+              estructura("text","Celular","mob_pho_moth","","madre","","13");
             ?>
 
             <!--Input: fam_add_moth (Direccion)-->
@@ -272,11 +272,11 @@
           <div class="input-group">
 
             <!--Input: fam_land_fath (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_fath","","padre")?>
+            <?php estructura("number","Telefono fijo","fam_land_fath","","padre","","10")?>
 
             <!--Input: mob_pho_fath (Telefono Celular)-->
             <?php
-              estructura("number","Celular","mob_pho_fath","","padre");
+              estructura("number","Celular","mob_pho_fath","","padre","","13");
             ?>
 
             <!--Input: fam_add_fath (Direccion)-->
@@ -332,11 +332,11 @@
           <div class="input-group">
 
             <!--Input: fam_land_acu (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_acu","","acudiente")?>
+            <?php estructura("number","Telefono fijo","fam_land_acu","","acudiente","","10")?>
 
             <!--Input: mob_pho_acu (Numero Telefonico)-->
             <?php
-              estructura("number","Celular","mob_pho_acu","","acudiente");
+              estructura("number","Celular","mob_pho_acu","","acudiente","","13");
             ?>
 
             <!--Input: fam_add_acu (Direccion)-->
