@@ -102,7 +102,7 @@
 
             <!--Input: stu_neig (Barrio)-->
             <?php
-              estructura("select","Barrio","stu_nei","neighborhood","estudiante");
+              estructura("text","Barrio","stu_nei","","estudiante");
             ?>
 
             <!--Input: stu_est (Estrato)-->
@@ -540,7 +540,7 @@
                   <td>
                     <!--Input: sch_grd_4 (Grado escolar 4)-->
                     <?php
-                      estructura2('select','sch_grd_4',"grades");
+                      estructura2('select','sch_grd_4',"grades","edu_inf_4");
                     ?>
                   </td>
                   <td>

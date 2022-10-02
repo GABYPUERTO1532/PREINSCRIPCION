@@ -269,13 +269,13 @@
                             $coneccionBD->query($sql);
                         }
 
-
-
                         if($post_sch_grd_4<>""){
                             //Registro 4
                             $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
                             $coneccionBD->query($sql);
                         }
+
+                        echo($post_sch_grd_4);
 
                         if($post_sch_grd_5<>""){
                             //Registro 5
