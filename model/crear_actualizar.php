@@ -253,19 +253,21 @@
                         $coneccionBD->query($sql);
 
                         //Registro 1
-                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
+                        $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
                         $coneccionBD->query($sql);
+
+
 
                         if($post_sch_grd_2<>""){
                             //Registro 2
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
+                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
                             $coneccionBD->query($sql);
                         }
 
                         if($post_sch_grd_3<>""){
 
                             //Registro 3
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
+                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
                             $coneccionBD->query($sql);
                         }
 
@@ -273,19 +275,19 @@
 
                         if($post_sch_grd_4<>""){
                             //Registro 4
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
+                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
                             $coneccionBD->query($sql);
                         }
 
                         if($post_sch_grd_5<>""){
                             //Registro 5
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
+                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
                             $coneccionBD->query($sql);
                         }
 
                         if($post_sch_grd_6<>""){
                             //Registro 6
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
+                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
                             $coneccionBD->query($sql);
                         }
                         
