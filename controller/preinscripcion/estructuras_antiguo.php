@@ -22,8 +22,6 @@
 
     $locations=consultar_informacion("obtener_localidades");
 
-    $neighborhood=consultar_informacion("obtener_barrios");
-
     $sisben=consultar_informacion("obtener_categoria_sisben");
 
     $eps=consultar_informacion("obtener_eps");
@@ -161,7 +159,6 @@
         global $cities;
         global $stu_doc_typ;
         global $locations;
-        global $neighborhood;
         global $sisben;
         global $eps;
         global $ars;
@@ -198,10 +195,6 @@
 
                     case "locations":
                         $options=$locations;
-                    break;
-
-                    case "neighborhood":
-                        $options=$neighborhood;
                     break;
 
                     case "sisben":

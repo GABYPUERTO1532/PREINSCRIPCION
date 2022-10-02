@@ -1,9 +1,15 @@
 <?php
 
     //Funcion: Obtener el valor de $_POST['nombre_input'] y luego debe retornarlo para ser guardado en la varibale de destino, en caso que dicha clave de POST no este defnido retornada vacio
-    function obtener_post($nombre_input){
+    function obtener_post($nombre_input,$strtoupper=null){
         if(isset($_POST[$nombre_input])){
-            return $_POST[$nombre_input];
+            if($strtoupper==TRUE){
+                $tmp=strtoupper($_POST[$nombre_input]);
+                return $tmp;
+            }else{
+                return $_POST[$nombre_input];
+            }
+
         }else{
             return null;
         }
@@ -46,16 +52,16 @@
         /*INFORMACION ESTUDIANTE*/
 
             //Input firs_sur (Primer Apellido Estudiante)
-            $post_firs_sur=obtener_post("firs_sur");
+            $post_firs_sur=obtener_post("firs_sur",true);
 
             //Input sec_sur (Segundo Apellido Estudiante)
-            $post_sec_sur=obtener_post("sec_sur");
+            $post_sec_sur=obtener_post("sec_sur",true);
 
             //Input firs_nam (Primer Nombre Estudiante)
-            $post_firs_nam=obtener_post("firs_nam");
+            $post_firs_nam=obtener_post("firs_nam",true);
 
             //Input sec_nam (Segundo Nombre Estudiante)
-            $post_sec_nam=obtener_post("sec_nam");
+            $post_sec_nam=obtener_post("sec_nam",true);
 
             //Input dat_bir (Fecha de Nacimiento Estudiante)
             $post_dat_bir=obtener_post("dat_bir");
@@ -76,13 +82,13 @@
             $post_exp_cit=obtener_post("exp_cit");
 
             //Input stu_add (Direccion de vivienda estudiante)
-            $post_stu_add=obtener_post("stu_add");
+            $post_stu_add=obtener_post("stu_add",true);
 
             //Input stu_loc (Localidad de vivienda estudiante)
             $post_stu_loc=obtener_post("stu_loc");
 
             //Input stu_nei (Barrio de vivienda estudiante)
-            $post_stu_nei=obtener_post("stu_nei");
+            $post_stu_nei=obtener_post("stu_nei",true);
 
             //Input stu_est (Estrato de vivienda estudiante)
             $post_stu_est=obtener_post("stu_est");
@@ -94,19 +100,19 @@
             $post_stu_tel=obtener_post("stu_tel");
 
             //Input stu_hob (Hobbies del Estudiante)
-            $post_stu_hob=obtener_post("stu_hob");
+            $post_stu_hob=obtener_post("stu_hob",true);
 
             //Input stu_enf (Enfermedades del Estudiante)
-            $post_stu_enf=obtener_post("stu_enf");
+            $post_stu_enf=obtener_post("stu_enf",true);
 
             //Input stu_eps (EPS del Estudiante)
             $post_stu_eps=obtener_post("stu_eps");
 
             //Input stu_ars (ARS del Estudiante)
-            $post_stu_ars=obtener_post("stu_ars");
+            $post_stu_ars=obtener_post("stu_ars",true);
 
             //Input stu_ips (IPS del Estudiante)
-            $post_stu_ips=obtener_post("stu_ips");
+            $post_stu_ips=obtener_post("stu_ips",true);
 
             //Input b_grp (Grupo Sanguineo del Estudiante)
             $post_b_grp=obtener_post("b_grp");
@@ -121,7 +127,7 @@
             /*INFORMACION MADRE*/
 
                 //Input fam_nam_moth (Nombre Familiar (Madre))
-                $post_fam_nam_moth=obtener_post("fam_nam_moth");
+                $post_fam_nam_moth=obtener_post("fam_nam_moth",true);
 
                 //Input doc_typ_moth (Tipo de documento del familiar (Madre))
                 $post_doc_typ_moth=obtener_post("doc_typ_moth");
@@ -139,7 +145,7 @@
                 $post_fam_add_moth=obtener_post("fam_add_moth");
 
                 //Input fam_ocu_moth (Ocupacion del Familiar (Madre))
-                $post_fam_ocu_moth=obtener_post("fam_ocu_moth");
+                $post_fam_ocu_moth=obtener_post("fam_ocu_moth",true);
 
                 //Input fam_ema_moth (Correo Electronico del Familiar (Madre))
                 $post_fam_ema_moth=obtener_post("fam_ema_moth");
@@ -149,7 +155,7 @@
             /*INFORMACION PADRE*/
 
                 //Input fam_nam_fath (Nombre Familiar (Padre))
-                $post_fam_nam_fath=obtener_post("fam_nam_fath");
+                $post_fam_nam_fath=obtener_post("fam_nam_fath",true);
 
                 //Input doc_typ_fath (Tipo de documento del familiar (Padre))
                 $post_doc_typ_fath=obtener_post("doc_typ_fath");
@@ -167,7 +173,7 @@
                 $post_fam_add_fath=obtener_post("fam_add_fath");
 
                 //Input fam_ocu_fath (Ocupacion del Familiar (Padre))
-                $post_fam_ocu_fath=obtener_post("fam_ocu_fath");
+                $post_fam_ocu_fath=obtener_post("fam_ocu_fath",true);
 
                 //Input fam_ema_fath (Correo Electronico del Familiar (Padre))
                 $post_fam_ema_fath=obtener_post("fam_ema_fath");
@@ -177,7 +183,7 @@
             /*INFORMACION ACUDIENTE*/
 
                 //Input fam_nam_acu (Nombre Familiar (Acudiente))
-                $post_fam_nam_acu=obtener_post("fam_nam_acu");
+                $post_fam_nam_acu=obtener_post("fam_nam_acu",true);
 
                 //Input doc_typ_acu (Tipo de documento del familiar (Acudiente))
                 $post_doc_typ_acu=obtener_post("doc_typ_acu");
@@ -189,13 +195,13 @@
                 $post_fam_land_acu=obtener_post("fam_land_acu");
 
                 //Input mob_pho_acu (Numero Telefonico del Familiar (Acudiente))
-                $post_mob_pho_acu=obtener_post("mob_pho_acu");
+                $post_mob_pho_acu=obtener_post("mob_pho_acu",true);
 
                 //Input fam_add_acu (Direccion de vivienda del Familiar (Acudiente))
                 $post_fam_add_acu=obtener_post("fam_add_acu");
 
                 //Input fam_ocu_acu (Ocupacion del Familiar (Acudiente))
-                $post_fam_ocu_acu=obtener_post("fam_ocu_acu");
+                $post_fam_ocu_acu=obtener_post("fam_ocu_acu",true);
 
                 //Input fam_ema_acu (Correo Electronico del Familiar (Acudiente))
                 $post_fam_ema_acu=obtener_post("fam_ema_acu");
@@ -219,10 +225,10 @@
             $post_dem_son=obtener_post("dem_son");
 
             //Input lim_stu (Limitaciones)
-            $post_lim_stu=obtener_post("lim_stu");
+            $post_lim_stu=obtener_post("lim_stu",true);
 
             //Input exp_cap (Capacidades Excepcionales)
-            $post_exp_cap=obtener_post("exp_cap");
+            $post_exp_cap=obtener_post("exp_cap",true);
 
             //Input iq_sco (Puntaje Coeficiente intelectual)
             $post_iq_sco=obtener_post("iq_sco");
@@ -246,7 +252,7 @@
                 $post_sch_cit_1=obtener_post("sch_cit_1");
 
                 //Input sch_ins_1 (Instituro donde fue cursado 1)
-                $post_sch_ins_1=obtener_post("sch_ins_1");
+                $post_sch_ins_1=obtener_post("sch_ins_1",true);
 
             /**/
 
@@ -262,7 +268,7 @@
                 $post_sch_cit_2=obtener_post("sch_cit_2");
 
                 //Input sch_ins_2 (Instituro donde fue cursado 2)
-                $post_sch_ins_2=obtener_post("sch_ins_2");
+                $post_sch_ins_2=obtener_post("sch_ins_2",true);
 
             /**/
 
@@ -278,7 +284,7 @@
                 $post_sch_cit_3=obtener_post("sch_cit_3");
 
                 //Input sch_ins_3 (Instituro donde fue cursado 3)
-                $post_sch_ins_3=obtener_post("sch_ins_3");
+                $post_sch_ins_3=obtener_post("sch_ins_3",true);
 
             /**/
 
@@ -294,7 +300,7 @@
                 $post_sch_cit_4=obtener_post("sch_cit_4");
 
                 //Input sch_ins_4 (Instituro donde fue cursado 4)
-                $post_sch_ins_4=obtener_post("sch_ins_4");
+                $post_sch_ins_4=obtener_post("sch_ins_4",true);
 
             /**/
 
@@ -310,7 +316,7 @@
                 $post_sch_cit_5=obtener_post("sch_cit_5");
 
                 //Input sch_ins_5 (Instituro donde fue cursado 5)
-                $post_sch_ins_5=obtener_post("sch_ins_5");
+                $post_sch_ins_5=obtener_post("sch_ins_5",true);
 
             /**/
 
@@ -326,7 +332,7 @@
                 $post_sch_cit_6=obtener_post("sch_cit_6");
 
                 //Input sch_ins_6 (Instituro donde fue cursado 6)
-                $post_sch_ins_6=obtener_post("sch_ins_6");
+                $post_sch_ins_6=obtener_post("sch_ins_6",true);
 
             /**/
 

@@ -256,8 +256,6 @@
                         $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
                         $coneccionBD->query($sql);
 
-
-
                         if($post_sch_grd_2<>""){
                             //Registro 2
                             $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");

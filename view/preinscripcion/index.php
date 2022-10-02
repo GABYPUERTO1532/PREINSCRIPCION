@@ -70,7 +70,7 @@
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante","disabled")?>
+            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante"," min='1000000000' disabled")?>
 
           </div>
 
@@ -102,7 +102,7 @@
 
             <!--Input: stu_neig (Barrio)-->
             <?php
-              estructura("select","Barrio","stu_nei","neighborhood","estudiante");
+              estructura("text","Barrio","stu_nei","","estudiante");
             ?>
 
             <!--Input: stu_est (Estrato)-->
