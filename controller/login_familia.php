@@ -3,9 +3,7 @@
     include "../model/login_familia.php";
 
     /*
-
         Explicacion: Se llama a la funcion "login" la cual se encuentra en el respectivo modelo, dicha funcion obtiene los valores ingresados en el formulario de ingreso y busca dicha informacion en la base de datos. En caso de encontrar una UNICA coincidencia retornara el valor de TRUE, el cual sera usado como argumento para la estructura if
-    
     */
     if (login()){
 

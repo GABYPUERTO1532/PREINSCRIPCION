@@ -3,18 +3,14 @@
     include "../model/login_empleados.php";
 
     /*
-    
         Explicacion: Validamos si la funcion "login", retorno el valor de true, lo que significa que esta si encontro el registro del empleado con la informacion ingresada por el usuario en el login.
-    
     */
     if(login()){
 
         /*
-        
             Explicacion: Despues de esto, valida la informacion guardada en "$_SESSION['per_char']", la cual corresponde al cargo que desempeña ese empleado en la institucion.
 
             Tip: Durante el Login, al usuario se le indica que ingrese que tipo de cargo ocupa en la institucion, dicho valor es guardado en "$_SESSION['per_char']", para luego ser usada en esta estructura
-
         */
         switch ($_SESSION['per_char']){
 

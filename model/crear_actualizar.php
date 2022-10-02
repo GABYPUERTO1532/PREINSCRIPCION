@@ -156,6 +156,13 @@
             /*FORMUALRIO PREINSCRIPCION*/
                 case "create":
 
+
+                    /*
+                        Explicacion sentencia SQL:
+
+                            INSERT INTO 'nombre_tabla' ('nombre_columna_1','nombre_columna_n') VALUES ('$valor_columna_1','$valor_columna n' WHERE 'condicion');
+                    */
+
                     //Ingreso informacion Estudiante
                     $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',FALSE,'$date','$date')");
                     $coneccionBD->query($sql);
@@ -198,38 +205,62 @@
                         $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_1','$post_sch_yea_1','$post_sch_cit_1','$post_sch_ins_1')");
                         $coneccionBD->query($sql);
 
-                        if($post_sch_grd_2<>""){
-                            //Registro 2
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
-                            $coneccionBD->query($sql);
-                        }
+                        /*
+                        
+                            Antecedentes: La plataforma debera permitir la preinscripcion de estudiantes de cualquier grado. A dichos estudiantes se les debera solicitar la informacion de los ultimos 5 años de trayectoria escolar.
 
-                        if($post_sch_grd_3<>""){
+                            Inconveniente/Problema: El sistema debe solicitar los ultimos 5 años de trayectoria escolar, sin embargo, esto no ocurre para los grados de segundo para abajo, esto causa que queden registros sin llenar lo cua genera inconvenientes con el registro de Preinscripcion.
 
-                            //Registro 3
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
-                            $coneccionBD->query($sql);
-                        }
+                            Solucion Planteada: El sistema debera solicitar de forma obligatoria el ultimo año de trayectoria escolar del estudiante, en caso de que este solo llene dicho campo el proceso de preinscripcion se debera llevar a cabo con normalidad.
 
-                        if($post_sch_grd_4<>""){
-                            //Registro 4
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
-                            $coneccionBD->query($sql);
-                        }
+                            Asi mismo, En caso que el usuario ingrese mas registros sobre su trayectoria escolar, estos se deberan agregar a la tabla con total normalidad.
 
-                        echo($post_sch_grd_4);
+                            Explicacion: Para lograr identificar su un registro ha sido llenado, se usa uno de sus valores post, en este caso "sch_grd" (Grado de Escolaridad). Dicho valor sera evaluado de la siguiente forma. 
 
-                        if($post_sch_grd_5<>""){
-                            //Registro 5
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
-                            $coneccionBD->query($sql);
-                        }
+                            Codigo: if($post_sch_grd_2<>"")
 
-                        if($post_sch_grd_6<>""){
-                            //Registro 6
-                            $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
-                            $coneccionBD->query($sql);
-                        }
+                                Explicacion textual: Si la variable "$post_stu_grd_n" es diferente de nada, es decir, diferente de null, realiceme el codigo en su interior.
+
+                                Tip: Recordemos que todos los valores post obtenidos de la diferentes vistas son guardados en variables de nombre similar, para este proceso se hace uso de la funcion "obtener_post", la cual determina si dicho valor POST existe, en caso de estarlo guardara dicho valor en su variable correspondiente, en caso contario guardara en la variable el valor de null.
+
+                                Tip: La funcion "obtener_post" se encuentra en el directorio /config/post.php, dicho archivo es llamado constantemente dentro de nuestra sistema ya que es el encargado de almacenar los valores POST dentro del sistema.
+
+                        */
+                            if($post_sch_grd_2<>""){
+
+                                //Registro 2
+                                $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_2','$post_sch_yea_2','$post_sch_cit_2','$post_sch_ins_2')");
+                                $coneccionBD->query($sql);
+                            }
+
+                            if($post_sch_grd_3<>""){
+
+                                //Registro 3
+                                $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_3','$post_sch_yea_3','$post_sch_cit_3','$post_sch_ins_3')");
+                                $coneccionBD->query($sql);
+                            }
+
+                            if($post_sch_grd_4<>""){
+                                //Registro 4
+                                $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_4','$post_sch_yea_4','$post_sch_cit_4','$post_sch_ins_4')");
+                                $coneccionBD->query($sql);
+                            }
+
+                            echo($post_sch_grd_4);
+
+                            if($post_sch_grd_5<>""){
+                                //Registro 5
+                                $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
+                                $coneccionBD->query($sql);
+                            }
+
+                            if($post_sch_grd_6<>""){
+                                //Registro 6
+                                $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_stu_doc_num','$post_sch_grd_6','$post_sch_yea_6','$post_sch_cit_6','$post_sch_ins_6')");
+                                $coneccionBD->query($sql);
+                            }
+
+                        /**/
 
                         
                         $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$date')";
@@ -238,6 +269,14 @@
                     
 
                 break;
+
+                /*
+                
+                    Explicacion estructura SQL:
+
+                        UPDATE "nombre_tabla" SET columna_1='$valor_columna1',columna_n='$valor_columnan' WHERE 'condicion'
+
+                */
 
                 case "update":
 
@@ -263,6 +302,7 @@
 
                     /*Actualizacion Informacion Educativa*/
 
+                        //Para facilitar el proceso de actualizacion de la informacion educativa del estudiante, se borra la informacion guardada anteriormente, esto con el fin de ser nuevamente guardada su version actualizada.
                         $sql="DELETE FROM edu_inf WHERE stu_doc_num=$post_doc_num";
                         $coneccionBD->query($sql);
 
@@ -306,6 +346,7 @@
 
                         /*Guardado Registro Preinscripcion*/
 
+                            //Una vez la informacion sea actualizada, se guardara un registro en la tabla "pre_stu" el cual sera consultado por coordinacion academica cuando esta realice las respectivas revisiones de las preinscripciones existentes.
                             $sql="INSERT INTO pre_stu (stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_doc_num','$date')";
                             $coneccionBD->query($sql);
 
@@ -330,19 +371,25 @@
                     $sql="DELETE FROM pre_stu WHERE stu_doc_num=$post_doc_num";
                     $coneccionBD->query($sql);
 
-                    //Actualizacion informacion Estudiante
+                    /*
+                        Explicacion: Actualizacion del numero de documento del estudiante
+
+                        Tip: El coordinador Academico tiene la capacidad de cambiar el numero de documento del estudiante, dicho cambia se ralizara solo en casos excepcionales o por solicitud de padre de familia o acudiente.
+
+                        Nota: En caso de que el coordinador no desee modificar dicha infomacion, solo debera dejar la informacion tal y como es traida de la base de datos, esto ya que de forma predeterminada se sobreescribira la informacion.
+                    */
                     $sql=("UPDATE students SET doc_num='$post_stu_doc_num' WHERE doc_num=$post_doc_num");
                     $coneccionBD->query($sql);
 
-                    //Actualizacion informacion Estudiante
+                    //Actualizacion Numero de Documento Madre
                     $sql=("UPDATE familiars SET doc_num='$post_doc_num_moth' WHERE doc_num=$doc_num_moth");
                     $coneccionBD->query($sql);
 
-                    //Actualizacion informacion Estudiante
+                    //Actualizacion Numero de Documento Padre
                     $sql=("UPDATE familiars SET doc_num='$post_doc_num_fath' WHERE doc_num=$doc_num_fath");
                     $coneccionBD->query($sql);
 
-                    //Actualizacion informacion Estudiante
+                    //Actualizacion Numero de Documento Acudiente
                     $sql=("UPDATE familiars SET doc_num='$post_doc_num_acu' WHERE doc_num=$doc_num_acu");
                     $coneccionBD->query($sql);
 
