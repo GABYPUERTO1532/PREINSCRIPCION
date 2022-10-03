@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2022 a las 18:13:50
+-- Tiempo de generación: 03-10-2022 a las 19:48:18
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 7.3.29
 
@@ -249,12 +249,18 @@ CREATE TABLE `edu_inf` (
 --
 
 INSERT INTO `edu_inf` (`id`, `stu_doc_num`, `sch_grd`, `sch_yea`, `sch_cit`, `sch_ins`) VALUES
-(37, '1019604622', 'Quinto', 2016, 'Bogota', 'IED SIMON BOLIVAR'),
-(38, '1019604622', 'Sexto', 2017, 'Bogota', 'ITD JUAN DEL CORRAL'),
-(39, '1019604622', 'Septimo', 2018, 'Bogota', 'ITD JUAN DEL CORRAL'),
-(40, '1019604622', 'Octavo', 2019, 'Bogota', 'ITD JUAN DEL CORRAL'),
-(41, '1019604622', 'Noveno', 2020, 'Bogota', 'ITD JUAN DEL CORRAL'),
-(42, '1019604622', 'Decimo', 2021, 'Bogota', 'ITD JUAN DEL CORRAL');
+(43, '1019604622', 'Quinto', 2016, 'Bogota', 'IED SIMON BOLIVAR'),
+(44, '1019604622', 'Sexto', 2017, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(45, '1019604622', 'Septimo', 2018, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(46, '1019604622', 'Octavo', 2019, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(47, '1019604622', 'Noveno', 2020, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(48, '1019604622', 'Decimo', 2021, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(49, '1032937438', 'Sexto', 2016, 'Bogota', 'NIDIA  QUINTERO DE TURBAY'),
+(50, '1032937438', 'Septimo', 2017, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(51, '1032937438', 'Octavo', 2018, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(52, '1032937438', 'Noveno', 2019, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(53, '1032937438', 'Decimo', 2021, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(54, '1032937438', 'Once', 2021, 'Bogota', 'ITD JUAN DEL CORRAL');
 
 -- --------------------------------------------------------
 
@@ -321,9 +327,12 @@ CREATE TABLE `familiars` (
 --
 
 INSERT INTO `familiars` (`id`, `fam_nam`, `doc_typ`, `doc_num`, `fam_land`, `mob_pho`, `fam_add`, `fam_ocu`, `fam_ema`, `cre_dat`, `upd_dat`) VALUES
-(1, 'ANA PATRICIA ROJAS RODRIGUEZ', 'Cedula de ciudadania', '39546537', '6013874710', '3213842028', 'CLL 82 95 C-14 INT 311', 'EMPLEADA', 'aprojasrodriguez69@gmail.com', '2022-10-03 10:39:43', '2022-10-03 10:48:04'),
-(2, 'GABRIEL PUERTO GRANADOS', 'Cedula de ciudadania', '4190747', '3104191064', '3104191064', 'CRA 90 BIS # 76-51', 'PENSIONADO', 'gabo.0747@hotmail.com', '2022-10-03 10:39:43', '2022-10-03 10:48:04'),
-(3, 'JUAN SEBASTIAN GUTIERREZ ROJAS', 'Cedula de ciudadania', '1014222352', '6013874710', '3132165438', 'CLL 82 # 95C-14 APT 311', 'EMPLEADO', 'ing.sgut2352@gmail.com', '2022-10-03 10:39:43', '2022-10-03 10:48:04');
+(1, 'ANA PATRICIA ROJAS RODRIGUEZ', 'Cedula de ciudadania', '39546537', '6013874710', '3213842028', 'CLL 82 95 C-14 INT 311', 'EMPLEADA', 'aprojasrodriguez69@gmail.com', '2022-10-03 10:39:43', '2022-10-03 11:17:27'),
+(2, 'GABRIEL PUERTO GRANADOS', 'Cedula de ciudadania', '4190747', '3104191064', '3104191064', 'CRA 90 BIS # 76-51', 'PENSIONADO', 'gabo.0747@hotmail.com', '2022-10-03 10:39:43', '2022-10-03 11:17:27'),
+(3, 'JUAN SEBASTIAN GUTIERREZ ROJAS', 'Cedula de ciudadania', '1014222352', '6013874710', '3132165438', 'CLL 82 # 95C-14 APT 311', 'EMPLEADO', 'ing.sgut2352@gmail.com', '2022-10-03 10:39:43', '2022-10-03 11:17:27'),
+(4, 'SANDRA PATRICA BORBON CLAVIJO', 'Cedula de ciudadania', '51937136', '4301574', '3102604427', 'CRA90BIS#76-51', 'EMPLEADA', 'aprojasrodriguez69@gmail.com', '2022-10-03 12:46:16', '2022-10-03 12:47:40'),
+(5, 'GARBRIEL', 'Cedula de ciudadania', '123456789', '3104191064', '3104191064', 'CRA90BIS#76-51', 'INDEPENDIENTE', 'ninguno@gmail.com', '2022-10-03 12:46:16', '2022-10-03 12:47:40'),
+(6, 'LU', 'Cedula de ciudadania', '41347352', '6013874710', '3132165438', 'CRA90BIS#76-51', 'PENSIONADA', '123456789@gmail.com', '2022-10-03 12:46:16', '2022-10-03 12:47:40');
 
 -- --------------------------------------------------------
 
@@ -416,7 +425,8 @@ CREATE TABLE `other_inf` (
 --
 
 INSERT INTO `other_inf` (`id`, `stu_doc_num`, `conf_vic`, `dis_sit`, `dis_arm_grp`, `dem_son`, `lim_stu`, `exp_cap`, `iq_sco`, `ass_tes`) VALUES
-(1, '1019604622', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No');
+(1, '1019604622', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No'),
+(2, '1032937438', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No');
 
 -- --------------------------------------------------------
 
@@ -459,8 +469,8 @@ CREATE TABLE `pre_stu` (
 --
 
 INSERT INTO `pre_stu` (`id`, `stu_doc_typ`, `stu_doc_num`, `stu_typ`, `dat_pre`) VALUES
-(6, 'Tarjeta de Identidad', '1019604622', 'Nuevo', '2022-10-03 10:50:31'),
-(7, 'Tarjeta de Identidad', '1019604622', 'Nuevo', '2022-10-03 11:00:18');
+(9, 'Tarjeta de Identidad', '1019604622', 'Nuevo', '2022-10-03 18:28:25'),
+(10, 'Cedula de ciudadania', '1032937438', 'Nuevo', '2022-10-03 12:46:16');
 
 -- --------------------------------------------------------
 
@@ -482,7 +492,10 @@ CREATE TABLE `relations` (
 INSERT INTO `relations` (`id`, `fam_doc_num`, `rel_typ`, `stu_doc_num`) VALUES
 (1, '39546537', 'Madre', '1019604622'),
 (2, '4190747', 'Padre', '1019604622'),
-(3, '1014222352', 'Acudiente', '1019604622');
+(3, '1014222352', 'Acudiente', '1019604622'),
+(4, '51937136', 'Madre', '1032937438'),
+(5, '123456789', 'Padre', '1032937438'),
+(6, '41347352', 'Acudiente', '1032937438');
 
 -- --------------------------------------------------------
 
@@ -617,7 +630,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `firs_sur`, `sec_sur`, `firs_nam`, `sec_nam`, `dat_bir`, `stu_cit`, `stu_dep`, `doc_typ`, `doc_num`, `exp_cit`, `stu_add`, `stu_nei`, `stu_loc`, `stu_est`, `stu_cat`, `stu_tel`, `stu_hob`, `stu_enf`, `stu_eps`, `stu_ars`, `stu_ips`, `b_grp`, `rh_fact`, `pre_stu`, `stu_typ`, `cre_dat`, `upd_dat`) VALUES
-(1, 'PUERTO', 'ROJAS', 'SANDRA', 'GABRIELA', '2006-02-03', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1019604622', 'Bogota', 'CLL 82 95 C-14 INT 311', 'BACHUE II', 'Engativa', 3, 'C16', '3007410404', 'VOLEY, PROGRAMACION', 'ASMA, RINITIS, DERMATITIS', 'EPS Famisanar LTDA', 'FAMISANAR', 'CM TIERRA GRATA', 'A', 'Positivo', 1, 'Nuevo', '2022-10-03 10:39:43', '2022-10-03 11:00:18');
+(1, 'PUERTO', 'ROJAS', 'SANDRA', 'GABRIELA', '2006-02-03', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1019604622', 'Bogota', 'CLL 82 95 C-14 INT 311', 'BACHUE II', 'Engativa', 3, 'C16', '3007410404', 'VOLEY, PROGRAMACION', 'ASMA, RINITIS, DERMATITIS', 'EPS Famisanar LTDA', 'FAMISANAR', 'CM TIERRA GRATA', 'A', 'Positivo', 1, 'Nuevo', '2022-10-03 10:39:43', '2022-10-03 11:17:27'),
+(2, 'BORBON ', 'CLAVIJO', 'MIGUEL ', 'ANGEL', '2022-09-16', 'Bogota', 'Bogota', 'Cedula de ciudadania', '1032937438', 'Bogota', 'CRA 90 BIS # 76-51', 'FLORENCIA', 'Engativa', 3, 'B1', '3045373058', 'PROGRAMAR, HACER CURSOS DEPROGRAMACION', 'NINGUNA', 'Salud Total SA EPS', 'N/A', 'CENTRO COMERCIAL PRIMAVERA', 'B', 'Positivo', 0, 'Nuevo', '2022-10-03 12:46:16', '2022-10-03 12:46:16');
 
 -- --------------------------------------------------------
 
@@ -839,7 +853,7 @@ ALTER TABLE `doc_typ`
 -- AUTO_INCREMENT de la tabla `edu_inf`
 --
 ALTER TABLE `edu_inf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT de la tabla `eps`
@@ -851,7 +865,7 @@ ALTER TABLE `eps`
 -- AUTO_INCREMENT de la tabla `familiars`
 --
 ALTER TABLE `familiars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `grades`
@@ -869,7 +883,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT de la tabla `other_inf`
 --
 ALTER TABLE `other_inf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `pob_typ`
@@ -881,13 +895,13 @@ ALTER TABLE `pob_typ`
 -- AUTO_INCREMENT de la tabla `pre_stu`
 --
 ALTER TABLE `pre_stu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `relations`
 --
 ALTER TABLE `relations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `rh_fact`
@@ -905,7 +919,7 @@ ALTER TABLE `sisb_cat`
 -- AUTO_INCREMENT de la tabla `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `workers`

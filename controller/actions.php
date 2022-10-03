@@ -3,7 +3,14 @@
     include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
 
     $stu_doc_num=$_GET['stu_doc_num'];
+    if(isset($stu_doc_num)){
+        $stu_doc_num="";
+    }
+
     $stu_typ=$_GET['stu_typ'];
+    if(isset($stu_typ)){
+        $stu_typ="";
+    }
     
     if(isset($_GET['action'])){
         $post_action=$_GET['action'];
@@ -54,7 +61,7 @@
             */
             $doc_num_moth=$_GET['doc_num_moth'];
             $doc_num_fath=$_GET['doc_num_fath'];
-            $doc_num_acu=$_GET['doc_num_acu'];  
+            $doc_num_acu=$_GET['doc_num_acu'];
         
             crear_actualizar("update",$stu_doc_num);
             crear_actualizar("confirmar_preinscripcion",$stu_doc_num,$doc_num_moth,$doc_num_fath,$doc_num_acu);
