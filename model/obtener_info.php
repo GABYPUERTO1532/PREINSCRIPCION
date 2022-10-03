@@ -241,6 +241,12 @@
 
                 break;
 
+                case "obtener_pre_stu":
+
+                    $sql="SELECT pre_stu FROM students WHERE doc_num='$stu_doc_num'";
+                    $resultado=$coneccionBD->query($sql);
+
+                    return $resultado;
             /**/
 
             /**/

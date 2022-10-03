@@ -1,4 +1,7 @@
 <?php 
+  if(!($_SESSION['view']=="Activa")){
+    header("Location: ../../");
+  }
 
   $_SESSION['titulo']="Proceso Preinscripcion";
 
@@ -7,8 +10,6 @@
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
-
-  echo(substr('abcdefgh','4','2'));
 
 ?>
   <!--Contenedor principal Formulario-->

@@ -103,7 +103,7 @@
 
             <!--Input: stu_est (Estrato)-->
             <?php
-              estructura("number","Estrato","stu_est","","max='6'");
+              estructura("number","Estrato","stu_est",""," min='1' max='6'");
             ?>
 
             <!--Input: stu_cat (Categoria sisben)-->

@@ -9,6 +9,7 @@
 
         //Al validarse su inicio de sesion, el usuario sera redirigido a la vista de preinscripcion
         $post_stu_doc_num=password_hash($post_stu_doc_num,PASSWORD_DEFAULT);
+        $_session['view']="activa";
         header("Location: ../view/preinscripcion?stu_doc_num=$post_stu_doc_num");
     }else{
 

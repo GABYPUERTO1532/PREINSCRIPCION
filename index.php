@@ -98,7 +98,7 @@
                 <a class="btn btn-primary" href="view/empleados" role="button">Soy Trabajador</a>
 
                 <!--Boton Inicio de sesion-->
-                <button type="submit" class="btn btn-success">Inicar Sesion</button>
+                <button type="submit" class="btn btn-success">Iniciar Sesion</button>
               </div>
             </div>
           </form>
