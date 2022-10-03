@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2022 a las 11:28:20
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 03-10-2022 a las 18:13:50
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -244,6 +244,18 @@ CREATE TABLE `edu_inf` (
   `sch_ins` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Instituto donde fue Cursado'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `edu_inf`
+--
+
+INSERT INTO `edu_inf` (`id`, `stu_doc_num`, `sch_grd`, `sch_yea`, `sch_cit`, `sch_ins`) VALUES
+(37, '1019604622', 'Quinto', 2016, 'Bogota', 'IED SIMON BOLIVAR'),
+(38, '1019604622', 'Sexto', 2017, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(39, '1019604622', 'Septimo', 2018, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(40, '1019604622', 'Octavo', 2019, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(41, '1019604622', 'Noveno', 2020, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(42, '1019604622', 'Decimo', 2021, 'Bogota', 'ITD JUAN DEL CORRAL');
+
 -- --------------------------------------------------------
 
 --
@@ -303,6 +315,15 @@ CREATE TABLE `familiars` (
   `cre_dat` datetime NOT NULL COMMENT 'Fecha de creación Registro',
   `upd_dat` datetime NOT NULL COMMENT 'Ultima fecha de modificacion Registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `familiars`
+--
+
+INSERT INTO `familiars` (`id`, `fam_nam`, `doc_typ`, `doc_num`, `fam_land`, `mob_pho`, `fam_add`, `fam_ocu`, `fam_ema`, `cre_dat`, `upd_dat`) VALUES
+(1, 'ANA PATRICIA ROJAS RODRIGUEZ', 'Cedula de ciudadania', '39546537', '6013874710', '3213842028', 'CLL 82 95 C-14 INT 311', 'EMPLEADA', 'aprojasrodriguez69@gmail.com', '2022-10-03 10:39:43', '2022-10-03 10:48:04'),
+(2, 'GABRIEL PUERTO GRANADOS', 'Cedula de ciudadania', '4190747', '3104191064', '3104191064', 'CRA 90 BIS # 76-51', 'PENSIONADO', 'gabo.0747@hotmail.com', '2022-10-03 10:39:43', '2022-10-03 10:48:04'),
+(3, 'JUAN SEBASTIAN GUTIERREZ ROJAS', 'Cedula de ciudadania', '1014222352', '6013874710', '3132165438', 'CLL 82 # 95C-14 APT 311', 'EMPLEADO', 'ing.sgut2352@gmail.com', '2022-10-03 10:39:43', '2022-10-03 10:48:04');
 
 -- --------------------------------------------------------
 
@@ -390,6 +411,13 @@ CREATE TABLE `other_inf` (
   `ass_tes` varchar(2) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Examen de valoracion'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `other_inf`
+--
+
+INSERT INTO `other_inf` (`id`, `stu_doc_num`, `conf_vic`, `dis_sit`, `dis_arm_grp`, `dem_son`, `lim_stu`, `exp_cap`, `iq_sco`, `ass_tes`) VALUES
+(1, '1019604622', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No');
+
 -- --------------------------------------------------------
 
 --
@@ -422,8 +450,17 @@ CREATE TABLE `pre_stu` (
   `id` int(11) NOT NULL COMMENT 'Codigo Registro',
   `stu_doc_typ` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de documento estudiante',
   `stu_doc_num` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Numero de documento Estudiante',
+  `stu_typ` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de estudiante',
   `dat_pre` datetime NOT NULL COMMENT 'Fecha de preinscripcion'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pre_stu`
+--
+
+INSERT INTO `pre_stu` (`id`, `stu_doc_typ`, `stu_doc_num`, `stu_typ`, `dat_pre`) VALUES
+(6, 'Tarjeta de Identidad', '1019604622', 'Nuevo', '2022-10-03 10:50:31'),
+(7, 'Tarjeta de Identidad', '1019604622', 'Nuevo', '2022-10-03 11:00:18');
 
 -- --------------------------------------------------------
 
@@ -437,6 +474,15 @@ CREATE TABLE `relations` (
   `rel_typ` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de relación con el estudiante',
   `stu_doc_num` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Identificador Estudiante'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `relations`
+--
+
+INSERT INTO `relations` (`id`, `fam_doc_num`, `rel_typ`, `stu_doc_num`) VALUES
+(1, '39546537', 'Madre', '1019604622'),
+(2, '4190747', 'Padre', '1019604622'),
+(3, '1014222352', 'Acudiente', '1019604622');
 
 -- --------------------------------------------------------
 
@@ -561,9 +607,17 @@ CREATE TABLE `students` (
   `b_grp` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Grupo sanguíneo estudiante',
   `rh_fact` varchar(255) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Factor Rh estudiante',
   `pre_stu` tinyint(1) DEFAULT NULL COMMENT 'Estado preinscripción ',
+  `stu_typ` varchar(20) COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Tipo de Estudiante',
   `cre_dat` datetime NOT NULL COMMENT 'Fecha de creación Registro',
   `upd_dat` datetime NOT NULL COMMENT 'Ultima fecha de modificación Registro'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `students`
+--
+
+INSERT INTO `students` (`id`, `firs_sur`, `sec_sur`, `firs_nam`, `sec_nam`, `dat_bir`, `stu_cit`, `stu_dep`, `doc_typ`, `doc_num`, `exp_cit`, `stu_add`, `stu_nei`, `stu_loc`, `stu_est`, `stu_cat`, `stu_tel`, `stu_hob`, `stu_enf`, `stu_eps`, `stu_ars`, `stu_ips`, `b_grp`, `rh_fact`, `pre_stu`, `stu_typ`, `cre_dat`, `upd_dat`) VALUES
+(1, 'PUERTO', 'ROJAS', 'SANDRA', 'GABRIELA', '2006-02-03', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1019604622', 'Bogota', 'CLL 82 95 C-14 INT 311', 'BACHUE II', 'Engativa', 3, 'C16', '3007410404', 'VOLEY, PROGRAMACION', 'ASMA, RINITIS, DERMATITIS', 'EPS Famisanar LTDA', 'FAMISANAR', 'CM TIERRA GRATA', 'A', 'Positivo', 1, 'Nuevo', '2022-10-03 10:39:43', '2022-10-03 11:00:18');
 
 -- --------------------------------------------------------
 
@@ -692,7 +746,8 @@ ALTER TABLE `pob_typ`
 ALTER TABLE `pre_stu`
   ADD PRIMARY KEY (`id`),
   ADD KEY `stu_doc_typ` (`stu_doc_typ`),
-  ADD KEY `stu_doc_num` (`stu_doc_num`);
+  ADD KEY `stu_doc_num` (`stu_doc_num`),
+  ADD KEY `stu_typ` (`stu_typ`);
 
 --
 -- Indices de la tabla `relations`
@@ -735,7 +790,9 @@ ALTER TABLE `students`
   ADD KEY `rh_fact` (`rh_fact`),
   ADD KEY `b_grp` (`b_grp`),
   ADD KEY `stu_loc` (`stu_loc`),
-  ADD KEY `doc_num` (`doc_num`);
+  ADD KEY `doc_num` (`doc_num`),
+  ADD KEY `doc_num_2` (`doc_num`),
+  ADD KEY `stu_typ` (`stu_typ`);
 
 --
 -- Indices de la tabla `workers`
@@ -782,7 +839,7 @@ ALTER TABLE `doc_typ`
 -- AUTO_INCREMENT de la tabla `edu_inf`
 --
 ALTER TABLE `edu_inf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `eps`
@@ -794,7 +851,7 @@ ALTER TABLE `eps`
 -- AUTO_INCREMENT de la tabla `familiars`
 --
 ALTER TABLE `familiars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `grades`
@@ -812,7 +869,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT de la tabla `other_inf`
 --
 ALTER TABLE `other_inf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `pob_typ`
@@ -824,13 +881,13 @@ ALTER TABLE `pob_typ`
 -- AUTO_INCREMENT de la tabla `pre_stu`
 --
 ALTER TABLE `pre_stu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `relations`
 --
 ALTER TABLE `relations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `rh_fact`
@@ -848,7 +905,7 @@ ALTER TABLE `sisb_cat`
 -- AUTO_INCREMENT de la tabla `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `workers`
@@ -897,7 +954,8 @@ ALTER TABLE `other_inf`
 --
 ALTER TABLE `pre_stu`
   ADD CONSTRAINT `pre_stu_ibfk_1` FOREIGN KEY (`stu_doc_num`) REFERENCES `students` (`doc_num`),
-  ADD CONSTRAINT `pre_stu_ibfk_2` FOREIGN KEY (`stu_doc_typ`) REFERENCES `doc_typ` (`doc_typ`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `pre_stu_ibfk_2` FOREIGN KEY (`stu_doc_typ`) REFERENCES `doc_typ` (`doc_typ`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `pre_stu_ibfk_3` FOREIGN KEY (`stu_typ`) REFERENCES `students` (`stu_typ`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `relations`
