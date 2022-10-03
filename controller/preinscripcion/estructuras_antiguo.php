@@ -95,6 +95,7 @@
         Explicacion: Se llama a la funcion "obtener_info", en ese momento se le indica que se desea obtener la informacion del estudiante ("obtener_info_estudiante"), ademas de indicarle el numero de documento de referencia. La funcion inmediatamente guardara dicho resultado en forma de arreglon asociativo en la variable $stu_info
     */
     $stu_info=obtener_info("obtener_info_estudiante",$stu_doc_num);   
+    $_SESSION['stu_typ']=$stu_info['stu_typ'];
 
     /*
         Solicitud: Se requiere obtener toda la informacion ya sea del padre, madre o acudiente de un estudiante, dicha infromacion debera guardarse en forma de arreglo asociativo.
@@ -310,7 +311,7 @@
             7. $maxlength (Opcional): Aunque de forma predeterminada el maximo de caracteres por cada input es de 255, la funcion tambien permite (En caso de ser necesario), definir un numero especifico de caracteres que el input admite
     
     */
-    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$array_bd,$addons=null,$maxlength=null){
+    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength=null){
 
         //Defino como 1 el minimo de caracteres que debe contener cada input en su interior
         $minlenght='1';

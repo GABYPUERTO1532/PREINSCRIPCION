@@ -13,7 +13,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>" method="post">
+    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&stu_typ='Antiguo'" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

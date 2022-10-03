@@ -3,6 +3,8 @@
     include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
 
     $stu_doc_num=$_GET['stu_doc_num'];
+    $stu_typ=$_GET['stu_typ'];
+    echo($stu_typ);
     
     if(isset($_GET['action'])){
         $post_action=$_GET['action'];
@@ -28,7 +30,7 @@
 
         //Metodo vista "preinscripcion_antiguos.php"
         case "update":
-            crear_actualizar("update",$stu_doc_num);
+            crear_actualizar("update",$stu_doc_num,"","","",$stu_typ);
             header("Location: ../");
         break;
 

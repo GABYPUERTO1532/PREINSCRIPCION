@@ -24,6 +24,7 @@
                 $id=$registro_individual['id'];
                 $stu_doc_typ=$registro_individual['stu_doc_typ'];
                 $stu_doc_num=$registro_individual['stu_doc_num'];
+                $stu_typ=$registro_individual['stu_typ'];
                 $dat_pre=$registro_individual['dat_pre'];
             /**/
 
@@ -35,6 +36,7 @@
                     <td>$id</td>
                     <td>$stu_doc_typ</td>
                     <td>$stu_doc_num</td>
+                    <td>$stu_typ</td>
                     <td>$dat_pre</td>
                     <td><a class='btn btn-primary' href='revision_preinscripcion.php?stu_doc_num=$etc' role='button'>Revision Preinscricion</a></td>
                 </tr>

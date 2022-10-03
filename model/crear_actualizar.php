@@ -9,7 +9,7 @@
         Tip: El objetivo de la estructura "switch" (Segun), es realizar ciertas acciones segun el contenido de x variable.
 
     */
-    function crear_actualizar($tipo_accion,$post_doc_num=null,$doc_num_moth=null,$doc_num_fath=null,$doc_num_acu=null){
+    function crear_actualizar($tipo_accion,$post_doc_num=null,$doc_num_moth=null,$doc_num_fath=null,$doc_num_acu=null,$addons=null){
 
         /*DATOS DEL ESTUDIANTE*/
             global $post_firs_sur;
@@ -164,7 +164,7 @@
                     */
 
                     //Ingreso informacion Estudiante
-                    $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',FALSE,'$date','$date')");
+                    $sql=("INSERT INTO students (firs_sur,sec_sur,firs_nam,sec_nam,dat_bir,stu_cit,stu_dep,doc_typ,doc_num,exp_cit,stu_add,stu_nei,stu_loc,stu_est,stu_cat,stu_tel,stu_hob,stu_enf,stu_eps,stu_ars,stu_ips,b_grp,rh_fact,pre_stu,stu_typ,cre_dat,upd_dat) VALUES ('$post_firs_sur','$post_sec_sur','$post_firs_nam','$post_sec_nam','$post_dat_bir','$post_stu_cit','$post_stu_dep','$post_stu_doc_typ','$post_stu_doc_num','$post_exp_cit','$post_stu_add','$post_stu_nei','$post_stu_loc','$post_stu_est','$post_stu_cat','$post_stu_tel','$post_stu_hob','$post_stu_enf','$post_stu_eps','$post_stu_ars','$post_stu_ips','$post_b_grp','$post_rh_fact',FALSE,'Nuevo','$date','$date')");
                     $coneccionBD->query($sql);
 
                     //Ingreso informacion Madre
@@ -263,7 +263,7 @@
                         /**/
 
                         
-                        $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$date')";
+                        $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,stu_typ,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$addons','$date')";
                         $coneccionBD->query($sql);
                     /**/
                     
@@ -347,7 +347,7 @@
                         /*Guardado Registro Preinscripcion*/
 
                             //Una vez la informacion sea actualizada, se guardara un registro en la tabla "pre_stu" el cual sera consultado por coordinacion academica cuando esta realice las respectivas revisiones de las preinscripciones existentes.
-                            $sql="INSERT INTO pre_stu (stu_doc_typ,stu_doc_num,dat_pre) VALUES ('$post_stu_doc_typ','$post_doc_num','$date')";
+                            $sql="INSERT INTO pre_stu (stu_doc_typ,stu_doc_num,stu_typ,dat_pre) VALUES ('$post_stu_doc_typ','$post_doc_num','Nuevo','$date')";
                             $coneccionBD->query($sql);
 
                         /**/
