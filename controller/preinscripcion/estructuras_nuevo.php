@@ -16,7 +16,7 @@
     $cities=consultar_informacion("obtener_ciudades");
 
     /*
-        Antecedentes: En este momento, todos los tipos de documento validos en territorio colombiano se encuentran en la tabla "doc_typ", sin embargo hay tipos de documento los cuales no son validos para un estudiante, por lo cual, se requeire que estos sean suprimidos.
+        Solicitud: En este momento, todos los tipos de documento validos en territorio colombiano se encuentran en la tabla "doc_typ", sin embargo hay tipos de documento los cuales no son validos para un estudiante, por lo cual, se requeire que estos sean suprimidos.
 
         Explicacion: Para cumplir con dicho requerimiento, inicalmente se traen todos los tipos de documento existentes, sin mebargo a dicho listado se le aplica la funcion unset, la cual borra registros segun su posicion dentro del Array.
 
@@ -43,7 +43,7 @@
     unset($fam_doc_typ['5'],$fam_doc_typ['6']);
 
     /*
-        Antecendetes: En la seccion "Otra informacion" del Formato de Preinscripcion hay lisstas desplegables y select, sin embargo, estas deberan ser mostradas copiando la estructura html directamente en la vista, sino que esta tiene que ser generada por la funcion correspondiente.
+        Antecendetes: En la seccion "Otra informacion" del Formato de Preinscripcion hay listas desplegables y select, sin embargo, estas deberan ser mostradas copiando la estructura html directamente en la vista, sino que esta tiene que ser generada por la funcion correspondiente.
 
         Explicacion: Se declara una variable con los datos que se requiere que sean mostrados en Dicha lista.
     */
@@ -54,7 +54,7 @@
     $grades=consultar_informacion("obtener_grados");
 
     /*
-        Antecedentes: Se requiere una funcion capaz de retornar e imprimir estructuras html, las cuales contengan las clases y propiedades de boostrap, dichas estructuras corresponde a los diferentes tipos de input utilizados.
+        Solicitud: Se requiere una funcion capaz de retornar e imprimir estructuras html, las cuales contengan las clases y propiedades de boostrap, dichas estructuras corresponde a los diferentes tipos de input utilizados.
 
         Explicacion: Para el correcto funcionamiento de dicha funcion, se necsitan los siguientes argumentos:
 
@@ -116,7 +116,7 @@
                 ");
 
                 /*
-                    Antecedentes: De acuerdo al tipo de lista seleccionada por el usuario, se requiere que esta sea impresa en forma de lista.
+                    Solicitud: De acuerdo al tipo de lista seleccionada por el usuario, se requiere que esta sea impresa en forma de lista.
 
                     Explicacion: Haciendo uso de una estructura switch y segun el contenido del argumento/variable "$array_type", se guardara dentro de la variable $options la lista de items solictada por el usuario
                 */
@@ -173,7 +173,7 @@
                 }
 
                 /*
-                    Antecedentes: Se debe imprimir cada elemento del array en dentro de una etiqueta option, asi mismo todas estas deberan quedar contenidas dentro de la estructura select declarada anteriormente
+                    Solicitud: Se debe imprimir cada elemento del array en dentro de una etiqueta option, asi mismo todas estas deberan quedar contenidas dentro de la estructura select declarada anteriormente
 
                     Explicacion: Habiendo guardados anteriormente, la slista de elementos a mostrar dentro de la variable $options, se hace uso de una estructura foreach, la cual guarda el primer registro de nuestro arreglo y ejecuta el codigo al interior de esta estructura.
 
@@ -216,7 +216,7 @@
     }
 
     /*
-        Antecedentes: Se requere de una funcion de funcionamiento similar a la anterior vista, sin embargo, estos inputs no deben encontrarse dentro de una estructura contenedora la cual le agregue margenes, todo esto ya que estos inputs van dentro de una tabla denominada "Informacion Educativa"
+        Solicitud: Se requere de una funcion de funcionamiento similar a la anterior vista, sin embargo, estos inputs no deben encontrarse dentro de una estructura contenedora la cual le agregue margenes, todo esto ya que estos inputs van dentro de una tabla denominada "Informacion Educativa"
 
         Explicacion: Su funcionamiento es muy similar a la estructura anterior, con la diferentencia de que esta solo permite postrar las listas de grados y ciudades.
     

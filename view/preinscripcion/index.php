@@ -8,6 +8,8 @@
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
 
+  echo(substr('abcdefgh','4','2'));
+
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">

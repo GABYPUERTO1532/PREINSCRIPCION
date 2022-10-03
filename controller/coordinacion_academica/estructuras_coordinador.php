@@ -6,7 +6,7 @@
     $consulta=consultar_informacion("consultar_listado");
 
     /*
-        Antecedentes: Se requiere de una funcion la cual tome cada registro dentro de la tabla "pre_stu" y muestre sus valores en una fila la cual estara contenida dentro de una tabla, asi mismo esta debera contar con un boton el cual rediriga al usuario a la vista "revision_preinscripcion.php" donde podra ver la informacion del estudiante seleccionado, asi como rechazar o aprobar su respectiva preinscripcion.
+        Solicitud: Se requiere de una funcion la cual tome cada registro dentro de la tabla "pre_stu" y muestre sus valores en una fila la cual estara contenida dentro de una tabla, asi mismo esta debera contar con un boton el cual rediriga al usuario a la vista "revision_preinscripcion.php" donde podra ver la informacion del estudiante seleccionado, asi como rechazar o aprobar su respectiva preinscripcion.
 
         Explicacion: Para completar dicho requerimiento se hace uso nuevamente de un ciclo While en el cual su argumento sera la posibilidad de guardar el arreglo asocitivo de un registro NUEVO dentro de la variable "$registo_individual" (Para mas informacion, revisar el modelo "obtener_info.php" en el caso "obtener_info familiar").
 

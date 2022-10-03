@@ -207,7 +207,7 @@
 
                         /*
                         
-                            Antecedentes: La plataforma debera permitir la preinscripcion de estudiantes de cualquier grado. A dichos estudiantes se les debera solicitar la informacion de los ultimos 5 años de trayectoria escolar.
+                            Solicitud: La plataforma debera permitir la preinscripcion de estudiantes de cualquier grado. A dichos estudiantes se les debera solicitar la informacion de los ultimos 5 años de trayectoria escolar.
 
                             Inconveniente/Problema: El sistema debe solicitar los ultimos 5 años de trayectoria escolar, sin embargo, esto no ocurre para los grados de segundo para abajo, esto causa que queden registros sin llenar lo cua genera inconvenientes con el registro de Preinscripcion.
 

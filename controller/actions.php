@@ -10,7 +10,7 @@
 
     /*
 
-        Antecedentes: Se requeire la creacion de una funcion la cual centralice y facilite la gestion de las operaciones en la base de datos, para esto, esta obtiene todos los valores post y debera realizar la operacion solicitada por la correspondiente vista.
+        Solicitud: Se requeire la creacion de una funcion la cual centralice y facilite la gestion de las operaciones en la base de datos, para esto, esta obtiene todos los valores post y debera realizar la operacion solicitada por la correspondiente vista.
 
         Explicacion: La funcion debera estar preparada para recibir la informacion sobre aquella operacion que se desea realizar, dicha informacion puede provenir de dos formas distintas:
 
