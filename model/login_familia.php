@@ -38,7 +38,7 @@
                     stu_id(Numero de documento del estudiante)="Valor_ingresado_por_el_usuario"
 
         */
-        $sql="SELECT * FROM familiars F, students S, relations R WHERE F.doc_typ='$post_fam_doc_typ' AND F.doc_num=$post_fam_doc_num AND S.doc_typ='$post_stu_doc_typ' AND S.doc_num=$post_stu_doc_num AND S.stu_typ='Antiguo' AND R.fam_doc_num=$post_fam_doc_num AND R.rel_typ='$post_relation' AND R.stu_doc_num=$post_stu_doc_num";
+        $sql="SELECT * FROM familiars F, students S, relations R WHERE F.doc_typ='$post_fam_doc_typ' AND F.doc_num=$post_fam_doc_num AND S.doc_typ='$post_stu_doc_typ' AND S.doc_num=$post_stu_doc_num AND R.fam_doc_num=$post_fam_doc_num AND R.rel_typ='$post_relation' AND R.stu_doc_num=$post_stu_doc_num";
 
         //Se realiza la consulta
         $consulta=$coneccionBD->query($sql);

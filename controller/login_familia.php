@@ -9,8 +9,8 @@
 
         //Al validarse su inicio de sesion, el usuario sera redirigido a la vista de preinscripcion
         $post_stu_doc_num=password_hash($post_stu_doc_num,PASSWORD_DEFAULT);
-        $_session['view']="activa";
-        header("Location: ../view/preinscripcion?stu_doc_num=$post_stu_doc_num");
+        $view_status=password_hash("true",PASSWORD_DEFAULT);
+        header("Location: ../view/preinscripcion?stu_doc_num=$post_stu_doc_num&status=$view_status");
     }else{
 
         //En caso que no se haya autorizado el inicio de sesion al usuario, ese sera redirigido nuevamente al login

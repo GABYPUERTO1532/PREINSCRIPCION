@@ -1,8 +1,8 @@
 <?php 
-  if(!($_SESSION['view']=="Activa")){
+
+  if(!isset($_GET['status']) or (password_verify($_GET[''],""))){
     header("Location: ../../");
   }
-
   $_SESSION['titulo']="Proceso Preinscripcion";
 
   $stu_doc_num=$_GET['stu_doc_num'];
