@@ -262,10 +262,8 @@
 
                         /**/
 
-                        if(!isset($Saddons)){
-                            $addons="Nuevo";
-                        }
-                        $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,stu_typ,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','$addons','$date')";
+                        
+                        $sql="INSERT INTO pre_stu(stu_doc_typ,stu_doc_num,stu_typ,dat_pre) VALUES ('$post_stu_doc_typ','$post_stu_doc_num','Nuevo','$date')";
                         $coneccionBD->query($sql);
                     /**/
                     

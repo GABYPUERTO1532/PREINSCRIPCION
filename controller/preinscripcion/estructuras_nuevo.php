@@ -184,9 +184,15 @@
                 */
                 foreach ($options as $option){
 
-                    $resultado.=("
+                    if ($option==$addons){
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;' selected>$option</option>
+                        ");
+                    }else{
+                        $resultado.=("
                             <option value='$option' style='text-align:center;'>$option</option>
-                    ");
+                        ");
+                    }
 
                 }
 

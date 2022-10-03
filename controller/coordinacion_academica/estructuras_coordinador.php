@@ -39,7 +39,7 @@
                     <td>$stu_doc_num</td>
                     <td>$stu_typ</td>
                     <td>$dat_pre</td>
-                    <td><a class='btn btn-primary' href='revision_preinscripcion.php?stu_doc_num=$etc&status=$view' role='button'>Revision Preinscricion</a></td>
+                    <td><a class='btn btn-success' href='revision_preinscripcion.php?stu_doc_num=$etc&status=$view' role='button'>Revision Preinscricion</a></td>
                 </tr>
             ");
 
