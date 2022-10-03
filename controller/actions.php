@@ -9,9 +9,13 @@
 
     $stu_typ=$_GET['stu_typ'];
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(isset($stu_typ)){
         $stu_typ="";
     }
+=======
+    echo($stu_typ);
+>>>>>>> parent of 68c6211 (ARREGLOS TESTEO ANGOLA)
 =======
     echo($stu_typ);
 >>>>>>> parent of 68c6211 (ARREGLOS TESTEO ANGOLA)
