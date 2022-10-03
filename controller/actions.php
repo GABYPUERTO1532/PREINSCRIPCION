@@ -8,9 +8,13 @@
     }
 
     $stu_typ=$_GET['stu_typ'];
+<<<<<<< HEAD
     if(isset($stu_typ)){
         $stu_typ="";
     }
+=======
+    echo($stu_typ);
+>>>>>>> parent of 68c6211 (ARREGLOS TESTEO ANGOLA)
     
     if(isset($_GET['action'])){
         $post_action=$_GET['action'];
