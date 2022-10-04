@@ -3,23 +3,23 @@
     include "../model/login_empleados.php";
 
     /*
-    
         Explicacion: Validamos si la funcion "login", retorno el valor de true, lo que significa que esta si encontro el registro del empleado con la informacion ingresada por el usuario en el login.
-    
     */
     if(login()){
 
         /*
-        
             Explicacion: Despues de esto, valida la informacion guardada en "$_SESSION['per_char']", la cual corresponde al cargo que desempeña ese empleado en la institucion.
 
             Tip: Durante el Login, al usuario se le indica que ingrese que tipo de cargo ocupa en la institucion, dicho valor es guardado en "$_SESSION['per_char']", para luego ser usada en esta estructura
-
         */
         switch ($_SESSION['per_char']){
 
             //En caso de que el empleado Trabaje en coordinacion academica, se le redireccionara a la vista /coordinacion_academica/services.php
             case "Coordinacion Academica":
+                header("Location: ../view/empleados/coordinacion_academica/");
+            break;
+
+            case "Administrador":
                 header("Location: ../view/empleados/coordinacion_academica/");
             break;
 
@@ -32,6 +32,7 @@
             default:
                 header("Location: ../view/empleados");
             break;
+            
         }
 
     }else{

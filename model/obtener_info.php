@@ -1,6 +1,6 @@
 <?php
 
-    $coneccionBD=mysqli_connect("localhost","root","","preinscripcion");
+    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
     function obtener_info($tipo_accion,$stu_doc_num,$nom_reg=null){
 
@@ -65,7 +65,7 @@
                     }
 
                     /*
-                        Antecedentes: Teniendo los numeros de documentos y buscando la mayor eficiencia del codigo, la funcion permite indicar especificamente de que familiar se desea obtener el registro.
+                        Solicitud: Teniendo los numeros de documentos y buscando la mayor eficiencia del codigo, la funcion permite indicar especificamente de que familiar se desea obtener el registro.
 
                         Explicacion: Haciendo uso de la variable "$nom_reg" (Nombre del Registro a Consultar), esta nos permite que numero de documento se asginara a la variable "$fam_doc_num", la cual sera usada como argumento a la hora de traer el registro del familiar solicitado.
                     */
@@ -241,6 +241,12 @@
 
                 break;
 
+                case "obtener_pre_stu":
+
+                    $sql="SELECT pre_stu FROM students WHERE doc_num='$stu_doc_num'";
+                    $resultado=$coneccionBD->query($sql);
+
+                    return $resultado;
             /**/
 
             /**/

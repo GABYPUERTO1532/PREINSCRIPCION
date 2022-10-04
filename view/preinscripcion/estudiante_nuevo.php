@@ -4,6 +4,37 @@
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php");
+
+  $stu_doc_typ_login=$_GET['stu_doc_typ'];
+  $stu_doc_num_login=$_GET['stu_doc_num'];
+
+  $moth_doc_num_login="";
+  $fath_doc_num_login="";
+  $acu_doc_num_login="";
+
+  $moth_doc_typ_login="";
+  $acu_doc_typ_login="";
+  $fath_doc_typ_login="";
+  $acu_doc_typ_login="";
+
+
+  switch ($_GET['relation']){
+    case "Madre":
+      $moth_doc_num_login=$_GET['fam_doc_num'];
+      $moth_doc_typ_login=$_GET['fam_doc_typ'];
+    break;
+
+    case "Padre":
+      $fath_doc_num_login=$_GET['fam_doc_num'];
+      $fath_doc_typ_login=$_GET['fam_doc_typ'];
+    break;
+
+    case "Acudiente":
+      $acu_doc_num_login=$_GET['fam_doc_num'];
+      $acu_doc_typ_login=$_GET['fam_doc_typ'];
+    break;
+  }
+
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
@@ -62,11 +93,11 @@
 
             <!--Input: stu_doc_typ (Tipo de documento)-->
             <?php 
-              estructura("select","Tipo de documento","stu_doc_typ","stu_doc_typ");
+              estructura("select","Tipo de documento","stu_doc_typ","stu_doc_typ","$stu_doc_typ_login");
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","","20")?>
+            <?php estructura("text","Numero de documento","stu_doc_num","","value='$stu_doc_num_login' min=1","20")?>
 
           </div>
 
@@ -103,7 +134,7 @@
 
             <!--Input: stu_est (Estrato)-->
             <?php
-              estructura("number","Estrato","stu_est","","max='6'");
+              estructura("number","Estrato","stu_est",""," min='1' max='6'");
             ?>
 
             <!--Input: stu_cat (Categoria sisben)-->
@@ -193,11 +224,11 @@
 
             <!--Input: doc_typ_moth (Tipo de documento)-->
             <?php
-              estructura("select","Tipo de documento","doc_typ_moth","fam_doc_typ");
+              estructura("select","Tipo de documento","doc_typ_moth","fam_doc_typ","$moth_doc_typ_login");
             ?>
 
             <!--Input: doc_num_moth (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_moth","","","20")?>
+            <?php estructura("text","Numero de documento","doc_num_moth","","value='$moth_doc_num_login'","20")?>
 
           </div>
 
@@ -253,12 +284,11 @@
 
             <!--Input: doc_typ_fath (Tipo de documento)-->
             <?php
-
-              estructura("select","Tipo de documento","doc_typ_fath","fam_doc_typ");
+              estructura("select","Tipo de documento","doc_typ_fath","fam_doc_typ","$fath_doc_typ_login");
             ?>
 
             <!--Input: doc_num_fath (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_fath","","","20")?>
+            <?php estructura("text","Numero de documento","doc_num_fath","","value='$fath_doc_num_login'","20")?>
 
           </div>
 
@@ -314,11 +344,11 @@
 
             <!--Input: doc_typ_acu (Tipo de documento)-->
             <?php
-              estructura("select","Tipo de documento","doc_typ_acu","fam_doc_typ");
+              estructura("select","Tipo de documento","doc_typ_acu","fam_doc_typ","$acu_doc_typ_login");
             ?>
 
             <!--Input: doc_num_acu (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_acu","","","20")?>
+            <?php estructura("text","Numero de documento","doc_num_acu","","value='$acu_doc_num_login'","20")?>
 
           </div>
 

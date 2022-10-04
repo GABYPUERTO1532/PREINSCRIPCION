@@ -60,6 +60,7 @@
                     <option value="Coordinacion Academica">Coordinacion Academica</option>
                     <option value="Secretaria">Secretaria</option>
                     <option value="Refrigerios">Refrigerios</option>
+                    <option value="Administrador">Administrador</option>
                   </select>
                 </div>
 
@@ -68,7 +69,7 @@
                 <a class="btn btn-primary" href="../../" role="button">Soy Padre de Familia</a>
 
                 <!--Boton Inicio de sesion-->
-                <button type="submit" class="btn btn-success">Inicar Sesion</button>
+                <button type="submit" class="btn btn-success">Iniciar Sesion</button>
               </div>
             </div>
           </form>

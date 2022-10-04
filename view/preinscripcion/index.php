@@ -1,5 +1,9 @@
 <?php 
 
+  if(!isset($_GET['status']) or (password_verify($_GET['status'],"true"))){
+    header("Location: ../../");
+  }
+  
   $_SESSION['titulo']="Proceso Preinscripcion";
 
   $stu_doc_num=$_GET['stu_doc_num'];
@@ -11,7 +15,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>" method="post">
+    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&stu_typ='Antiguo'" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

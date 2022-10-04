@@ -45,7 +45,7 @@
                       <div class="col-md-5">
                         <select class="form-control" name="fam_doc_typ" id="fam_doc_typ" required>
                           <option selected value="">Seleccione</option>
-                          <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                          <option value="Cedula de ciudadania">Cedula de Ciudadania</option>
                           <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                           <option value="No. de Identificacion Personal">No. de Identificacion Personal</option>
                           <option value="No. Unico de Identificacion Personal">No. Único de Identificación personal</option>
@@ -98,7 +98,7 @@
                 <a class="btn btn-primary" href="view/empleados" role="button">Soy Trabajador</a>
 
                 <!--Boton Inicio de sesion-->
-                <button type="submit" class="btn btn-success">Inicar Sesion</button>
+                <button type="submit" class="btn btn-success">Iniciar Sesion</button>
               </div>
             </div>
           </form>

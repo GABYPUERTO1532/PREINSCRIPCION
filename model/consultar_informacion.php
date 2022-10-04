@@ -87,18 +87,6 @@
 
                 break;
 
-                case "obtener_barrios":
-
-                    $sql="SELECT neig_nam FROM neigh";
-                    $consulta=$coneccionBD->query($sql);
-                    $array=[];
-                    while($item=mysqli_fetch_assoc($consulta)){
-                        array_push($array,$item['neig_nam']);
-                    }
-                    return $array;
-
-                break;
-
                 case "obtener_categoria_sisben":
 
                     $sql="SELECT cat_nam FROM sisb_cat";

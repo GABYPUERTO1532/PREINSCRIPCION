@@ -143,6 +143,7 @@
 
                 //Input fam_add_moth (Direccion de vivienda del Familiar (Madre))
                 $post_fam_add_moth=obtener_post("fam_add_moth");
+                $post_fam_add_moth=str_replace(" ","",$post_fam_add_moth);
 
                 //Input fam_ocu_moth (Ocupacion del Familiar (Madre))
                 $post_fam_ocu_moth=obtener_post("fam_ocu_moth",true);
@@ -171,6 +172,7 @@
 
                 //Input fam_add_fath (Direccion de vivienda del Familiar (Padre))
                 $post_fam_add_fath=obtener_post("fam_add_fath");
+                $post_fam_add_fath=str_replace(" ","",$post_fam_add_fath);
 
                 //Input fam_ocu_fath (Ocupacion del Familiar (Padre))
                 $post_fam_ocu_fath=obtener_post("fam_ocu_fath",true);
@@ -199,6 +201,7 @@
 
                 //Input fam_add_acu (Direccion de vivienda del Familiar (Acudiente))
                 $post_fam_add_acu=obtener_post("fam_add_acu");
+                $post_fam_add_acu=str_replace(" ","",$post_fam_add_acu);
 
                 //Input fam_ocu_acu (Ocupacion del Familiar (Acudiente))
                 $post_fam_ocu_acu=obtener_post("fam_ocu_acu",true);
