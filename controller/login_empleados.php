@@ -16,11 +16,11 @@
 
             //En caso de que el empleado Trabaje en coordinacion academica, se le redireccionara a la vista /coordinacion_academica/services.php
             case "Coordinacion Academica":
-                header("Location: ../view/empleados/coordinacion_academica/");
+                header("Location: ../view/empleados/coordinacion_academica/listado_preinscripciones.php");
             break;
 
-            case "Administrador":
-                header("Location: ../view/empleados/coordinacion_academica/");
+            case "Rectoria":
+                header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
             break;
 
             /*

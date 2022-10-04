@@ -655,5 +655,4 @@
       </div>
     </form>
   </div>
-  
-<?php include "../footer.php"?>
+<?php include "C://xampp/htdocs/PREINSCRIPCION/view/footer.php"?>
