@@ -35,9 +35,19 @@
             $stu_doc_num=$itmes_consulta['doc_num'];
         }
     }
+    /*
+        Explicacion: Esta funcion se realiza para determinar si el estudiante ya fue preinscrito con anterioridad, para esto hacemos uso del caso "obtener_pre_stu" y pasandole como segundo argumento el numero de documentp del cual se desea hacer la preinscripcion, dicho resultado es de tipo BOOLEANO, lo que significa que sera un valor de 0 (Mejor Conocido como False) o 1 (Mejor Conocido como true).
+
+        Una vez teniendo el valor del de la columna "pre_stu" (O estudiante Preinscrito), podremos comprarar dicho valor con el numero 1 (El cual corrsponde al valor de TRUE), en caso de ser ser iguales, significa que este estudiante ya fue preinscrito con anterioridad, lo cual causa que esta no pueda volver a repetirse. 
+    */
+    /*$pre_stu=obtener_info("obtener_pre_stu",$stu_doc_num)['pre_stu'];
+    if($pre_stu==1){
+       header("Location: ../../");
+    }*/
+    
 
     /*
-        Explicacion: La funcion "consultar_informacion", unicamente tiene un unico argumento y esta es el nombre de la tabla de la cual queremos obtener la informacion, una vez realizada la consulta, guardara todos los registros en forma de array asociativo para luego ser retornados y guardados en su variable correspondiente:
+        Explicacion: La funcion "consultar_informacion", unicamente tiene un unico argumento y esta es el nombre de la tabla de la cual queremos obtener la informacion, una vez realizada la consulta, guardara todos los registros en forma de array  asociativo para luego ser retornados y guardados en su variable correspondiente:
 
         Codigo: $departaments=consultar_informacion("obtener_departamentos");
 

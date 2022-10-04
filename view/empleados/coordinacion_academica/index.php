@@ -1,8 +1,9 @@
 <?php
     session_start();
     $_SESSION['titulo']="Listado Preinscripciones";
+    $_SESSION['sub_lev']='lev_3';
     
-    include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/view/header.php";
     include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/estructuras_coordinador.php"; 
 ?>
     <div class="container">
