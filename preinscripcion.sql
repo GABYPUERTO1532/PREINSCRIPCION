@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2022 a las 05:16:30
+-- Tiempo de generación: 04-10-2022 a las 06:29:04
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -38,6 +38,7 @@ CREATE TABLE `actors` (
 
 INSERT INTO `actors` (`id`, `act_nam`) VALUES
 (3, 'Acudiente'),
+(9, 'Administrador'),
 (4, 'Coodinacion Convivencial'),
 (5, 'Coordinacion Academica'),
 (6, 'Docente'),
@@ -266,7 +267,19 @@ INSERT INTO `edu_inf` (`id`, `stu_doc_num`, `sch_grd`, `sch_yea`, `sch_cit`, `sc
 (99, '1011083243', 'Octavo', 2019, 'Bogota', 'ITD JUAN DEL CORRAL'),
 (100, '1011083243', 'Noveno', 2020, 'Bogota', 'ITD JUAN DEL CORRAL'),
 (101, '1011083243', 'Decimo', 2021, 'Bogota', 'ITD JUAN DEL CORRAL'),
-(102, '1011083243', 'Once', 2021, 'Bogota', 'ITD JUAN DEL CORRAL');
+(102, '1011083243', 'Once', 2021, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(115, '1032937438', 'Quinto', 2016, 'Bogota', 'NIDIA QUINTERO DE TURBAR'),
+(116, '1032937438', 'Sexto', 2017, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(117, '1032937438', 'Septimo', 2018, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(118, '1032937438', 'Octavo', 2019, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(119, '1032937438', 'Noveno', 2020, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(120, '1032937438', 'Decimo', 2021, 'Bogota', 'ITD JUAN DEL CORRAL'),
+(133, '1048710065', 'Quinto', 2016, 'Bogota', 'INSTITUCIóN FE Y ALEGRíA '),
+(134, '1048710065', 'Sexto', 2017, 'Bogota', 'INSTITUCIóN FE Y ALEGRíA '),
+(135, '1048710065', 'Septimo', 2018, 'Bogota', 'INSTITUCIóN LUIS MARIANO'),
+(136, '1048710065', 'Octavo', 2019, 'Bogota', 'INSTITUCIóN LUIS MARIANO'),
+(137, '1048710065', 'Noveno', 2020, 'Bogota', 'JUAN DEL CORRAL'),
+(138, '1048710065', 'Decimo', 2021, 'Bogota', 'JUAN DEL CORRAL');
 
 -- --------------------------------------------------------
 
@@ -341,7 +354,13 @@ INSERT INTO `familiars` (`id`, `fam_nam`, `doc_typ`, `doc_num`, `fam_land`, `mob
 (36, 'INGRID PATRICIA DE LA ROSA SANDON ', 'Cedula de ciudadania', '52088430', '4401450', '3017914528', 'CALLE76D#110-14', 'EMPLEADA', 'ingridpatricia52@hotmail.com', '2022-10-03 21:43:15', '2022-10-03 21:57:42'),
 (37, 'KAREN ANDREA CASTELLANOS RODRIGUEZ', 'Cedula de ciudadania', '1032425802', '3007682027', '3007682027', 'KR112C#72C-15', 'EMPLEADA', 'mihija20@hotmail.com', '2022-10-03 21:54:38', '2022-10-03 21:56:31'),
 (38, 'DEIVIS JOSE HOSTIA VILLALOBOS', 'Cedula de ciudadania', '77104279', '3146512231', '3146512231', 'KR112C#72C-15', 'EMPLEADO', 'deivis281976@hotmail.com', '2022-10-03 21:54:38', '2022-10-03 21:56:31'),
-(39, 'KAREN ANDREA CASTELLANOS RODRIGUEZ', 'Cedula de ciudadania', '1032425802', '3007682027', '3007682027', 'KR112C#72C-15', 'EMPLEADA', 'mihija20@hotmail.com', '2022-10-03 21:54:38', '2022-10-03 21:56:31');
+(39, 'KAREN ANDREA CASTELLANOS RODRIGUEZ', 'Cedula de ciudadania', '1032425802', '3007682027', '3007682027', 'KR112C#72C-15', 'EMPLEADA', 'mihija20@hotmail.com', '2022-10-03 21:54:38', '2022-10-03 21:56:31'),
+(40, 'SANDRA PATRICIA BORBON CLAVIJO', 'Cedula de ciudadania', '51937136', '4301574', '3102604427', 'CRA90BIS#76-51', 'EMPLEADA', '123456789@gmail.com', '2022-10-03 22:28:00', '2022-10-03 22:29:13'),
+(41, 'GABRIEL', 'Cedula de ciudadania', '123456789', '4301574', '1234567890', 'CRA90BIS#76-51', 'N/A', '123456789@gmail.com', '2022-10-03 22:28:00', '2022-10-03 22:29:13'),
+(42, 'LUZ ESTELA CLAVIJO DE BORBON', 'Cedula de ciudadania', '41347352', '4301574', '3102604427', 'CRA90BIS76-51', 'PENSIONADA', '123456789@gmail.com', '2022-10-03 22:28:00', '2022-10-03 22:29:13'),
+(43, 'LUZ MIRIAM CAMACHO GAMBA', 'Cedula de ciudadania', '52692365', '12345678', '3134888841', 'CALLE64#125a17', 'COMERCIANTE', 'Miryamcamacho264@gamil.com', '2022-10-03 22:59:33', '2022-10-03 23:00:55'),
+(44, 'JAIRO GABRIEL ALFONSO GAMEZ', 'Cedula de ciudadania', ' 4071391', '12345678', '3212329193', 'Calle64#125a17', 'COMERCIANTE', 'Jairogabriel1913@gmail.com', '2022-10-03 22:59:33', '2022-10-03 23:00:55'),
+(45, 'JAIRO GABRIEL ALFONSO GAMEZ', 'Cedula de ciudadania', ' 4071391', '12345678', '3212329193', 'Calle64#125a17', 'COMERCIANTE', 'Jairogabriel1913@gmail.com', '2022-10-03 22:59:33', '2022-10-03 23:00:55');
 
 -- --------------------------------------------------------
 
@@ -436,7 +455,9 @@ CREATE TABLE `other_inf` (
 INSERT INTO `other_inf` (`id`, `stu_doc_num`, `conf_vic`, `dis_sit`, `dis_arm_grp`, `dem_son`, `lim_stu`, `exp_cap`, `iq_sco`, `ass_tes`) VALUES
 (11, '1019604622', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No'),
 (12, '1011083243', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No'),
-(13, '1021393246', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No');
+(13, '1021393246', 'No', 'No', 'No', 'No', 'NINGUNA', 'NINGUNA', 'N/A', 'No'),
+(14, '1032937438', 'No', 'No', 'No', 'No', 'N/A', 'N/A', 'N/A', 'No'),
+(15, '1048710065', 'No', 'No', 'No', 'No', 'N/A', 'N/A', 'N/A', 'No');
 
 -- --------------------------------------------------------
 
@@ -500,7 +521,13 @@ INSERT INTO `relations` (`id`, `fam_doc_num`, `rel_typ`, `stu_doc_num`) VALUES
 (36, '52088430', 'Acudiente', '1011083243'),
 (37, '1032425802', 'Madre', '1021393246'),
 (38, '77104279', 'Padre', '1021393246'),
-(39, '1032425802', 'Acudiente', '1021393246');
+(39, '1032425802', 'Acudiente', '1021393246'),
+(40, '51937136', 'Madre', '1032937438'),
+(41, '123456789', 'Padre', '1032937438'),
+(42, '41347352', 'Acudiente', '1032937438'),
+(43, '52692365', 'Madre', '1048710065'),
+(44, ' 4071391', 'Padre', '1048710065'),
+(45, ' 4071391', 'Acudiente', '1048710065');
 
 -- --------------------------------------------------------
 
@@ -637,7 +664,9 @@ CREATE TABLE `students` (
 INSERT INTO `students` (`id`, `firs_sur`, `sec_sur`, `firs_nam`, `sec_nam`, `dat_bir`, `stu_cit`, `stu_dep`, `doc_typ`, `doc_num`, `exp_cit`, `stu_add`, `stu_nei`, `stu_loc`, `stu_est`, `stu_cat`, `stu_tel`, `stu_hob`, `stu_enf`, `stu_eps`, `stu_ars`, `stu_ips`, `b_grp`, `rh_fact`, `pre_stu`, `stu_typ`, `cre_dat`, `upd_dat`) VALUES
 (11, 'PUERTO', 'ROJAS', 'GABRIEL', 'SANTIAGO', '2006-02-03', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1019604622', 'Bogota', 'CLL 82 95 C-14 INT 311', 'BACHUE II', 'Engativa', 3, 'C16', '3007410404', 'VOLEY, PROGRAMACION', 'ASMA, RINITIS, DERMATITIS', 'EPS Famisanar LTDA', 'FAMISANAR', 'CM TIERRA GRATA', 'A', 'Positivo', 1, 'Nuevo', '2022-10-03 16:25:34', '2022-10-03 16:27:17'),
 (12, 'ANGOLA', 'DE LA ROSA', 'FELIPE', 'ANDRES', '2005-03-22', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1011083243', 'Bogota', 'CALLE76D#110-14', 'VILLAS DE GRANADA', 'Engativa', 3, 'N/A', '3045202364', 'LEER', 'NINGUNA', 'Nueva EPS SA', 'NUEVA EPS SA', 'PRIMAVERA NORTE', 'B', 'Positivo', 1, 'Nuevo', '2022-10-03 21:43:15', '2022-10-03 21:57:42'),
-(13, 'CASTELLANOS', 'RODRIGUEZ', 'LAURA', 'VALENTINA', '2004-07-20', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1021393246', 'Bogota', 'KR112C#72C-15', 'LA PERLA', 'Engativa', 3, 'N/A', '3204135823', 'MUSICA, DIBUJAR', 'NINGUNA', 'Nueva EPS SA', 'NUEVA EPS SA', 'PRIMAVERA NORTE', 'O', 'Positivo', 1, 'Nuevo', '2022-10-03 21:54:38', '2022-10-03 21:56:31');
+(13, 'CASTELLANOS', 'RODRIGUEZ', 'LAURA', 'VALENTINA', '2004-07-20', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1021393246', 'Bogota', 'KR112C#72C-15', 'LA PERLA', 'Engativa', 3, 'N/A', '3204135823', 'MUSICA, DIBUJAR', 'NINGUNA', 'Nueva EPS SA', 'NUEVA EPS SA', 'PRIMAVERA NORTE', 'O', 'Positivo', 1, 'Nuevo', '2022-10-03 21:54:38', '2022-10-03 21:56:31'),
+(14, 'BORBON', 'CLAVIJO', 'MIGUEL', 'ANGEL', '2004-09-16', 'Bogota', 'Bogota', 'Tarjeta de Identidad', '1032937438', 'Bogota', 'CRA 90 BIS # 76-51', 'FLORENCIA', 'Engativa', 3, 'B1', '3045373058', 'PROGRAMAR', 'NINGUNA', 'Salud Total SA EPS', 'N', 'CENTRO COMERCIAL PRIMAVERA', 'B', 'Positivo', 1, 'Nuevo', '2022-10-03 22:28:00', '2022-10-03 22:29:13'),
+(15, 'ALFONSO ', 'CAMACHO', 'CAMILA', 'ALEXANDRA', '2004-07-05', 'Villavicencio', 'Meta', 'Tarjeta de Identidad', '1048710065', 'Bogota', 'CALLE 64 #125A17', 'TORQUIGUA', 'Engativa', 2, 'A2', '3132685023', 'N/A', 'N/A', 'EPS Sanitas SA', 'EPS SANITAS SA', 'C.C PRIMAVERA', 'O', 'Positivo', 1, 'Nuevo', '2022-10-03 22:59:33', '2022-10-03 23:00:55');
 
 -- --------------------------------------------------------
 
@@ -665,7 +694,8 @@ CREATE TABLE `workers` (
 
 INSERT INTO `workers` (`id`, `per_nam`, `doc_num`, `per_land`, `per_pho`, `per_add`, `per_char`, `per_ema`, `per_hash`, `cre_dat`, `upd_dat`) VALUES
 (1, 'GABRIEL SANTIAGO PUERTO ROJAS', '1019604622', 3874710, '3222325596', 'DIRECCION', 'Coordinacion Academica', 'gabrielspuertor57@gmail.com', '$2y$10$pVxQovE.OvkmcuCfZiJnC.ToWNMbD.JJ5vjP5u0anYBh0Miv/SP0O', '2022-09-16 05:35:41', '2022-09-16 05:35:41'),
-(2, 'SERGIO ALFONSO FORERO LOPEZ', '1111111', 222222, '555555', 'DIRECCION', 'Docente', 'sergioaforerol@juandelcorral.edu.co', '$2y$10$ttP5T6Dk1AtmmrhGGXSbn.2gJjku9bW459k.d4241KU2Pochy4FS2', '2022-09-16 06:10:09', '2022-09-16 06:10:09');
+(2, 'SERGIO ALFONSO FORERO LOPEZ', '1111111', 222222, '555555', 'DIRECCION', 'Docente', 'sergioaforerol@juandelcorral.edu.co', '$2y$10$ttP5T6Dk1AtmmrhGGXSbn.2gJjku9bW459k.d4241KU2Pochy4FS2', '2022-09-16 06:10:09', '2022-09-16 06:10:09'),
+(3, 'Admin', '123456789', 123456789, '123456789', 'Direccion', 'Administrador', 'admin@gmail.com', '$2y$10$/ehN9LuV5adwDKGQjjsUbuZ1ayf1oy7a8ofj6YXetTNVDGnXriR7y', '2022-10-04 06:07:47', '2022-10-04 06:07:47');
 
 --
 -- Índices para tablas volcadas
@@ -829,7 +859,7 @@ ALTER TABLE `workers`
 -- AUTO_INCREMENT de la tabla `actors`
 --
 ALTER TABLE `actors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `blo_grp`
@@ -859,7 +889,7 @@ ALTER TABLE `doc_typ`
 -- AUTO_INCREMENT de la tabla `edu_inf`
 --
 ALTER TABLE `edu_inf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=103;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT de la tabla `eps`
@@ -871,7 +901,7 @@ ALTER TABLE `eps`
 -- AUTO_INCREMENT de la tabla `familiars`
 --
 ALTER TABLE `familiars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `grades`
@@ -889,7 +919,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT de la tabla `other_inf`
 --
 ALTER TABLE `other_inf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `pob_typ`
@@ -901,13 +931,13 @@ ALTER TABLE `pob_typ`
 -- AUTO_INCREMENT de la tabla `pre_stu`
 --
 ALTER TABLE `pre_stu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo Registro', AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `relations`
 --
 ALTER TABLE `relations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `rh_fact`
@@ -925,13 +955,13 @@ ALTER TABLE `sisb_cat`
 -- AUTO_INCREMENT de la tabla `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `workers`
 --
 ALTER TABLE `workers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo registro', AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

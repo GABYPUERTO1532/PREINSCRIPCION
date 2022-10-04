@@ -19,6 +19,10 @@
                 header("Location: ../view/empleados/coordinacion_academica/");
             break;
 
+            case "Administrador":
+                header("Location: ../view/empleados/coordinacion_academica/");
+            break;
+
             /*
                 Dato: La estructura swich que valida que tipo de usuario es, permite que de acuerdo al tipo de empleado este pueda ser redirigido a su vista correspondiente, lo cual es bastante util para trabajar con multiples empleados, cada uno con su interfaz propia.
 
@@ -28,6 +32,7 @@
             default:
                 header("Location: ../view/empleados");
             break;
+            
         }
 
     }else{

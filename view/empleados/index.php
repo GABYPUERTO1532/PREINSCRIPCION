@@ -60,6 +60,7 @@
                     <option value="Coordinacion Academica">Coordinacion Academica</option>
                     <option value="Secretaria">Secretaria</option>
                     <option value="Refrigerios">Refrigerios</option>
+                    <option value="Administrador">Administrador</option>
                   </select>
                 </div>
 
