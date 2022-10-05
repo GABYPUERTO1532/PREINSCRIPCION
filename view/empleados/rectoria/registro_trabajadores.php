@@ -5,11 +5,16 @@
     include "C://xampp/htdocs/PREINSCRIPCION/view/header.php";
     include "C://xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php";
 
+    if(!isset($_GET['status']) or !isset($_GET['action']) or (password_verify($_GET['status'],"true")) or password_verify($_GET['action'],"crear") or isset($_GET['emp_doc_num'])){
+        header("Location: ../../../");
+    }
+
 ?>
-<div class="card">
-    <form action="testeo.php" method="post">
+
+<div class="card col-md-10 formulario_mini">
+    <form action="../../../controller/actions.php" method="post">
         <div class="card-header">
-            <h4 class="card-title">Registro de Nuevos Trabajadores</h4>
+            <h4 class="card-title">Registro Nuevos Trabajadores</h4>
         </div>
         <div class="card-body">
 

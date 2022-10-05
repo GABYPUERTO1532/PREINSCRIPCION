@@ -5,6 +5,9 @@
     
     include "C://xampp/htdocs/PREINSCRIPCION/view/header.php";
     include "C://xampp/htdocs/PREINSCRIPCION/controller/empleados/estructuras_rectoria.php"; 
+
+    $action_crear=password_hash("crear",PASSWORD_DEFAULT);
+    $view=password_hash("true",PASSWORD_DEFAULT);
 ?>
     <div class="container">
         <div class="card" style="margin-top: 20px;">
@@ -36,6 +39,7 @@
                 </form>
 
                 <div class="card-footer text-muted">
+                    <a class="btn btn-info" href="registro_trabajadores.php?status=<?php echo($view)?>&action=<?php echo($action_crear)?>' role='button'" role="button">Crear Trabajador</a>
                     <a class="btn btn-primary" href="../" role="button">Cerrar Sesion</a>
                 </div>
             </div>

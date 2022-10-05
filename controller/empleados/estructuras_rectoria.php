@@ -20,17 +20,18 @@
         while($registro_individual=mysqli_fetch_assoc($consulta)){
 
             /*Extraccion de la informacion en variables*/
-                $per_nam=$registro_individual['per_nam'];
+                $per_nam=$registro_individual['emp_nam'];
                 $doc_num=$registro_individual['doc_num'];
-                $per_land=$registro_individual['per_land'];
-                $per_pho=$registro_individual['per_pho'];
-                $per_ema=$registro_individual['per_ema'];
-                $per_char=$registro_individual['per_char'];
+                $per_land=$registro_individual['emp_land'];
+                $per_pho=$registro_individual['emp_pho'];
+                $per_ema=$registro_individual['emp_ema'];
+                $per_char=$registro_individual['emp_char'];
             /**/
 
             //Generar el hash del numero de documento del estudiante
             $etc=password_hash($doc_num,PASSWORD_DEFAULT);
             $view=password_hash("true",PASSWORD_DEFAULT);
+            $action=password_hash("actualizar",PASSWORD_DEFAULT);
 
             echo("
                 <tr>
@@ -40,7 +41,7 @@
                     <td>$per_pho</td>
                     <td>$per_ema</td>
                     <td>$per_char</td>
-                    <td><a class='btn btn-warning' href='revision_preinscripcion.php?stu_doc_num=$etc&status=$view' role='button'>Editar Informacion</a></td>
+                    <td><a class='btn btn-warning' href='registro_trabajadores.php?emp_doc_num=$etc&status=$view&action=$action' role='button'>Editar Informacion</a></td>
                 </tr>
             ");
 

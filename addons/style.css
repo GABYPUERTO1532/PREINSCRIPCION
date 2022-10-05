@@ -25,3 +25,8 @@ input{
 .oculto{
     display: none;
 }
+
+.formulario_mini{
+    margin:auto;
+    margin-top: 10px;
+}
