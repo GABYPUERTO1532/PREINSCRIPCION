@@ -179,6 +179,18 @@
 
                 break; 
 
+                case "consultar_lista_actores":
+
+                    $sql="SELECT * FROM actors";
+                    $consulta=$coneccionBD->query($sql);
+                    $array=[];
+                    while($item=mysqli_fetch_assoc($consulta)){
+                        array_push($array,$item['act_nam']);
+                    }
+                    return $array;
+                    
+                break;
+
             /**/
 
         }

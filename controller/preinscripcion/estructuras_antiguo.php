@@ -81,6 +81,9 @@
 
     $rh=consultar_informacion("obtener_factor_rh");
 
+    //Lista Usada para la funcionalidad de creacion de trabajadores del actor "Rectoria";
+    $actors=consultar_informacion("consultar_listado_actores");
+
     //Similar al caso de los numeros de documentos validos para el estudiante, sin mebargo, en este caso se suprime: Registro Civil y Tarjeta de identidad
     $fam_doc_typ=consultar_informacion("obtener_tipo_documento");
     unset($fam_doc_typ['5'],$fam_doc_typ['6']);
@@ -345,6 +348,7 @@
         global $yes_no;
         global $ci;
         global $actions;
+        global $actors;
 
         /*
         
@@ -420,6 +424,10 @@
 
                     case "actions":
                         $options=$actions;
+                    break;
+                    
+                    case "actors":
+                        $options=$actors;
                     break;
 
                     

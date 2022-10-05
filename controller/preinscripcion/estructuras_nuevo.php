@@ -1,6 +1,9 @@
 <?php
     
     //Se Trae el modelo "consultar_informacion.php", ya que este contiene en su interiro la funcion para obtener los arrays, los cuales se mostraran como listas desplegables o select html
+
+use function PHPSTORM_META\type;
+
     include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 
     /*
@@ -37,6 +40,10 @@
     $blood_group=consultar_informacion("obtener_grupo_sanguineo");
 
     $rh=consultar_informacion("obtener_factor_rh");
+
+    //Lista Usada para la funcionalidad de creacion de trabajadores del actor "Rectoria";
+    $actors=consultar_informacion("consultar_lista_actores");
+    unset($actors['1'],$actors['0'],$actors['5'],$actors['6']);
 
     //Similar al caso de los numeros de documentos validos para el estudiante, sin mebargo, en este caso se suprime: Registro Civil y Tarjeta de identidad
     $fam_doc_typ=consultar_informacion("obtener_tipo_documento");
@@ -94,6 +101,7 @@
             global $fam_doc_typ;
             global $yes_no;
             global $ci;
+            global $actors;
         /**/
     
         /*
@@ -167,6 +175,10 @@
 
                     case "ci":
                         $options=$ci;
+                    break;
+
+                    case "actors":
+                        $options=$actors;
                     break;
 
                     
