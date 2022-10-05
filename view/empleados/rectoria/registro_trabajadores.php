@@ -12,7 +12,7 @@
 ?>
 
 <div class="card col-md-10 formulario_mini">
-    <form action="../../../controller/actions.php" method="post">
+    <form action="../../../controller/actions.php?action=crear_empleado" method="post">
         <div class="card-header">
             <h4 class="card-title">Registro Nuevos Trabajadores</h4>
         </div>

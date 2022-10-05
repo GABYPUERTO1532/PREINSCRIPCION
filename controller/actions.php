@@ -13,8 +13,6 @@
     }else{
         $stu_typ="Nuevo";   
     }
-
-    $stu_typ=$_GET['stu_typ'];
     
     if(isset($_GET['action'])){
         $post_action=$_GET['action'];
@@ -69,7 +67,7 @@
         
             crear_actualizar("update",$stu_doc_num);
             crear_actualizar("confirmar_preinscripcion",$stu_doc_num,$doc_num_moth,$doc_num_fath,$doc_num_acu);
-            header("Location: ../view/empleados/coordinacion_academica/");
+            header("Location: ../view/empleados/coordinacion_academica/listado_trabajadores.php");
         break;
 
         //Metodo vista "revision_preinscripcion.php" caso "Rechazar o Negar Preinscripcion"
@@ -80,7 +78,12 @@
             $doc_num_acu=$_GET['doc_num_acu'];
             crear_actualizar("update",$stu_doc_num);
             crear_actualizar("rechazar_preinscripcion",$stu_doc_num,$doc_num_moth,$doc_num_fath,$doc_num_acu);
-            header("Location: ../view/empleados/coordinacion_academica/");
+            header("Location: ../view/empleados/coordinacion_academica/listado_trabajadores.php");
+        break;
+
+        case "crear_empleado":
+            crear_actualizar("crear_empleado");
+            header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
         break;
     }
 ?>

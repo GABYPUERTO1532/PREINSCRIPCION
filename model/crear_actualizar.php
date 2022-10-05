@@ -138,14 +138,15 @@
 
         /*DATOS TRABAJADORES*/
 
-            global $post_per_nam;
-            global $post_per_doc_num;
-            global $post_per_land;
-            global $post_per_pho;
-            global $post_per_add;
-            global $post_per_char;
-            global $post_per_ema;
-            global $post_per_pass;
+            global $post_emp_nam;
+            global $post_emp_doc_typ;
+            global $post_emp_doc_num;
+            global $post_emp_land;
+            global $post_emp_pho;
+            global $post_emp_add;
+            global $post_emp_char;
+            global $post_emp_ema;
+            global $post_emp_pass;
 
         /**/
 
@@ -429,20 +430,23 @@
                         Tip: Un hash no es mas que el resultado de pasar una cadena de texto por una funcion la cual a traves de un algoritmo especifico, combierte dicha cadena en un conjunto de caracteres alfanumericos de igual cantidad, dicha funcion nos permite encriptar las contraseñas, para que estas no puedan ser extraidas si alguien obtiene acceso a nuestras bases de datos, asi mismo representa una medida de seguridad para el login. 
 
                     */
-                    $per_hash=password_hash($post_per_pass,PASSWORD_DEFAULT);
+                    $emp_hash=password_hash($post_emp_pass,PASSWORD_DEFAULT);
 
+                    echo($post_emp_doc_typ);
+                    
                     //Crear nuevo Empleado
-                    $sql="INSERT INTO workers (per_nam,doc_num,per_land,per_pho,per_add,per_char,per_ema,per_hash,cre_dat,upd_dat) VALUES ('$post_per_nam','$post_per_doc_num','$post_per_land','$post_per_pho','$post_per_add','$post_per_char','$post_per_ema','$per_hash','$date','$date')";
+                    $sql="INSERT INTO workers (emp_nam,doc_typ,doc_num,emp_land,emp_pho,emp_add,emp_char,emp_ema,emp_hash,cre_dat,upd_dat) VALUES ('$post_emp_nam','$post_emp_doc_typ','$post_emp_doc_num','$post_emp_land','$post_emp_pho','$post_emp_add','$post_emp_char','$post_emp_ema','$emp_hash','$date','$date')";
+                    
                     $coneccionBD->query($sql);
                     
                 break;
 
                 case "actualizar_empleado":
 
-                    $per_hash=password_hash($post_per_pass,PASSWORD_DEFAULT);
+                    $emp_hash=password_hash($post_emp_pass,PASSWORD_DEFAULT);
 
                     //Actualizar la informacion de un Empleado Antiguo
-                    $sql=("UPDATE workers SET per_nam='$post_per_nam', doc_num='$post_per_doc_num',per_land='$post_per_land', per_pho='$post_per_pho', per_add='$post_per_add', per_ema='$post_per_ema', per_hash='$per_hash', upd_dat='$date' WHERE doc_num='$post_doc_num'");
+                    $sql=("UPDATE workers SET per_nam='$post_emp_nam', doc_typ='$post_emp_doc_typ',doc_num='$post_emp_doc_num',per_land='$post_emp_land', per_pho='$post_emp_pho', per_add='$post_emp_add', per_ema='$post_emp_ema', per_hash='$emp_hash', upd_dat='$date' WHERE doc_num='$post_doc_num'");
                     $coneccionBD->query($sql);
 
                 break;

@@ -349,4 +349,18 @@
 
     /**/
 
+    /*FORMULARIO EMPLEADOS*/
+
+        $post_emp_nam=obtener_post("emp_nam");
+        $post_emp_doc_typ=obtener_post("emp_doc_typ");
+        $post_emp_doc_num=obtener_post("emp_doc_num");
+        $post_emp_land=obtener_post("emp_land");
+        $post_emp_pho=obtener_post("emp_pho");
+        $post_emp_add=obtener_post("emp_add");
+        $post_emp_char=obtener_post("emp_char");
+        $post_emp_ema=obtener_post("emp_ema");
+        $post_emp_pass=obtener_post("emp_pass");
+
+    /**/
+
 ?>
