@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $_SESSION['titulo']="Listado Preinscripciones";
     $_SESSION['sub_lev']='lev_3';
     
@@ -9,7 +8,7 @@
     $action_crear=password_hash("crear",PASSWORD_DEFAULT);
     $view=password_hash("true",PASSWORD_DEFAULT);
 ?>
-    <div class="container">
+    <div class="">
         <div class="card" style="margin-top: 20px;">
             <div class="card-header">
                 <h4 class="card-title">Lista de Trabajadores dentro de la institucion</h4>

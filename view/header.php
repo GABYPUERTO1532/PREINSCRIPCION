@@ -1,11 +1,14 @@
 <?php
 
-  $route="../..";
   if(isset($_SESSION['sub_lev'])){
     switch ($_SESSION['sub_lev']){
       case "lev_3":
         $route="../../..";
       break;    
+
+      case "lev_2":
+        $route="../..";
+      break;
     }
   }
 

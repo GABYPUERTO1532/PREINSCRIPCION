@@ -86,4 +86,4 @@
             header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
         break;
     }
-?>
+?>  

@@ -1,6 +1,6 @@
 <?php 
-  session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['sub_lev']="lev_2";
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php");
