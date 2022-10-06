@@ -21,7 +21,7 @@
 ?>
 
 <div class="card col-md-10 formulario_mini">
-    <form action="../../../controller/actions.php" method="post">
+    <form action="../../../controller/actions.php?action=actualizar_empleado&emp_doc_num=<?php echo($doc_num)?>" method="post">
         <div class="card-header">
             <h4 class="card-title">Actualizacion Informacion Trabajadores</h4>
         </div>
@@ -63,12 +63,12 @@
                 <?php estructura("email","Correo Electronico","emp_ema")?>
 
                 <!--Input: emp_pass (Contraseña Empleado)-->
-                <?php estructura("text","Contraseña Empleado","emp_pass","","","","","desactivado")?>
+                <?php estructura("password","Contraseña Empleado","emp_pass","","","","","desactivado")?>
             </div>
 
         </div>
         <div class="card-footer text-muted">
-            <button type="submit" class="btn btn-success">Completar Registro</button>
+            <button type="submit" class="btn btn-success">Finalizar Proceso</button>
         </div>
     </form>
 </div>

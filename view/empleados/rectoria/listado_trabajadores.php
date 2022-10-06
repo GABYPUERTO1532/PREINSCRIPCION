@@ -38,8 +38,9 @@
                 </form>
 
                 <div class="card-footer text-muted">
-                    <a class="btn btn-info" href="registro_trabajadores.php?status=<?php echo($view)?>&action=<?php echo($action_crear)?>' role='button'" role="button">Crear Trabajador</a>
-                    <a class="btn btn-primary" href="../" role="button">Cerrar Sesion</a>
+                    <a class="btn btn-primary" href="registro_trabajadores.php?status=<?php echo($view)?>&action=<?php echo($action_crear)?>' role='button'" role="button">Crear Trabajador</a>
+
+                    <a class="btn btn-danger" href="../" role="button">Cerrar Sesion</a>
                 </div>
             </div>
         </div>

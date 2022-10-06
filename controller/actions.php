@@ -94,5 +94,10 @@
             crear_actualizar("eliminar_empleado",$post_emp_doc_num);
             header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
         break;
+
+        case "actualizar_empleado":
+            crear_actualizar("actualizar_empleado",$post_emp_doc_num);
+            header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
+        break;
     }
 ?>  
