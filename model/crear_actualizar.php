@@ -330,8 +330,6 @@
                             $coneccionBD->query($sql);
                         }
 
-                        echo($post_sch_grd_4);
-
                         if($post_sch_grd_5<>""){
                             //Registro 5
                             $sql=("INSERT INTO edu_inf (stu_doc_num,sch_grd,sch_yea,sch_cit,sch_ins) VALUES ('$post_doc_num','$post_sch_grd_5','$post_sch_yea_5','$post_sch_cit_5','$post_sch_ins_5')");
