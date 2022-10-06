@@ -67,7 +67,7 @@
         
             crear_actualizar("update",$stu_doc_num);
             crear_actualizar("confirmar_preinscripcion",$stu_doc_num,$doc_num_moth,$doc_num_fath,$doc_num_acu);
-            header("Location: ../view/empleados/coordinacion_academica/listado_trabajadores.php");
+            header("Location: ../view/empleados/coordinacion_academica/listado_preinscripciones.php");
         break;
 
         //Metodo vista "revision_preinscripcion.php" caso "Rechazar o Negar Preinscripcion"
@@ -78,7 +78,7 @@
             $doc_num_acu=$_GET['doc_num_acu'];
             crear_actualizar("update",$stu_doc_num);
             crear_actualizar("rechazar_preinscripcion",$stu_doc_num,$doc_num_moth,$doc_num_fath,$doc_num_acu);
-            header("Location: ../view/empleados/coordinacion_academica/listado_trabajadores.php");
+            header("Location: ../view/empleados/coordinacion_academica/listado_preinscripciones.php");
         break;
 
         case "crear_empleado":

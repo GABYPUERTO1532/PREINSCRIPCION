@@ -5,6 +5,7 @@
   }
   
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['sub_lev']="lev_2";
 
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
