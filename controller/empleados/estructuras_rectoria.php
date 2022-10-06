@@ -1,18 +1,19 @@
 <?php
     include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/obtener_info.php";
 
     //Se guarda todos los datos obtenidos de la tabla "pre_stu" (Estudiantes Preinscritos)
     $consulta=consultar_informacion("consultar_listado_empleados");
+    $doc_num_emp=consultar_informacion("consultar_doc_num_emp");
 
-    /*
-        Solicitud: Se requiere de una funcion la cual tome cada registro dentro de la tabla "pre_stu" y muestre sus valores en una fila la cual estara contenida dentro de una tabla, asi mismo esta debera contar con un boton el cual rediriga al usuario a la vista "revision_preinscripcion.php" donde podra ver la informacion del estudiante seleccionado, asi como rechazar o aprobar su respectiva preinscripcion.
+    if(isset($_SESSION['emp_doc_num'])){
+        while($item=mysqli_fetch_assoc($doc_num_emp)){
+            if(password_verify($item['doc_num'],$_SESSION['emp_doc_num'])){
+                $doc_num=$item['doc_num'];
+            }
+        }
+    }
 
-        Explicacion: Para completar dicho requerimiento se hace uso nuevamente de un ciclo While en el cual su argumento sera la posibilidad de guardar el arreglo asocitivo de un registro NUEVO dentro de la variable "$registo_individual" (Para mas informacion, revisar el modelo "obtener_info.php" en el caso "obtener_info familiar").
-
-        Una vez guardado un unico registro en la variable "$registro_individual", la funcion comenzara a guardar los valores de las claves en sus respetivas variables de nombre similar, para luego se impresas en una fila html.
-
-        ACLARACION: El boton, ademas de ser enlace a la vista de "revision_preisncripcion.php", tambien le esta enviando a dicha vista el numero de documento del estudiante a consultar,Sin mebargo, por cuestiones de seguridad en numero de documento no puede ser enviado con tanta facilidad, sino que este es sometido a la funcion "password_hash", la cual genera una cadena de caracteres encriptados, la cual sera resuelta en el controlador "estructuras_antiguo.php" (Para mas informacion, revisar dicho controlador)
-    */
     function listar_registros(){
         
         global $consulta;
@@ -42,7 +43,7 @@
                     <td>$per_ema</td>
                     <td>$per_char</td>
                     <td>
-                        <a class='btn btn-danger'  href='actualizacion_trabajadores.php?emp_doc_num=$etc&status=$view&action=$action' role='button'>Eliminar</a>
+                        <a class='btn btn-danger' href='../../../controller/actions.php?emp_doc_num=$doc_num&action=eliminar_empleado' role='button'>Eliminar</a>
 
                         <a class='btn btn-warning' href='actualizacion_trabajadores.php?emp_doc_num=$etc&status=$view&action=$action' role='button'>Editar</a>
                     </td>
@@ -52,6 +53,115 @@
 
         }
         
+    }
+
+    if(isset($doc_num)){
+        $emp_inf=obtener_info("obtener_emp_info",$doc_num);
+    }
+
+    function value_selected($col_nam){
+
+        global $emp_inf;
+
+        switch ($col_nam){
+            
+            case "emp_doc_typ":                
+                return $emp_inf['doc_typ'];
+            break;
+
+            case "emp_doc_num":                
+                return $emp_inf['doc_num'];
+            break;
+
+            case "emp_pass":                
+                return "";
+            break;
+
+            default:
+                return $emp_inf[$col_nam];
+            break;
+
+        }
+    }
+
+    $actors=consultar_informacion("consultar_lista_actores");
+    unset($actors['0'],$actors['5'],$actors['6']);
+
+    $doc_typ=consultar_informacion("obtener_tipo_documento");
+    unset($doc_typ['5'],$doc_typ['6']);
+
+    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength=null,$minlenght=null){
+
+        if($minlenght==null){
+            $minlenght='1';
+        }
+
+        if($maxlength==null){
+            $maxlength='255';
+        }
+        
+        global $actors;
+        global $doc_typ;
+
+        $value_select=value_selected($nombre_input);
+    
+        switch ($tipo_input){
+            case "select":
+                $resultado=("
+                    <div class='mb-3 col-md-3 input'>
+                        <label for='$nombre_input' class='form-label'>$titulo</label>
+                        <select class='form-control' name='$nombre_input''id='$nombre_input' required>
+                            <option value='' style='text-align:center;'>Seleccione</option>
+                ");
+
+                switch ($array_type){
+                    
+                    case "actors":
+                        $options=$actors;
+                    break;
+
+                    case "doc_typ":
+                        $options=$doc_typ;
+                    break;
+
+                    
+                }
+
+                foreach ($options as $option){
+
+                    if ($option==$value_select){
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;' selected>$option</option>
+                        ");
+                    }else{
+                        $resultado.=("
+                            <option value='$option' style='text-align:center;'>$option</option>
+                        ");
+                    }
+
+                }
+
+                $resultado.=("
+                        </select>
+                    </div>
+                ");
+
+                echo($resultado);
+            break;
+
+            default:
+                echo("
+                    <div class='mb-3 col-md-3 input'>
+                        <label for='$nombre_input' class='form-label'>$titulo</label>
+                        <input type='$tipo_input'
+                            class='form-control' name='$nombre_input' id='$nombre_input' 
+                            maxlength='$maxlength' aria-describedby='helpId' required minlenght='$minlenght'
+                            min='0' value='$value_select'
+                            $addons>
+                    </div>
+                ");   
+            break;
+        };
     }
 
 ?>

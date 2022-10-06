@@ -18,6 +18,10 @@
         $post_action=$_GET['action'];
     }
 
+    if(isset($_GET['emp_doc_num'])){
+        $post_emp_doc_num=$_GET['emp_doc_num'];
+    }
+
     /*
 
         Solicitud: Se requeire la creacion de una funcion la cual centralice y facilite la gestion de las operaciones en la base de datos, para esto, esta obtiene todos los valores post y debera realizar la operacion solicitada por la correspondiente vista.
@@ -83,6 +87,11 @@
 
         case "crear_empleado":
             crear_actualizar("crear_empleado");
+            header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
+        break;
+
+        case "eliminar_empleado":
+            crear_actualizar("eliminar_empleado",$post_emp_doc_num);
             header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
         break;
     }

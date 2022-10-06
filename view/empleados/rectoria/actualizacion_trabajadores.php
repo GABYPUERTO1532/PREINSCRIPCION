@@ -1,21 +1,29 @@
 <?php
+
+    if(
+        !isset($_GET['status']) or 
+        !isset($_GET['action']) or
+        password_verify($_GET['status'],"true") or
+        password_verify($_GET['action'],"actualizar") or
+        !isset($_GET['emp_doc_num'])
+    )
+    {
+        header("Location: ../../../");
+    }
+    
     $_SESSION['titulo']="Listado Preinscripciones";
     $_SESSION['sub_lev']='lev_3';
     $_SESSION['emp_doc_num']=$_GET['emp_doc_num'];
     
     include "C://xampp/htdocs/PREINSCRIPCION/view/header.php";
-    include "C://xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php"; 
-
-    if(!isset($_GET['status']) or !isset($_GET['action']) or (password_verify($_GET['status'],"true")) or password_verify($_GET['action'],"actualizar") or !isset($_GET['emp_doc_num'])){
-        header("Location: ../../../");
-    }
+    include "C://xampp/htdocs/PREINSCRIPCION/controller/empleados/estructuras_rectoria.php"; 
 
 ?>
 
 <div class="card col-md-10 formulario_mini">
     <form action="../../../controller/actions.php" method="post">
         <div class="card-header">
-            <h4 class="card-title">Registro Nuevos Trabajadores</h4>
+            <h4 class="card-title">Actualizacion Informacion Trabajadores</h4>
         </div>
         <div class="card-body">
 
@@ -26,7 +34,7 @@
                 <?php estructura("text","Nombre Completo","emp_nam")?>
 
                 <!--Input: emp_doc_typ (Tipo de documento Empleado)-->
-                <?php estructura("select","Tipo de Documento","emp_doc_typ","fam_doc_typ")?>
+                <?php estructura("select","Tipo de Documento","emp_doc_typ","doc_typ")?>
 
                 <!--Input: emp_doc_typ (Numero de documento empleado)-->
                 <?php estructura("text","Numero de Documento","emp_doc_num","","","20")?>
@@ -55,7 +63,7 @@
                 <?php estructura("email","Correo Electronico","emp_ema")?>
 
                 <!--Input: emp_pass (Contraseña Empleado)-->
-                <?php estructura("password","Contraseña Empleado","emp_pass","","","","desactivado")?>
+                <?php estructura("password","Contraseña Empleado","emp_pass","","","",)?>
             </div>
 
         </div>

@@ -191,6 +191,14 @@
                     
                 break;
 
+                case "consultar_doc_num_emp":
+                    
+                    $sql="SELECT doc_num FROM workers";
+                    $consulta=$coneccionBD->query($sql);
+
+                    return $consulta;
+                break;
+
             /**/
 
         }

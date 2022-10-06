@@ -454,7 +454,7 @@
                 case "eliminar_empleado":
 
                     //Eliminar la informacion de un empleado existente.
-                    $sql=("DELETE FROM  workers WHERE doc_num='$post_doc_num'");
+                    $sql=("DELETE FROM workers WHERE doc_num='$post_doc_num'");
                     $coneccionBD->query($sql);
 
                 break;
