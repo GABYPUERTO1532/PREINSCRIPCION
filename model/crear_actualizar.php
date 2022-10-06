@@ -455,8 +455,7 @@
                         $sql=("UPDATE workers SET emp_nam='$post_emp_nam', doc_typ='$post_emp_doc_typ',doc_num='$post_emp_doc_num',emp_land='$post_emp_land', emp_pho='$post_emp_pho', emp_add='$post_emp_add', emp_ema='$post_emp_ema', emp_hash='$emp_hash', upd_dat='$date' WHERE doc_num='$post_doc_num'");
 
                     }else{
-
-                        echo("no definida");
+                        
                         //Actualizar la informacion de un Empleado Antiguo
                         $sql=("UPDATE workers SET emp_nam='$post_emp_nam', doc_typ='$post_emp_doc_typ',doc_num='$post_emp_doc_num',emp_land='$post_emp_land', emp_pho='$post_emp_pho', emp_add='$post_emp_add', emp_ema='$post_emp_ema',upd_dat='$date' WHERE doc_num='$post_doc_num'");
 

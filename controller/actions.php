@@ -37,7 +37,86 @@
         //Metodo vista "preinscripcion_nuevos.php"
         case "create":
             crear_actualizar("create");
-            header("Location: ../");
+            //header("Location: ../");
+            $pdf_info=[
+                //INFORMACION DEL ESTUDIANTE
+                'firs_sur'=>$post_firs_sur,
+                'sec_sur'=>$post_sec_sur,
+                'firs_nam'=>$post_firs_nam,
+                'sec_nam'=>$post_sec_nam,
+                'dat_bir'=>$post_dat_bir,
+                'stu_dep'=>$post_stu_dep,
+                'stu_cit'=>$post_stu_cit,
+                'stu_doc_typ'=>$post_stu_doc_typ,
+                'stu_doc_num'=>$post_stu_doc_num,
+                'exp_cit'=>$post_exp_cit,
+                'stu_add'=>$post_stu_add,
+                'stu_loc'=>$post_stu_loc,
+                'stu_nei'=>$post_stu_nei,
+                'stu_est'=>$post_stu_est,
+                'stu_cat'=>$post_stu_cat,
+                'stu_tel'=>$post_stu_tel,
+                'stu_hob'=>$post_stu_hob,
+                'stu_enf'=>$post_stu_enf,
+                'stu_eps'=>$post_stu_eps,
+                'stu_ars'=>$post_stu_ars,
+                'stu_ips'=>$post_stu_ips,
+                'b_grp'=>$post_b_grp,
+                'rh_fact'=>$post_rh_fact,
+
+                //INFORMACION MADRE
+                'fam_nam_moth'=>$post_fam_nam_moth,
+                'doc_typ_moth'=>$post_doc_typ_moth,
+                'doc_num_moth'=>$post_doc_num_moth,
+                'fam_land_moth'=>$post_fam_land_moth,
+                'mob_pho_moth'=>$post_mob_pho_moth,
+                'fam_add_moth'=>$post_fam_add_moth,
+                'fam_ocu_moth'=>$post_fam_ocu_moth,
+                'fam_ema_moth'=>$post_fam_ema_moth,
+
+                //INFORMACION PADRE
+                'fam_nam_fath'=>$post_fam_nam_fath,
+                'doc_typ_fath'=>$post_doc_typ_fath,
+                'doc_num_fath'=>$post_doc_num_fath,
+                'fam_land_moth'=>$post_fam_land_fath,
+                'mob_pho_fath'=>$post_mob_pho_fath,
+                'fam_add_fath'=>$post_fam_add_fath,
+                'fam_ocu_fath'=>$post_fam_ocu_fath,
+                'fam_ema_fath'=>$post_fam_ema_fath,
+
+                //INFORMACION ACUDIENTE
+                'fam_nam_acu'=>$post_fam_nam_acu,
+                'doc_typ_acu'=>$post_doc_typ_acu,
+                'doc_num_acu'=>$post_doc_num_acu,
+                'fam_land_acu'=>$post_fam_land_acu,
+                'mob_pho_acu'=>$post_mob_pho_acu,
+                'fam_add_acu'=>$post_fam_add_acu,
+                'fam_ocu_acu'=>$post_fam_ocu_acu,
+                'fam_ema_acu'=>$post_fam_ema_acu,
+
+                //OTRA INFORMACION
+                'conf_vic'=>$post_conf_vic,
+                'dis_sit'=>$post_dis_sit,
+                'dis_arm_grp'=>$post_dis_arm_grp,
+                'dem_son'=>$post_dem_son,
+                'lim_stu'=>$post_lim_stu,
+                'exp_cap'=>$post_exp_cap,
+                'iq_sco'=>$post_iq_sco,
+                'ass_tes'=>$post_ass_tes,
+                
+                //OTRA INFORMACION
+                'conf_vic'=>$post_conf_vic,
+                'dis_sit'=>$post_dis_sit,
+                'dis_arm_grp'=>$post_dis_arm_grp,
+                'dem_son'=>$post_dem_son,
+                'lim_stu'=>$post_lim_stu,
+                'exp_cap'=>$post_exp_cap,
+                'iq_sco'=>$post_iq_sco,
+                'ass_tes'=>$post_ass_tes,
+
+            ];
+
+            print_r($pdf_info);
         break;
 
         //Metodo vista "preinscripcion_antiguos.php"
