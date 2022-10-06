@@ -42,7 +42,8 @@
                     <td>$per_ema</td>
                     <td>$per_char</td>
                     <td>
-                        <a class='btn btn-danger' href='actualizacion_trabajadores.php?emp_doc_num=$etc&status=$view&action=$action' role='button'>Eliminar</a>
+                        <a class='btn btn-danger'  href='actualizacion_trabajadores.php?emp_doc_num=$etc&status=$view&action=$action' role='button'>Eliminar</a>
+
                         <a class='btn btn-warning' href='actualizacion_trabajadores.php?emp_doc_num=$etc&status=$view&action=$action' role='button'>Editar</a>
                     </td>
                     
