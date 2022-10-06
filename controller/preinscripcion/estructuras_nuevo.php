@@ -44,7 +44,7 @@
 
     //Similar al caso de los numeros de documentos validos para el estudiante, sin mebargo, en este caso se suprime: Registro Civil y Tarjeta de identidad
     $fam_doc_typ=consultar_informacion("obtener_tipo_documento");
-    unset($fam_doc_typ['5'],$fam_doc_typ['6']);
+    unset($fam_doc_typ['5'],$fam_doc_typ['6'],$fam_doc_typ['4']);
 
     /*
         Antecendetes: En la seccion "Otra informacion" del Formato de Preinscripcion hay listas desplegables y select, sin embargo, estas deberan ser mostradas copiando la estructura html directamente en la vista, sino que esta tiene que ser generada por la funcion correspondiente.

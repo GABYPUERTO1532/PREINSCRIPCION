@@ -59,6 +59,12 @@
         $emp_inf=obtener_info("obtener_emp_info",$doc_num);
     }
 
+    $actors=consultar_informacion("consultar_lista_actores");
+    unset($actors['0'],$actors['5'],$actors['6']);
+
+    $doc_typ=consultar_informacion("obtener_tipo_documento");
+    unset($doc_typ['5'],$doc_typ['6']);
+
     function value_selected($col_nam){
 
         global $emp_inf;
@@ -84,13 +90,13 @@
         }
     }
 
-    $actors=consultar_informacion("consultar_lista_actores");
-    unset($actors['0'],$actors['5'],$actors['6']);
+    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength=null,$minlenght=null,$required=null){
 
-    $doc_typ=consultar_informacion("obtener_tipo_documento");
-    unset($doc_typ['5'],$doc_typ['6']);
-
-    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength=null,$minlenght=null){
+        if(isset($required) AND $required=="desactivado"){
+            $required="";
+        }else{
+            $required="required";
+        }
 
         if($minlenght==null){
             $minlenght='1';
@@ -110,7 +116,7 @@
                 $resultado=("
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
-                        <select class='form-control' name='$nombre_input''id='$nombre_input' required>
+                        <select class='form-control' name='$nombre_input''id='$nombre_input' $required>
                             <option value='' style='text-align:center;'>Seleccione</option>
                 ");
 
@@ -155,7 +161,7 @@
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
                             class='form-control' name='$nombre_input' id='$nombre_input' 
-                            maxlength='$maxlength' aria-describedby='helpId' required minlenght='$minlenght'
+                            maxlength='$maxlength' aria-describedby='helpId' $required  minlenght='$minlenght'
                             min='0' value='$value_select'
                             $addons>
                     </div>

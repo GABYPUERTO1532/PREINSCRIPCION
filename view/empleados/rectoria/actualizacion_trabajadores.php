@@ -63,7 +63,7 @@
                 <?php estructura("email","Correo Electronico","emp_ema")?>
 
                 <!--Input: emp_pass (Contraseña Empleado)-->
-                <?php estructura("password","Contraseña Empleado","emp_pass","","","",)?>
+                <?php estructura("text","Contraseña Empleado","emp_pass","","","","","desactivado")?>
             </div>
 
         </div>
