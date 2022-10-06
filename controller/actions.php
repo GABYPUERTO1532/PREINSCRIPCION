@@ -37,7 +37,6 @@
         //Metodo vista "preinscripcion_nuevos.php"
         case "create":
             crear_actualizar("create");
-            //header("Location: ../");
             $pdf_info=[
                 //INFORMACION DEL ESTUDIANTE
                 'firs_sur'=>$post_firs_sur,
@@ -150,13 +149,13 @@
                 'sch_cit_6'=>$post_sch_cit_6,
                 'sch_ins_6'=>$post_sch_ins_6,
             ];
-            
+            $_SESSION['pdf_info']=$pdf_info;
+            header("Location: ../view/imprimir.php");
         break;
 
         //Metodo vista "preinscripcion_antiguos.php"
         case "update":
             crear_actualizar("update",$stu_doc_num,"","","",$stu_typ);
-            //header("Location: ../");
             $pdf_info=[
                 //INFORMACION DEL ESTUDIANTE
                 'firs_sur'=>$post_firs_sur,
@@ -269,7 +268,8 @@
                 'sch_cit_6'=>$post_sch_cit_6,
                 'sch_ins_6'=>$post_sch_ins_6,
             ];
-            
+            $_SESSION['pdf_info']=$pdf_info;
+            header("Location: pdf_structure.php");
         break;
 
         //Metodo vista "revision_preinscripcion.php" caso "Confirmar o Aceptar Preinscripcion"
