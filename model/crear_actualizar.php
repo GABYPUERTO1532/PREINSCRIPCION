@@ -1,6 +1,6 @@
 <?php
 
-    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "../config/bd.php";
 
     /*
     

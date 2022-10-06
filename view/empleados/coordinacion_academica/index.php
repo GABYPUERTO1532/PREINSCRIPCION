@@ -2,8 +2,8 @@
     session_start();
     $_SESSION['titulo']="Listado Preinscripciones";
     
-    include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php";
-    include "C://xampp/htdocs/PREINSCRIPCION/controller/coordinacion_academica/estructuras_coordinador.php"; 
+    include "../view/empleados/header.php";
+    include "../controller/coordinacion_academica/estructuras_coordinador.php"; 
 ?>
     <div class="container">
         <div class="card" style="margin-top: 20px;">
@@ -40,4 +40,4 @@
         </div>
     </div>
 
-<?php include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/footer.php"?>
+<?php include "../view/empleados/footer.php"?>

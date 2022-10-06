@@ -1,6 +1,6 @@
 <?php
-    include "C://xampp/htdocs/PREINSCRIPCION/model/crear_actualizar.php";
-    include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
+    include "../model/crear_actualizar.php";
+    include "../config/post.php";
 
     if(isset($_GET['stu_doc_num'])){
         $stu_doc_num=$_GET['stu_doc_num'];   

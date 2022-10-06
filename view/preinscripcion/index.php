@@ -9,13 +9,14 @@
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
-  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
+  include "../header.php"; 
+  include ("../../controller/preinscripcion/estructuras_antiguo.php");
 
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&stu_typ='Antiguo'" method="post">
+    <form action="../imprimir.php">
+    <!--<form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&stu_typ='Antiguo'" method="post">-->
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

@@ -2,8 +2,8 @@
   session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
-  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php");
+  include "../header.php"; 
+  include ("../../controller/preinscripcion/estructuras_nuevo.php");
 
   $stu_doc_typ_login=$_GET['stu_doc_typ'];
   $stu_doc_num_login=$_GET['stu_doc_num'];
@@ -652,6 +652,7 @@
       </div>
       <div class="card-footer text-muted text-center">
         <button type="submit" class="btn btn-success">Finalizar Proceso</button>
+        <button type="submit" class="btn btn-success">Imprimir</button>
       </div>
     </form>
   </div>

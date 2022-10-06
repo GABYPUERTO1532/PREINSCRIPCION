@@ -9,8 +9,8 @@
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
-  include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
+  include "../view/empleados/header.php"; 
+  include ("../controller/preinscripcion/estructuras_antiguo.php");
   $stu_typ=$_SESSION['stu_typ'];
 
 ?>

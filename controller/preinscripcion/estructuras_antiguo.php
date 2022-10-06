@@ -9,10 +9,10 @@
     $stu_doc_num_cont=$_SESSION['stu_doc_num_cont'];
 
     //Se Trae el modelo "consultar_informacion.php", ya que este contiene en su interiro la funcion para obtener los arrays, los cuales se mostraran como listas desplegables o select html
-    include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
+    include "../../model/consultar_informacion.php";
 
     //Se llama al modelo "obtener_info", ya que en su interior contiene las funcion que nos permitira traer toda la informacion guardada en la base de datos.
-    include "C://xampp/htdocs/PREINSCRIPCION/model/obtener_info.php";
+    include "../../model/obtener_info.php";
 
     /*
 
