@@ -16,7 +16,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&stu_typ=Antiguo" method="post">
+    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&doc_num_moth=<?php echo($moth_info['doc_num']);?>&doc_num_fath=<?php echo($fath_info['doc_num']);?>&doc_num_acu=<?php echo($acu_info['doc_num']);?>" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

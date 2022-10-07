@@ -157,7 +157,11 @@
 
         //Metodo vista "preinscripcion_antiguos.php"
         case "update":
-            /*crear_actualizar("update",$stu_doc_num,"","","",$stu_typ);*/
+            crear_actualizar("update",$stu_doc_num,"","","",$stu_typ);
+            $doc_num_moth=$_GET['doc_num_moth'];
+            $doc_num_fath=$_GET['doc_num_fath'];
+            $doc_num_acu=$_GET['doc_num_acu'];
+
             $pdf_info=[
                 //INFORMACION DEL ESTUDIANTE
                 'firs_sur'=>$post_firs_sur,
@@ -187,7 +191,7 @@
                 //INFORMACION MADRE
                 'fam_nam_moth'=>$post_fam_nam_moth,
                 'doc_typ_moth'=>$post_doc_typ_moth,
-                'doc_num_moth'=>$post_doc_num_moth,
+                'doc_num_moth'=>$doc_num_moth,
                 'fam_land_moth'=>$post_fam_land_moth,
                 'mob_pho_moth'=>$post_mob_pho_moth,
                 'fam_add_moth'=>$post_fam_add_moth,
@@ -197,7 +201,7 @@
                 //INFORMACION PADRE
                 'fam_nam_fath'=>$post_fam_nam_fath,
                 'doc_typ_fath'=>$post_doc_typ_fath,
-                'doc_num_fath'=>$post_doc_num_fath,
+                'doc_num_fath'=>$doc_num_fath,
                 'fam_land_fath'=>$post_fam_land_fath,
                 'mob_pho_fath'=>$post_mob_pho_fath,
                 'fam_add_fath'=>$post_fam_add_fath,
@@ -207,7 +211,7 @@
                 //INFORMACION ACUDIENTE
                 'fam_nam_acu'=>$post_fam_nam_acu,
                 'doc_typ_acu'=>$post_doc_typ_acu,
-                'doc_num_acu'=>$post_doc_num_acu,
+                'doc_num_acu'=>$doc_num_acu,
                 'fam_land_acu'=>$post_fam_land_acu,
                 'mob_pho_acu'=>$post_mob_pho_acu,
                 'fam_add_acu'=>$post_fam_add_acu,
@@ -273,8 +277,7 @@
             session_reset();
             session_start();
             $_SESSION['pdf_info']=$pdf_info;
-            echo $post_doc_num_acu;
-            //header("Location: pdf_structure.php");
+            header("Location: pdf_structure.php");
         break;
 
         //Metodo vista "revision_preinscripcion.php" caso "Confirmar o Aceptar Preinscripcion"
