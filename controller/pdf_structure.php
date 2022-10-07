@@ -14,25 +14,34 @@
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>Formulario Preinscripcion</title>
             <style>
+
                 table {
                     width: 100%;
                 }
                 td{
                     text-align: center;
                 }
-                h3{
+                div{
                     margin: 0px 0px 0px 0px;
                 }
+                h3{
+                    margin: 0px 0px 0px 0px;
+                    font-size: 15px;
+                }
                 h2{
-                    margin: 10px 0px 10px 0px;
+                    margin: 0px 0px 0px 0px;
+                    font-size: 20px;
                 }
                 .compromiso{
                     font-size:10px;
                 }
+                .cabecera{
+                    margin: 0px 0px 0px 0px;
+                }
             </style>
         </head>
         <body style='font-size:15px;'>
-            <div style='text-align: center'>        
+            <div style='text-align: center' class='cabecera'>        
                 <h3>COLEGIO ITD JUAN DEL CORRAL IED</h3>
                 <h2>MATRICULA AÑO ".$año_actual."</h2>
             </div>
@@ -56,7 +65,6 @@
             </table>
             <div style='text-align: center'>        
                 <h3>DATOS DEL ESTUDIANTE</h3>
-                
             </div>
             
             <table align='center'>
