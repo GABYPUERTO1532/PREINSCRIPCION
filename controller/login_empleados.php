@@ -12,15 +12,15 @@
 
             Tip: Durante el Login, al usuario se le indica que ingrese que tipo de cargo ocupa en la institucion, dicho valor es guardado en "$_SESSION['per_char']", para luego ser usada en esta estructura
         */
-        switch ($_SESSION['per_char']){
+        switch ($_SESSION['emp_char']){
 
             //En caso de que el empleado Trabaje en coordinacion academica, se le redireccionara a la vista /coordinacion_academica/services.php
             case "Coordinacion Academica":
-                header("Location: ../view/empleados/coordinacion_academica/");
+                header("Location: ../view/empleados/coordinacion_academica/listado_preinscripciones.php");
             break;
 
-            case "Administrador":
-                header("Location: ../view/empleados/coordinacion_academica/");
+            case "Rectoria":
+                header("Location: ../view/empleados/rectoria/listado_trabajadores.php");
             break;
 
             /*

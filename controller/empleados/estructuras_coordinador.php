@@ -1,9 +1,9 @@
 <?php
 
-    include "../model/consultar_informacion.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 
     //Se guarda todos los datos obtenidos de la tabla "pre_stu" (Estudiantes Preinscritos)
-    $consulta=consultar_informacion("consultar_listado");
+    $consulta=consultar_informacion("consultar_listado_preinscripciones");
 
     /*
         Solicitud: Se requiere de una funcion la cual tome cada registro dentro de la tabla "pre_stu" y muestre sus valores en una fila la cual estara contenida dentro de una tabla, asi mismo esta debera contar con un boton el cual rediriga al usuario a la vista "revision_preinscripcion.php" donde podra ver la informacion del estudiante seleccionado, asi como rechazar o aprobar su respectiva preinscripcion.

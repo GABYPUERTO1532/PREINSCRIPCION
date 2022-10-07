@@ -1,7 +1,7 @@
 <?php
 
-    include "../config/bd.php";
-    include "../config/post.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
 
     function login(){
 

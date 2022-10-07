@@ -1,6 +1,6 @@
 <?php
 
-    include "../../config/bd.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
 
     /*    
         Explicacion: Esta funcion tiene como fin el obtener todos los registros de diferentes tablas, segun la necesidad del sistema, para ello se hace uso de una estructura switch la cual segun el argumento que le introduzcamos a la funcion, esta buscara en una u otra tabla y retornara el correspondiente resultado a dicha consulta.
@@ -163,13 +163,41 @@
                     Aclaracion: Despues de realizar la consulta se retorna, dicho resultado y se le dara uso en el controlador "coordinacion_academica.php", donde este iterara sobre dichos resultados y los mostrara en forma de lista en la vista del coordinador.
 
                 */
-                case "consultar_listado":
+                case "consultar_listado_preinscripciones":
 
                     $sql="SELECT * FROM pre_stu";
                     $consulta=$coneccionBD->query($sql);
                     return $consulta;
 
                 break; 
+
+                case "consultar_listado_empleados":
+
+                    $sql="SELECT * FROM workers";
+                    $consulta=$coneccionBD->query($sql);
+                    return $consulta;
+
+                break; 
+
+                case "consultar_lista_actores":
+
+                    $sql="SELECT * FROM actors";
+                    $consulta=$coneccionBD->query($sql);
+                    $array=[];
+                    while($item=mysqli_fetch_assoc($consulta)){
+                        array_push($array,$item['act_nam']);
+                    }
+                    return $array;
+                    
+                break;
+
+                case "consultar_doc_num_emp":
+                    
+                    $sql="SELECT doc_num FROM workers";
+                    $consulta=$coneccionBD->query($sql);
+
+                    return $consulta;
+                break;
 
             /**/
 

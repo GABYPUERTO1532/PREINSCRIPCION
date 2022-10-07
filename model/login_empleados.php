@@ -1,7 +1,7 @@
 <?php
 
-    include "../config/bd.php";
-    include "../config/post.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "C://xampp/htdocs/PREINSCRIPCION/config/post.php";
 
     function login(){
 
@@ -16,7 +16,7 @@
             Explicacion: Se realiza una primera consulta, donde se busquen todos los registro en el cual concuerde el tipo de cargo del empleado y su correo asignado
 
         */
-        $sql="SELECT * FROM workers WHERE per_char='$post_emp_char' AND per_ema='$post_emp_ema'";
+        $sql="SELECT * FROM workers WHERE emp_char='$post_emp_char' AND emp_ema='$post_emp_ema'";
 
         /*
 
@@ -49,14 +49,14 @@
 
                 La funcion password_verify genera el hash para la contraseña ingresada por el usuario y luego compara dicho string con el string del hash original
             */
-            if(password_verify($post_emp_pass,$resultado['per_hash'])){
+            if(password_verify($post_emp_pass,$resultado['emp_hash'])){
 
                 /*
                     En caso que la contraseña si coincida, se acticara una sesion y en la variable 'per_char', se guardara el cargo del empleado, para ser usado en la diferenciacion de este y su posterior redireccion a sus vistas correspondientes.
                 */
 
                 session_start();
-                $_SESSION['per_char']=$post_emp_char;
+                $_SESSION['emp_char']=$post_emp_char;
 
                 //Una vez hecho esto, la funcion retornara el valor de TRUE, el cual sera usado en el controlador correspondiente
                 return TRUE;
