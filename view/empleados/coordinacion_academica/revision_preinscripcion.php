@@ -5,18 +5,19 @@
   }
 
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['sub_lev']='lev_3';
 
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/empleados/header.php"; 
+  include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
   $stu_typ=$_SESSION['stu_typ'];
 
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../../controller/actions.php?stu_doc_num=<?php echo($stu_doc_num);?>&doc_num_moth=<?php echo($moth_info['doc_num']);?>&doc_num_fath=<?php echo($fath_info['doc_num']);?>&doc_num_acu=<?php echo($acu_info['doc_num']);?>&stu_typ='$stu_typ'" method="post">
+    <form action="../../../controller/actions.php?stu_doc_num=<?php echo($stu_doc_num);?>&doc_num_moth=<?php echo($moth_info['doc_num']);?>&doc_num_fath=<?php echo($fath_info['doc_num']);?>&doc_num_acu=<?php echo($acu_info['doc_num']);?>" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
@@ -636,4 +637,4 @@
     </form>
   </div>
   
-<?php include "../footer.php"?>
+<?php include "C://xampp/htdocs/PREINSCRIPCION/view/footer.php"?>

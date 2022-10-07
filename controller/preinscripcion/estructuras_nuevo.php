@@ -38,9 +38,13 @@
 
     $rh=consultar_informacion("obtener_factor_rh");
 
+    //Lista Usada para la funcionalidad de creacion de trabajadores del actor "Rectoria";
+    $actors=consultar_informacion("consultar_lista_actores");
+    unset($actors['1'],$actors['0'],$actors['5'],$actors['6']);
+
     //Similar al caso de los numeros de documentos validos para el estudiante, sin mebargo, en este caso se suprime: Registro Civil y Tarjeta de identidad
     $fam_doc_typ=consultar_informacion("obtener_tipo_documento");
-    unset($fam_doc_typ['5'],$fam_doc_typ['6']);
+    unset($fam_doc_typ['5'],$fam_doc_typ['6'],$fam_doc_typ['4']);
 
     /*
         Antecendetes: En la seccion "Otra informacion" del Formato de Preinscripcion hay listas desplegables y select, sin embargo, estas deberan ser mostradas copiando la estructura html directamente en la vista, sino que esta tiene que ser generada por la funcion correspondiente.
@@ -71,7 +75,13 @@
             6. $maxlength (Opcional): Aunque de forma predeterminada el maximo de caracteres por cada input es de 255, la funcion tambien permite (En caso de ser necesario), definir un numero especifico de caracteres que el input admite
     
     */
-    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength=null){
+    function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$addons=null,$maxlength=null,$required=null){
+
+        if(isset($required) AND $required=="desactivado"){
+            $required="";
+        }else{
+            $required="required";
+        }
 
         //Defino como 1 el minimo de caracteres que debe contener cada input en su interior
         $minlenght='1';
@@ -94,6 +104,7 @@
             global $fam_doc_typ;
             global $yes_no;
             global $ci;
+            global $actors;
         /**/
     
         /*
@@ -111,7 +122,7 @@
                 $resultado=("
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
-                        <select class='form-control' name='$nombre_input''id='$nombre_input' required>
+                        <select class='form-control' name='$nombre_input''id='$nombre_input' $required>
                             <option value='' style='text-align:center;'>Seleccione</option>
                 ");
 
@@ -169,6 +180,10 @@
                         $options=$ci;
                     break;
 
+                    case "actors":
+                        $options=$actors;
+                    break;
+
                     
                 }
 
@@ -212,8 +227,8 @@
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
-                            class='form-control' name='$nombre_input' id='$nombre_input' required aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
-                            min='0'
+                            class='form-control' name='$nombre_input' id='$nombre_input' $required aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
+                            min='1'
                             $addons>
                     </div>
                 ");   

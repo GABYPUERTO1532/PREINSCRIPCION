@@ -59,6 +59,7 @@
                     <option value="Coordinacion Convivencial">Coordinacion Convivencial</option>
                     <option value="Coordinacion Academica">Coordinacion Academica</option>
                     <option value="Secretaria">Secretaria</option>
+                    <option value="Rectoria">Rectoria</option>
                     <option value="Refrigerios">Refrigerios</option>
                     <option value="Administrador">Administrador</option>
                   </select>

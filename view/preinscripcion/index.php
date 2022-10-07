@@ -5,6 +5,7 @@
   }
   
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['sub_lev']="lev_2";
 
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
@@ -15,7 +16,7 @@
 ?>
   <!--Contenedor principal Formulario-->
   <div class="card">
-    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&stu_typ='Antiguo'" method="post">
+    <form action="../../controller/actions.php?action=update&stu_doc_num=<?php echo($stu_doc_num);?>&doc_num_moth=<?php echo($moth_info['doc_num']);?>&doc_num_fath=<?php echo($fath_info['doc_num']);?>&doc_num_acu=<?php echo($acu_info['doc_num']);?>" method="post">
       <div class="card-body">
       <section>
         <!--Titulo seccion-->

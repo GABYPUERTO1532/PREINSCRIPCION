@@ -1,6 +1,6 @@
 <?php 
-  session_start();
   $_SESSION['titulo']="Proceso Preinscripcion";
+  $_SESSION['sub_lev']="lev_2";
   
   include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php");
@@ -134,7 +134,7 @@
 
             <!--Input: stu_est (Estrato)-->
             <?php
-              estructura("number","Estrato","stu_est",""," min='1' max='6'");
+              estructura("number","Estrato","stu_est","","min='2' max='6'");
             ?>
 
             <!--Input: stu_cat (Categoria sisben)-->
@@ -655,5 +655,4 @@
       </div>
     </form>
   </div>
-  
-<?php include "../footer.php"?>
+<?php include "C://xampp/htdocs/PREINSCRIPCION/view/footer.php"?>

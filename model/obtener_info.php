@@ -245,8 +245,19 @@
 
                     $sql="SELECT pre_stu FROM students WHERE doc_num='$stu_doc_num'";
                     $resultado=$coneccionBD->query($sql);
+                    $resultado=mysqli_fetch_assoc($resultado);
 
                     return $resultado;
+                break;
+
+                case "obtener_emp_info":
+
+                    $sql="SELECT * FROM workers WHERE doc_num='$stu_doc_num'";
+                    $resultado=$coneccionBD->query($sql);
+                    $array=mysqli_fetch_assoc($resultado);
+
+                    return $array;
+                break;
             /**/
 
             /**/
