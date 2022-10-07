@@ -23,6 +23,12 @@
                 h3{
                     margin: 0px 0px 0px 0px;
                 }
+                h2{
+                    margin: 10px 0px 10px 0px;
+                }
+                .compromiso{
+                    font-size:10px;
+                }
             </style>
         </head>
         <body style='font-size:15px;'>
@@ -197,7 +203,6 @@
                     </tbody>
                 </table>
 
-                
                 <table align='center'>
                     <tbody>
                         <tr>
@@ -351,7 +356,39 @@
 
                         </tr>
                     </tbody>
+                </table>
+                <table align='center'>
+                    <tbody>
+                        <tr>
+                            <td style='border: 1px black solid' class='compromiso'>Al firmar la presente matrícula aceptamos el PEI del colegio, nos comprometemos a acatar las normas estipuladas en el manual de convivencia, cumplir los
+                            principios juancorralinos, respetar la filosofía del colegio y asumir las reponsabilidades constitucionales de la familia en la educación de los hijos.</td>
+                        </tr>
+                    </tbody>
                 </table>              
+            </div>
+
+            <div>
+                <table align='center'>
+                    <tbody>
+                        <tr>
+                            <td>__________________________</td>
+                            <td>______________________________________________</td>
+                        </tr>
+                        <tr>
+                            <td>FIRMA ALUMNO</td>
+                            <td>FIRMA DEL PADRE, MADRE O ACUDIENTE</td>
+                        </tr>
+
+                        <tr>
+                            <td>__________________________</td>
+                            <td>_________________________________</td>
+                        </tr>
+                        <tr>
+                            <td>FIRMA RECTOR</td>
+                            <td>FIRMA DE LA SECRETARIA</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             
         </body>
