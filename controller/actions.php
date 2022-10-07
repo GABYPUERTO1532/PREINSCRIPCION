@@ -152,12 +152,12 @@
             session_start();
             print_r($pdf_info);
             $_SESSION['pdf_info']=$pdf_info;
-            header("Location: ../view/imprimir.php");
+            header("Location: pdf_structure.php");
         break;
 
         //Metodo vista "preinscripcion_antiguos.php"
         case "update":
-            crear_actualizar("update",$stu_doc_num,"","","",$stu_typ);
+            /*crear_actualizar("update",$stu_doc_num,"","","",$stu_typ);*/
             $pdf_info=[
                 //INFORMACION DEL ESTUDIANTE
                 'firs_sur'=>$post_firs_sur,
@@ -198,7 +198,7 @@
                 'fam_nam_fath'=>$post_fam_nam_fath,
                 'doc_typ_fath'=>$post_doc_typ_fath,
                 'doc_num_fath'=>$post_doc_num_fath,
-                'fam_land_moth'=>$post_fam_land_fath,
+                'fam_land_fath'=>$post_fam_land_fath,
                 'mob_pho_fath'=>$post_mob_pho_fath,
                 'fam_add_fath'=>$post_fam_add_fath,
                 'fam_ocu_fath'=>$post_fam_ocu_fath,
@@ -273,8 +273,8 @@
             session_reset();
             session_start();
             $_SESSION['pdf_info']=$pdf_info;
-            //print_r($_SESSION['pdf_info'])
-            header("Location: pdf_structure.php");
+            echo $post_doc_num_acu;
+            //header("Location: pdf_structure.php");
         break;
 
         //Metodo vista "revision_preinscripcion.php" caso "Confirmar o Aceptar Preinscripcion"

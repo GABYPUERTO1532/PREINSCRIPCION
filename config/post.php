@@ -11,7 +11,7 @@
             }
 
         }else{
-            return "";
+            return null;
         }
     }
 

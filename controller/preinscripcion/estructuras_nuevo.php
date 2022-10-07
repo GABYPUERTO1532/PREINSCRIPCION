@@ -228,7 +228,7 @@
                         <label for='$nombre_input' class='form-label'>$titulo</label>
                         <input type='$tipo_input'
                             class='form-control' name='$nombre_input' id='$nombre_input' $required aria-describedby='helpId' maxlength='$maxlength' minlenght='$minlenght'
-                            min='0'
+                            min='1'
                             $addons>
                     </div>
                 ");   

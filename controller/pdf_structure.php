@@ -171,7 +171,7 @@
                         </tr>
                         <tr>
                             <td style='border: 1px black solid'>".$pdf_info['fam_add_moth']."</td>
-                            <td style='border: 1px black solid'>".$pdf_info['dam_ocu_moth']."</td>
+                            <td style='border: 1px black solid'>".$pdf_info['fam_ocu_moth']."</td>
                             <td style='border: 1px black solid'>".$pdf_info['fam_ema_moth']."</td>
                         </tr>
                     </tbody>
@@ -207,7 +207,7 @@
                         </tr>
                         <tr>
                             <td style='border: 1px black solid'>".$pdf_info['fam_add_fath']."</td>
-                            <td style='border: 1px black solid'>".$pdf_info['dam_ocu_fath']."</td>
+                            <td style='border: 1px black solid'>".$pdf_info['fam_ocu_fath']."</td>
                             <td style='border: 1px black solid'>".$pdf_info['fam_ema_fath']."</td>
                         </tr>
                     </tbody>
@@ -241,7 +241,7 @@
                         </tr>
                         <tr>
                             <td style='border: 1px black solid'>".$pdf_info['fam_add_acu']."</td>
-                            <td style='border: 1px black solid'>".$pdf_info['dam_ocu_acu']."</td>
+                            <td style='border: 1px black solid'>".$pdf_info['fam_ocu_acu']."</td>
                             <td style='border: 1px black solid'>".$pdf_info['fam_ema_acu']."</td>
                         </tr>
                     </tbody>
@@ -281,7 +281,7 @@
                             <td style='border: 1px black solid'>".$pdf_info['lim_stu']."</td>
                             <td style='border: 1px black solid'>".$pdf_info['exp_cap']."</td>
                             <td style='border: 1px black solid'>".$pdf_info['iq_sco']."</td>
-                            <td style='border: 1px black solid'>".$pdf_info['ass_test']."</td>
+                            <td style='border: 1px black solid'>".$pdf_info['ass_tes']."</td>
                         </tr>
                     </tbody>
                 </table>
