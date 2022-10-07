@@ -368,7 +368,7 @@
             </div>
 
             <div>
-                <table align='center'>
+                <table align='center' class='firmas'>
                     <tbody>
                         <tr>
                             <td>__________________________</td>
