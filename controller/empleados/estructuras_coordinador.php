@@ -1,6 +1,6 @@
 <?php
 
-    include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 
     //Se guarda todos los datos obtenidos de la tabla "pre_stu" (Estudiantes Preinscritos)
     $consulta=consultar_informacion("consultar_listado_preinscripciones");

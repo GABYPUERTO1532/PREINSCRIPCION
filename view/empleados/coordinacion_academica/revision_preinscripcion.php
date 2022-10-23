@@ -10,7 +10,7 @@
   $stu_doc_num=$_GET['stu_doc_num'];
   $_SESSION['stu_doc_num_cont']=$stu_doc_num;
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
+  include "/opt/lampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_antiguo.php");
   $stu_typ=$_SESSION['stu_typ'];
 
@@ -637,4 +637,4 @@
     </form>
   </div>
   
-<?php include "C://xampp/htdocs/PREINSCRIPCION/view/footer.php"?>
+<?php include "/opt/lampp/htdocs/PREINSCRIPCION/view/footer.php"?>

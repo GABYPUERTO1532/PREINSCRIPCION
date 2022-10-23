@@ -1,6 +1,6 @@
 <?php
 
-    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/config/bd.php";
 
     function obtener_info($tipo_accion,$stu_doc_num,$nom_reg=null){
 

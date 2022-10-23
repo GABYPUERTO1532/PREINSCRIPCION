@@ -1,7 +1,7 @@
 <?php
     
     //Se Trae el modelo "consultar_informacion.php", ya que este contiene en su interiro la funcion para obtener los arrays, los cuales se mostraran como listas desplegables o select html
-    include "C://xampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/model/consultar_informacion.php";
 
     /*
         Explicacion: La funcion "consultar_informacion", unicamente tiene un unico argumento y esta es el nombre de la tabla de la cual queremos obtener la informacion, una vez realizada la consulta, guardara todos los registros en forma de array asociativo para luego ser retornados y guardados en su variable correspondiente:

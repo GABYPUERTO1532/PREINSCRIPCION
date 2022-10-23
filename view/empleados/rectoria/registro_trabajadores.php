@@ -2,8 +2,8 @@
     $_SESSION['titulo']="Proceso Registro Empleado";
     $_SESSION['sub_lev']="lev_3";
 
-    include "C://xampp/htdocs/PREINSCRIPCION/view/header.php";
-    include "C://xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/view/header.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php";
 
     if(!isset($_GET['status']) or !isset($_GET['action']) or (password_verify($_GET['status'],"true")) or password_verify($_GET['action'],"crear") or isset($_GET['emp_doc_num'])){
         header("Location: ../../../");

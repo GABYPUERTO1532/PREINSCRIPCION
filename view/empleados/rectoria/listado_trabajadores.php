@@ -2,8 +2,8 @@
     $_SESSION['titulo']="Listado Preinscripciones";
     $_SESSION['sub_lev']='lev_3';
     
-    include "C://xampp/htdocs/PREINSCRIPCION/view/header.php";
-    include "C://xampp/htdocs/PREINSCRIPCION/controller/empleados/estructuras_rectoria.php"; 
+    include "/opt/lampp/htdocs/PREINSCRIPCION/view/header.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/controller/empleados/estructuras_rectoria.php"; 
 
     $action_crear=password_hash("crear",PASSWORD_DEFAULT);
     $view=password_hash("true",PASSWORD_DEFAULT);
@@ -46,4 +46,4 @@
         </div>
     </div>
 
-<?php include "C://xampp/htdocs/PREINSCRIPCION/view/footer.php"?>
+<?php include "/opt/lampp/htdocs/PREINSCRIPCION/view/footer.php"?>

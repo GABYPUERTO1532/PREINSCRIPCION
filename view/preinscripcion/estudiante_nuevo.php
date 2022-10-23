@@ -2,7 +2,7 @@
   $_SESSION['titulo']="Proceso Preinscripcion";
   $_SESSION['sub_lev']="lev_2";
   
-  include "C://xampp/htdocs/PREINSCRIPCION/view/header.php"; 
+  include "/opt/lampp/htdocs/PREINSCRIPCION/view/header.php"; 
   include ("C:/xampp/htdocs/PREINSCRIPCION/controller/preinscripcion/estructuras_nuevo.php");
 
   $stu_doc_typ_login=$_GET['stu_doc_typ'];
@@ -655,4 +655,4 @@
       </div>
     </form>
   </div>
-<?php include "C://xampp/htdocs/PREINSCRIPCION/view/footer.php"?>
+<?php include "/opt/lampp/htdocs/PREINSCRIPCION/view/footer.php"?>

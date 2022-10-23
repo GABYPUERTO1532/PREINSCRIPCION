@@ -1,6 +1,6 @@
 <?php
 
-    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/config/bd.php";
 
     /*    
         Explicacion: Esta funcion tiene como fin el obtener todos los registros de diferentes tablas, segun la necesidad del sistema, para ello se hace uso de una estructura switch la cual segun el argumento que le introduzcamos a la funcion, esta buscara en una u otra tabla y retornara el correspondiente resultado a dicha consulta.

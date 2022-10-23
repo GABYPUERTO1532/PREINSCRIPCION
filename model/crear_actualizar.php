@@ -1,10 +1,10 @@
 <?php
 
-    include "C://xampp/htdocs/PREINSCRIPCION/config/bd.php";
+    include "/opt/lampp/htdocs/PREINSCRIPCION/config/bd.php";
 
     /*
     
-        Explicacion: Esta funcion es de suma importancia ya que en su interior contiene las operaciones de CREATE, UPDATE y DELETE del sistema de preinscripcion. Dichas operaciones se realizan en casos como la creacion o modificacion de un registro de preinscripcion, asi como el rechazo o aceptacion de dichas preinscripciones, todo esto sin mencionar la creacion de cuentas de usuario para personal administrativo dentro de la institucion.
+        Explicacion: Esta funcion es xde suma importancia ya que en su interior contiene las operaciones de CREATE, UPDATE y DELETE del sistema de preinscripcion. Dichas operaciones se realizan en casos como la creacion o modificacion de un registro de preinscripcion, asi como el rechazo o aceptacion de dichas preinscripciones, todo esto sin mencionar la creacion de cuentas de usuario para personal administrativo dentro de la institucion.
 
         Tip: El objetivo de la estructura "switch" (Segun), es realizar ciertas acciones segun el contenido de x variable.
 
