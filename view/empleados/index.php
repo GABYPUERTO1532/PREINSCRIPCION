@@ -52,14 +52,14 @@
 
                 <!--Input: emp_char (Cargo del empleado dentro de la institucion)-->
                 <div class="mb-3">
-                  <label for="emp_char" class="form-label">Seleccione su cargo en la institucion</label>
+                  <label for="emp_char" class="form-label">Seleccione su cargo en la institución</label>
                   <select class="form-control" name="emp_char" id="emp_char">
                     <option value="" selected>Seleccione</option>
                     <option value="Docente">Docente</option>
-                    <option value="Coordinacion Convivencial">Coordinacion Convivencial</option>
-                    <option value="Coordinacion Academica">Coordinacion Academica</option>
+                    <option value="Coordinacion Convivencial">Coordinación Convivencial</option>
+                    <option value="Coordinacion Academica">Coordinación Académica</option>
                     <option value="Secretaria">Secretaria</option>
-                    <option value="Rectoria">Rectoria</option>
+                    <option value="Rectoria">Rectoría</option>
                     <option value="Refrigerios">Refrigerios</option>
                     <option value="Administrador">Administrador</option>
                   </select>
@@ -70,7 +70,7 @@
                 <a class="btn btn-primary" href="../../" role="button">Soy Padre de Familia</a>
 
                 <!--Boton Inicio de sesion-->
-                <button type="submit" class="btn btn-success">Iniciar Sesion</button>
+                <button type="submit" class="btn btn-success">Iniciar Sesión</button>
               </div>
             </div>
           </form>

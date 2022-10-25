@@ -19,10 +19,10 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Tipo de documento Estudiante</th>
-                                <th scope="col">Numero de documento Estudiante</th>
+                                <th scope="col">Número de documento Estudiante</th>
                                 <th scope="col">Tipo de estudiante</th>
-                                <th scope="col">Fecha y hora de la preinscripcion</th>
-                                <th scope="col">Accion</th>
+                                <th scope="col">Fecha y hora de la preinscripción</th>
+                                <th scope="col">Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,7 +31,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-muted">
-                    <a class="btn btn-primary" href="../" role="button">Cerrar Sesion</a>
+                    <a class="btn btn-primary" href="../" role="button">Cerrar Sesión</a>
                 </div>
             </div>
         </div>

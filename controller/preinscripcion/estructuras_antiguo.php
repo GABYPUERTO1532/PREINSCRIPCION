@@ -97,7 +97,7 @@
 
     $ci=['N/A','0-4','5-19','20-34','35-54','55-69','70-84','85-99','100','101-114','115-129','130-139','140-154','155-174','175-184','185-201'];
 
-    $arreglo_asociativo=['CLAVE'=>'VALOR','CLAVE2'=>'valor2'];
+    /* $arreglo_asociativo=['CLAVE'=>'VALOR','CLAVE2'=>'valor2']; */
     
 
     //Esta lista de items esta especialmente diseñada para la vista "revision_preinscripcion.php"

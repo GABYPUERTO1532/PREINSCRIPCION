@@ -21,7 +21,7 @@
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
-        <h3 class="card-title text-center">Datos Estudiante</h3>
+        <h3 class="card-title text-center">Datos del Estudiante</h3>
 
         <!--Subseccion solo para inputs-->
         <article>
@@ -76,7 +76,7 @@
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante")?>
+            <?php estructura("text","Número de documento","stu_doc_num","","estudiante")?>
 
           </div>
 
@@ -87,12 +87,12 @@
 
             <!--Input: exp_cit (Ciudad de expedicion documento)-->
             <?php
-              estructura("select","Ciudad de expedicion","exp_cit","cities","estudiante");
+              estructura("select","Ciudad de expedición","exp_cit","cities","estudiante");
 
             ?>
 
             <!--Input: stu_add (Direccion)-->
-            <?php estructura("text","Direccion","stu_add","","estudiante")?>
+            <?php estructura("text","Dirección","stu_add","","estudiante")?>
 
             <!--Input: stu_loc (Localidad)-->
             <?php
@@ -118,7 +118,7 @@
 
             <!--Input: stu_cat (Categoria sisben)-->
             <?php
-              estructura("select","Categoria sisben","stu_cat","sisben","estudiante");
+              estructura("select","Categoria sisbén","stu_cat","sisben","estudiante");
             ?>
     
           </div>
@@ -130,7 +130,7 @@
 
             <!--Input: stu_tel (Telefono)-->
             <?php
-              estructura("number","Telefono","stu_tel","","estudiante");
+              estructura("number","Celular","stu_tel","","estudiante");
             ?>
 
             <!--Input: stu_hob (Aficiones o Hobbies)-->
@@ -138,9 +138,9 @@
               estructura("text","Aficiones o Hobbies","stu_hob","","estudiante");
             ?>
 
-            <!--Input: stu_enf (Cirujuas o enfermedades)-->
+            <!--Input: stu_enf (Cirugías o enfermedades)-->
             <?php
-              estructura("text","Cirujias o enfermedades","stu_enf","","estudiante");
+              estructura("text","Cirugías o enfermedades","stu_enf","","estudiante");
             ?>
             
           </div>
@@ -174,7 +174,7 @@
 
             <!--Input: b_grp (Grupo Sanguineo)-->
             <?php
-              estructura("select","Grupo Sanguineo","b_grp","blood_group","estudiante");
+              estructura("select","Grupo Sanguíneo","b_grp","blood_group","estudiante");
             ?>
 
             <!--Input: rh_fact (Factor Sanguineo)-->
@@ -207,25 +207,25 @@
             ?>
 
             <!--Input: doc_num_moth (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_moth","","madre")?>
+            <?php estructura("text","Número de documento","doc_num_moth","","madre")?>
 
           </div>
 
           <!--SECCION 2-->
 
-          <!--Input: Telefono fijo, Telefono celular, Direccion-->
+          <!--Input: Telefono fijo, Teléfono celular, Direccion-->
           <div class="input-group">
 
-            <!--Input: fam_land_moth (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_moth","","madre")?>
+            <!--Input: fam_land_moth (Teléfono fijo)-->
+            <?php estructura("number","Teléfono fijo","fam_land_moth","","madre")?>
 
             <!--Input: mob_pho_moth (Telefono Celular)-->
             <?php
               estructura("number","Celular","mob_pho_moth","","madre");
             ?>
 
-            <!--Input: fam_add_moth (Direccion)-->
-            <?php estructura("text","Direccion","fam_add_moth","","madre")?>
+            <!--Input: fam_add_moth (Dirección)-->
+            <?php estructura("text","Dirección","fam_add_moth","","madre")?>
 
           </div>
 
@@ -234,12 +234,12 @@
           <!--Input: Ocupacion, Correo Electronico-->
           <div class="input-group">
 
-            <!--Input: fam_ocu_moth (Ocupacion)-->
-            <?php estructura("text","Ocupacion","fam_ocu_moth","","madre")?>
+            <!--Input: fam_ocu_moth (Ocupación)-->
+            <?php estructura("text","Ocupación","fam_ocu_moth","","madre")?>
 
             <!--Input: fam_ema_moth (Correo Electronico)-->
             <?php
-              estructura("email","Correo Electronico","fam_ema_moth","","madre");
+              estructura("email","Correo Electrónico","fam_ema_moth","","madre");
             ?>
 
           </div>
@@ -268,7 +268,7 @@
             ?>
 
             <!--Input: doc_num_fath (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_fath","","padre")?>
+            <?php estructura("text","Número de documento","doc_num_fath","","padre")?>
 
           </div>
 
@@ -277,8 +277,8 @@
           <!--Input: Telefono fijo, Telefono celular, Direccion-->
           <div class="input-group">
 
-            <!--Input: fam_land_fath (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_fath","","padre")?>
+            <!--Input: fam_land_fath (Teléfono fijo)-->
+            <?php estructura("number","Teléfono fijo","fam_land_fath","","padre")?>
 
             <!--Input: mob_pho_fath (Telefono Celular)-->
             <?php
@@ -286,7 +286,7 @@
             ?>
 
             <!--Input: fam_add_fath (Direccion)-->
-            <?php estructura("text","Direccion","fam_add_fath","","padre")?>
+            <?php estructura("text","Dirección","fam_add_fath","","padre")?>
 
           </div>
 
@@ -296,11 +296,11 @@
           <div class="input-group">
 
             <!--Input: fam_ocu_fath (Ocupacion)-->
-            <?php estructura("text","Ocupacion","fam_ocu_fath","","padre")?>
+            <?php estructura("text","Ocupación","fam_ocu_fath","","padre")?>
 
             <!--Input: fam_ema_fath (Correo Electronico)-->
             <?php
-              estructura("email","Correo Electronico","fam_ema_fath","","padre");
+              estructura("email","Correo Electrónico","fam_ema_fath","","padre");
             ?>
 
           </div>
@@ -328,7 +328,7 @@
             ?>
 
             <!--Input: doc_num_acu (Numero de documento)-->
-            <?php estructura("text","Numero de documento","doc_num_acu","","acudiente")?>
+            <?php estructura("text","Número de documento","doc_num_acu","","acudiente")?>
 
           </div>
 
@@ -338,7 +338,7 @@
           <div class="input-group">
 
             <!--Input: fam_land_acu (Telefono fijo)-->
-            <?php estructura("number","Telefono fijo","fam_land_acu","","acudiente")?>
+            <?php estructura("number","Teléfono fijo","fam_land_acu","","acudiente")?>
 
             <!--Input: mob_pho_acu (Numero Telefonico)-->
             <?php
@@ -346,7 +346,7 @@
             ?>
 
             <!--Input: fam_add_acu (Direccion)-->
-            <?php estructura("text","Direccion","fam_add_acu","","acudiente")?>
+            <?php estructura("text","Dirección","fam_add_acu","","acudiente")?>
 
           </div>
 
@@ -356,11 +356,11 @@
           <div class="input-group">
 
             <!--Input: fam_ocu_moth (Ocupacion)-->
-            <?php estructura("text","Ocupacion","fam_ocu_acu","","acudiente")?>
+            <?php estructura("text","Ocupación","fam_ocu_acu","","acudiente")?>
 
             <!--Input: fam_ema_moth (Correo Electronico)-->
             <?php
-              estructura("email","Correo Electronico","fam_ema_acu","","acudiente");
+              estructura("email","Correo Electrónico","fam_ema_acu","","acudiente");
             ?>
 
           </div>
@@ -631,8 +631,8 @@
       </section>
       </div>
       <div class="card-footer text-muted text-center">
-        <?php estructura("select","Esta Preinscripcion es:","action","actions")?>
-        <button type="submit" class="btn btn-primary">Finalizar Revision</button>
+        <?php estructura("select","Esta Preinscripción es:","action","actions")?>
+        <button type="submit" class="btn btn-primary">Finalizar Revisión</button>
       </div>
     </form>
   </div>

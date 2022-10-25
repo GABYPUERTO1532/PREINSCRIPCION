@@ -35,21 +35,21 @@
           <form action="controller/login_familia.php" method="post">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">BIENVENIDO AL SISTEMA DE PREINSCRIPCION</h4>
+                <h4 class="card-title">BIENVENIDO AL SISTEMA DE PREINSCRIPCIÓN</h4>
 
                 <!--Informacion obtenida: Tipo y numero de documento del Familiar-->
                 <div class="mb-3">
-                  <label for="" class="form-label">Digite numero de documento</label>
+                  <label for="" class="form-label">Digite número de documento</label>
                   <div class="mb-3">
                     <div class="input-group"> 
                       <div class="col-md-5">
                         <select class="form-control" name="fam_doc_typ" id="fam_doc_typ" required>
                           <option selected value="">Seleccione</option>
-                          <option value="Cedula de ciudadania">Cedula de Ciudadania</option>
-                          <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                          <option value="No. de Identificacion Personal">No. de Identificacion Personal</option>
+                          <option value="Cedula de ciudadania">Cédula de Ciudadania</option>
+                          <option value="Cedula de Extranjeria">Cédula de Extranjeria</option>
+                          <option value="No. de Identificacion Personal">No. de Identificación Personal</option>
                           <option value="No. Unico de Identificacion Personal">No. Único de Identificación personal</option>
-                          <option value="No. Unico de Identificacion Tributaria">No. de Identificacion Tributaria</option>
+                          <option value="No. Unico de Identificacion Tributaria">No. de Identificación Tributaria</option>
                           <option value="Pasaporte">Pasaporte</option>
                         </select>
                       </div>
@@ -62,7 +62,7 @@
 
                 <!--Informacion obtenida: Tipo y numero de documento del estudiante-->
                 <div class="mb-3">
-                  <label for="" class="form-label">Digite numero de documento del estudiante</label>
+                  <label for="" class="form-label">Digite número de documento del estudiante</label>
                   <div class="mb-3">
                     <div class="input-group">  
                       <div class="col-md-5">
@@ -82,7 +82,7 @@
 
                 <!--Informacion obtenida: Relacion entre el Familiar y el estudiante-->
                 <div class="mb-3">
-                  <label for="" class="form-label">Especifique su relacion con el Estudiante</label>
+                  <label for="" class="form-label">Especifique su relación con el Estudiante</label>
                   <select class="form-control" name="relation" id="relation" required>
                     <option selected value="">Seleccione</option>
                     <option value="Padre">Padre</option>
@@ -98,7 +98,7 @@
                 <a class="btn btn-primary" href="view/empleados" role="button">Soy Trabajador</a>
 
                 <!--Boton Inicio de sesion-->
-                <button type="submit" class="btn btn-success">Iniciar Sesion</button>
+                <button type="submit" class="btn btn-success">Iniciar Sesión</button>
               </div>
             </div>
           </form>

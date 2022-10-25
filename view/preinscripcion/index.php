@@ -20,7 +20,7 @@
       <div class="card-body">
       <section>
         <!--Titulo seccion-->
-        <h3 class="card-title text-center">Datos Estudiante</h3>
+        <h3 class="card-title text-center">Datos del Estudiante</h3>
 
         <!--Subseccion solo para inputs-->
         <article>
@@ -75,7 +75,7 @@
             ?>
 
             <!--Input: stu_doc_num (Numero de documento)-->
-            <?php estructura("text","Numero de documento","stu_doc_num","","estudiante","min='1000000000' disabled")?>
+            <?php estructura("text","Número de documento","stu_doc_num","","estudiante","min='1000000000' disabled")?>
 
           </div>
 
@@ -86,12 +86,12 @@
 
             <!--Input: exp_cit (Ciudad de expedicion documento)-->
             <?php
-              estructura("select","Ciudad de expedicion","exp_cit","cities","estudiante");
+              estructura("select","Ciudad de expedición","exp_cit","cities","estudiante");
 
             ?>
 
             <!--Input: stu_add (Direccion)-->
-            <?php estructura("text","Direccion","stu_add","","estudiante")?>
+            <?php estructura("text","Dirección","stu_add","","estudiante")?>
 
             <!--Input: stu_loc (Localidad)-->
             <?php
@@ -117,7 +117,7 @@
 
             <!--Input: stu_cat (Categoria sisben)-->
             <?php
-              estructura("select","Categoria sisben","stu_cat","sisben","estudiante");
+              estructura("select","Categoria sisbén","stu_cat","sisben","estudiante");
             ?>
     
           </div>
@@ -129,7 +129,7 @@
 
             <!--Input: stu_tel (Telefono)-->
             <?php
-              estructura("text","Telefono Celular","stu_tel","","estudiante","","10");
+              estructura("text","Teléfono Celular","stu_tel","","estudiante","","10");
             ?>
 
             <!--Input: stu_hob (Aficiones o Hobbies)-->

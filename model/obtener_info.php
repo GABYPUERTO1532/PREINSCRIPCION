@@ -177,7 +177,9 @@
                         Explicacion: Haciendo uso la variable "$nom_reg", la cual es obtenida como argumento de la funcion, se emplea para determinar cual de los 6 registros sera retornado.
 
                     */
+                    $array_null=['stu_doc_num'=>'','sch_grd'=>'','sch_yea'=>'','sch_cit'=>'','sch_ins'=>''];
                     switch ($nom_reg){
+
                         case "edu_inf_1":
                             return $edu_inf_1;
                         break;
@@ -185,7 +187,7 @@
                         case "edu_inf_2":
                             
                             if(!isset($edu_inf_2)){
-                                $edu_inf_2=['stu_doc_num'=>'','sch_grd'=>'','sch_yea'=>'','sch_cit'=>'','sch_ins'=>''];
+                                $edu_inf_2=$array_null;       
                                 return $edu_inf_2;
                             }else{
                                 return $edu_inf_2;
@@ -196,7 +198,7 @@
                         case "edu_inf_3":
                             
                             if(!isset($edu_inf_3)){
-                                $edu_inf_3=['stu_doc_num'=>'','sch_grd'=>'','sch_yea'=>'','sch_cit'=>'','sch_ins'=>''];
+                                $edu_inf_3=$array_null;           
                                 return $edu_inf_3;
                             }else{
                                 return $edu_inf_3;
@@ -218,7 +220,7 @@
                         case "edu_inf_5":
 
                             if(!isset($edu_inf_5)){
-                                $edu_inf_5=['stu_doc_num'=>'','sch_grd'=>'','sch_yea'=>'','sch_cit'=>'','sch_ins'=>''];
+                                $edu_inf_5=$array_null;
                                 return $edu_inf_5;
                             }else{
                                 return $edu_inf_5;
@@ -229,7 +231,7 @@
                         case "edu_inf_6":
                             
                             if(!isset($edu_inf_6)){
-                                $edu_inf_6=['stu_doc_num'=>'','sch_grd'=>'','sch_yea'=>'','sch_cit'=>'','sch_ins'=>''];
+                                $edu_inf_6=$array_null;
                                 return $edu_inf_6;
                             }else{
                                 return $edu_inf_6;
