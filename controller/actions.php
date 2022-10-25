@@ -150,7 +150,6 @@
                 'sch_ins_6'=>$post_sch_ins_6,
             ];
             session_start();
-            print_r($pdf_info);
             $_SESSION['pdf_info']=$pdf_info;
             header("Location: pdf_structure.php");
         break;

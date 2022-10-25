@@ -209,7 +209,7 @@
                         case "edu_inf_4":
                             
                             if(!isset($edu_inf_4)){
-                                $edu_inf_4=['stu_doc_num'=>'','sch_grd'=>'','sch_yea'=>'','sch_cit'=>'','sch_ins'=>''];
+                                $edu_inf_4=$array_null;
                                 return $edu_inf_4;
                             }else{
                                 return $edu_inf_4;

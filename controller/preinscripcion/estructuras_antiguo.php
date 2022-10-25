@@ -327,6 +327,7 @@
             7. $maxlength (Opcional): Aunque de forma predeterminada el maximo de caracteres por cada input es de 255, la funcion tambien permite (En caso de ser necesario), definir un numero especifico de caracteres que el input admite
     
     */
+
     function estructura($tipo_input,$titulo,$nombre_input,$array_type=null,$array_bd=null,$addons=null,$maxlength=null){
 
         //Defino como 1 el minimo de caracteres que debe contener cada input en su interior
@@ -372,7 +373,7 @@
                 $resultado=("
                     <div class='mb-3 col-md-3 input'>
                         <label for='$nombre_input' class='form-label'>$titulo</label>
-                        <select class='form-control' name='$nombre_input''id='$nombre_input' required>
+                        <select class='form-control' name='$nombre_input' id='$nombre_input' required>
                             <option value='' style='text-align:center;'>Seleccione</option>
                 ");
 

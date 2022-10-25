@@ -455,6 +455,7 @@
               </thead>
               
               <!--Informacion Escolar (6 Filas)-->
+              <?php $date=date("Y")-1?>
               <tbody>
 
                 <!--Fila 1 -->
@@ -468,7 +469,7 @@
                   <td>
                     <!--Input: sch_yea_1 (Año escolar 1)-->
                     <?php
-                      estructura2('number','sch_yea_1',"","edu_inf_1","min='2004' max='2021' required");
+                      estructura2('number','sch_yea_1',"","edu_inf_1","min='2004' max='$date' required");
                     ?>
                   </td>
                   <td>
@@ -496,7 +497,7 @@
                   <td>
                     <!--Input: sch_yea_2 (Año escolar 2)-->
                     <?php
-                      estructura2('number','sch_yea_2',"","edu_inf_2","min='2004' max='2021'");
+                      estructura2('number','sch_yea_2',"","edu_inf_2","min='2004' max='$date'");
                     ?>
                   </td>
                   <td>
@@ -524,7 +525,7 @@
                   <td>
                     <!--Input: sch_yea_3 (Año escolar 3)-->
                     <?php
-                      estructura2('number','sch_yea_3',"","edu_inf_3","min='2004' max='2021'");
+                      estructura2('number','sch_yea_3',"","edu_inf_3","min='2004' max='$date'");
                     ?>
                   </td>
                   <td>
@@ -552,7 +553,7 @@
                   <td>
                     <!--Input: sch_yea_4 (Año escolar 4)-->
                     <?php
-                      estructura2('number','sch_yea_4',"","edu_inf_4","min='2004' max='2021'");
+                      estructura2('number','sch_yea_4',"","edu_inf_4","min='2004' max='$date'");
                     ?>
                   </td>
                   <td>
@@ -580,7 +581,7 @@
                   <td>
                     <!--Input: sch_yea_5 (Año escolar 5)-->
                     <?php
-                      estructura2('number','sch_yea_5',"","edu_inf_5","min='2004' max='2021'");
+                      estructura2('number','sch_yea_5',"","edu_inf_5","min='2004' max='$date'");
                     ?>
                   </td>
                   <td>
@@ -608,7 +609,7 @@
                   <td>
                     <!--Input: sch_yea_6 (Año escolar 6)-->
                     <?php
-                      estructura2('number','sch_yea_6',"","edu_inf_6","min='2004' max='2021'");
+                      estructura2('number','sch_yea_6',"","edu_inf_6","min='2004' max='$date'");
                     ?>
                   </td>
                   <td>

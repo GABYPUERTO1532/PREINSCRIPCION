@@ -15,7 +15,6 @@
             </div>
             <div class="card-body">
                 <form action="" method="post">
-
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
