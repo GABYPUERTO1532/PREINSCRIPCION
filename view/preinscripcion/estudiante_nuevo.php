@@ -479,6 +479,7 @@
 
                 <!--Fila 1 -->
                 <tr class="">
+                <?php $date=date("Y")-1?>
                   <td>
                     <!--Input: sch_grd_1 (Grado escolar 1)-->
                     <?php
@@ -535,7 +536,6 @@
 
                 <!--Fila 3-->
                 <tr class="">
-                <?php $date=date("Y")-1?>
                   <td>
                     <!--Input: sch_grd_3 (Grado escolar 3)-->
                     <?php
